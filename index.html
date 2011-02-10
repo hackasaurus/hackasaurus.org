@@ -4,16 +4,39 @@
 <style>
 body {
     font-family: Baskerville, Helvetica, Arial;
-    width: 640px;
-    margin: 0 auto;
     background: #ffd203;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+  height: 450px;
+}
+
+#topnav {
+  min-height: 75px;
+  background: black;
+}
+
+#logo {
+  position: relative;
+  top: -100px;
+  text-align: center;
+}
+
+#content {
+  width: 640px;
+  margin: 0 auto;
 }
 </style>
-<div><center><img src="hackasaurus_mashed.png"></center></div>
+<div id="header">
+  <div id="topnav"></div>
+  <div id="logo"><img src="hackasaurus_mashed.png"></div>
+</div>
+<div id="content">
 <h1>
 What is Hackasaurus?
 </h1>
-
 <p>
 The Web is the most ubiquitous communication medium of our age, and it's where many spend hours of their day for work and play. Yet few people understand its underlying structure; few know, for instance, that every page is composed of standard parts that no company owns. Few know that the composition is malleable: typos can be fixed, canvases altered, sounds spliced, annoyances removed, features added.
 </p>
@@ -85,3 +108,4 @@ Where and When Will Hackasaurus Be Developed?
 <p>
 Over the next six months, we will be developing prototypes of the Hackasaurus backpack, which will be user-tested and co-designed by youth in design jams in New York and Chicago.
 </p>
+</div>
