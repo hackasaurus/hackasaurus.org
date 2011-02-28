@@ -9,6 +9,10 @@ body {
     padding: 0;
 }
 
+h1 {
+  font-weight: normal;
+}
+
 #header {
   height: 450px;
 }
@@ -28,12 +32,47 @@ body {
   width: 640px;
   margin: 0 auto;
 }
+
+#tools {
+  text-align: center;
+  margin: 0 auto;
+}
+
+div.tool div.icon {
+  float: right;
+}
+
+div.tool div.desc {
+  padding-top: 1em;
+}
+
+div.tool:after {
+  content: ".";
+  line-height: 0;
+  height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+a {
+  font-weight: bold;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 </style>
 <div id="header">
   <div id="topnav"></div>
   <div id="logo"><img src="hackasaurus_mashed.png"></div>
 </div>
 <div id="content">
+<div id="tools">
+  
+</div>
 <h1>
 What is Hackasaurus?
 </h1>
@@ -49,63 +88,34 @@ The goal of the Hackasaurus backpack is to provide a set of easy-to-use tools wi
 By making it easy to take apart, understand, and remix the fabric of the Web, we enable anyone to turn it into a space where they can represent and define their own identity; make informed decisions about their privacy and security online; protect the openness of this digital commons for future generations; and have fun creating instead of consuming.
 </p>
 
-<h2>
-The Tools
-</h2>
-
-<p>
-The Hackasaurus backpack is currently comprised of the following tools:
-</p>
-
-<ul>
-
-<li>
-
-<p>
-
-<strong>
-Web X-Ray Goggles
-</strong>
- - This tool allows anyone to easily “see through the surface” of any Web page, and obtain an intuitive understanding of how pages are composed. The goggles can be used anywhere on the Web one hangs out&mdash;whether it’s Facebook, the New York Times, 4chan, or someplace else. Casual use of this tool enables one to gain a rudimentary grasp of HTML, CSS, and the Document Object Model.
-</p>
-
-</li>
-
-<li>
-
-<p>
-
-<strong>
-Mixmaster
-</strong>
- - This is what people use after they’ve mastered the Web X-Ray Goggles. While goggles allow one to take apart a page and inspect its individual parts, the Mixmaster allows one to actually <em>change</em> parts to remix the page. For instance, the tool can be used to change the font that’s used on a page, or to hyperlink a word on a page to its entry on Wikipedia. Each alteration is called a <em>hack</em> and hacks can be easily shared with friends for any purpose&mdash;to make a page, a site, or even the entire Web more usable, more hilarious, or more meaningful. Experimenting with this tool engages people in writing short snippets of HTML, which provides scaffolding for future adventures in Web development.
-</p>
-
-</li>
-
-</ul>
-
 <h1>
-Who Will Use Hackasaurus?
+Tools To Try Out
 </h1>
 
 <p>
-We are developing the Hackasaurus backpack with teenagers as the core audience. However, we are creating resources that are flexible enough to be explored and implemented by learners of all ages.
+The Hackasaurus backpack is currently comprised of the following tools. These are still evolving, and more tools are on their way.
 </p>
 
-<h1>
-How Will Hackasaurus Be Created?
-</h1>
+<div class="tool">
+  <div class="icon">
+    <a href="https://secure.toolness.com/webxray/"><img src="goggles.png"></a>
+  </div>
+  <div class="desc">
+    <a href="https://secure.toolness.com/webxray/">Web X-Ray Goggles</a> allow anyone to easily “see through the surface” of any Web page, and obtain an intuitive understanding of how pages are composed. They can be used anywhere on the Web one hangs out, and casual use of the tool enables one to gain a rudimentary grasp of HTML, CSS, and the Document Object Model.
+  </div>
+</div>
 
-<p>
-We have compiled a core team of designers, developers, researchers, curriculum experts, educators and teens to develop tools for the community. The Hackasaurus backpack itself is a curated set of tools: some of them are developed by our core collaboration team of the New Youth City Learning Network, NYPL, YouMedia and Mozilla, while others are designed by the open source community.
-</p>
+<div class="tool">
+  <div class="icon">
+    <a href="http://htmlpad.org/"><img src="htmlpad.png"></a>
+  </div>
+  <div class="desc">
+    <a href="http://htmlpad.org/">HTMLPad</a> is a simple website that allows anyone to easily create a Web page, collaborate on it in real-time with friends, and share it with the rest of the world.
+  </div>
+</div>
 
-<h1>
-Where and When Will Hackasaurus Be Developed?
-</h1>
+<h1>Learning More</h1>
 
-<p>
-Over the next six months, we will be developing prototypes of the Hackasaurus backpack, which will be user-tested and co-designed by youth in design jams in New York and Chicago.
-</p>
+<p>To learn more about Hackasaurus, check out the <a href="https://wiki.mozilla.org/Drumbeat/Hackasaurus">Hackasaurus Wiki</a>.</p>
+
 </div>
