@@ -59,6 +59,25 @@ div#recruitment-form a:hover {
   background: #f0f0f0;
 }
 
+div#recruitment-form img.throbber {
+  display: none;
+  padding-right: 1em;
+}
+
+div#recruitment-form div.server-response {
+  display: none;
+  font-size: 18pt;
+  float: left;
+}
+
+div#recruitment-form div.server-error {
+  color: firebrick;
+}
+
+div#recruitment-form div.server-success {
+  color: green;
+}
+
 #footer {
   background: black;
   color: white;
@@ -187,12 +206,15 @@ The Hackasaurus backpack is currently comprised of the following experimental to
       <textarea id="comments" name="comments" rows="25" cols="25"></textarea>
       <p class="formHint">If you'd like us to know anything about you, feel free to tell us here.</p>
     </div>
-    <div class="ctrlHolder">
+    <div class="ctrlHolder turingAnswer">
       <label for="turingAnswer">What's this project called?</label>
       <input type="text" id="turingAnswer" name="turingAnswer" value="" size="35" class="textInput required">
       <p class="formHint">We just need to make sure you're not a robot.</p>
     </div>
-    <div class="buttonHolder"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
+    <div class="buttonHolder">
+      <div class="server-error server-response">An error occurred. Try again?</div>
+      <div class="server-success server-response">Thanks! We'll get back to you soon.</div>
+      <img src="img/ajax-loader.gif" class="throbber"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
   </fieldset>
 </form>
 </div>
@@ -202,17 +224,52 @@ The Hackasaurus backpack is currently comprised of the following experimental to
   </div>
 </div>
 <script>
+function submitRecruitmentForm(cb) {
+  // TODO: Replace this with an actual XHR.
+  window.setTimeout(function() { cb("SUCCESS"); }, 1000);
+}
+
 $(window).ready(function() {
   $("#recruitment-form form").uniform().submit(function() {
+    var self = $(this);
+
+    if (self.find("img.throbber:visible").length)
+      return false;
+
+    self.find(".server-response").hide();
+
     var formData = {};
-    $(this).find("input:text, input:checkbox:checked, " +
+    var result = null;
+    self.find("input:text, input:checkbox:checked, " +
                  "textarea").each(function() {
       formData[$(this).attr("name")] = $(this).val();
       $(this).blur();
     });
-    var isValidated = ($(this).find('.error').length == 0);
-    if (isValidated)
-      $(this).slideUp();
+    var isValidated = (self.find('.error').length == 0);
+
+    if (isValidated) {
+      submitRecruitmentForm(function(result) {
+        self.find(".throbber").hide();
+        switch (result) {
+          case "SUCCESS":
+          self.find(".server-success").fadeIn();
+          break;
+
+          case "TURINGFAIL":
+          self.find("div.turingAnswer").addClass("invalid error")
+              .find("p.formHint").text("Are you a robot? Try again!");
+          break;
+
+          case "ERROR":
+          self.find(".server-error").fadeIn();
+          break;
+
+          default:
+          throw new Error("Invalid result: " + result);
+        }
+      });
+      self.find(".throbber").show();
+    }
     return false;
   });
   if (window.location.search.match(/\?form=1/))
