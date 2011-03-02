@@ -38,21 +38,13 @@ h1 {
   margin: 0 auto;
 }
 
-div.tool div.icon {
-  float: right;
+div.tool {
+  display: table;
 }
 
-div.tool div.desc {
-  padding-top: 1em;
-}
-
-div.tool:after {
-  content: ".";
-  line-height: 0;
-  height: 0;
-  display: block;
-  visibility: hidden;
-  clear: both;
+div.tool div.icon, div.tool div.desc {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 a {
