@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Hackasaurus</title>
+<script src="js/jquery.min.js"></script>
+<script src="js/uni-form.jquery.js"></script>
+<script src="js/uni-form-validation.jquery.js"></script>
 <style>
 @import url('css/uni-form.css');
 @import url('css/default.uni-form.css');
@@ -166,7 +169,7 @@ The Hackasaurus backpack is currently comprised of the following experimental to
     </div>
     <div class="ctrlHolder">
       <label for="email">Your E-Mail Address</label>
-      <input type="text" id="email" name="email" value="" size="35" class="textInput">
+      <input type="text" id="email" name="email" value="" size="35" class="textInput validateEmail required">
       <p class="formHint">We promise we won't give it to spammers.</p>
     </div>
     <div class="ctrlHolder">
@@ -186,7 +189,7 @@ The Hackasaurus backpack is currently comprised of the following experimental to
     </div>
     <div class="ctrlHolder">
       <label for="turingAnswer">What's this project called?</label>
-      <input type="text" id="turingAnswer" name="turingAnswer" value="" size="35" class="textInput">
+      <input type="text" id="turingAnswer" name="turingAnswer" value="" size="35" class="textInput required">
       <p class="formHint">We just need to make sure you're not a robot.</p>
     </div>
     <div class="buttonHolder"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
@@ -199,8 +202,20 @@ The Hackasaurus backpack is currently comprised of the following experimental to
   </div>
 </div>
 <script>
-onload = function() {
+$(window).ready(function() {
+  $("#recruitment-form form").uniform().submit(function() {
+    var formData = {};
+    $(this).find("input:text, input:checkbox:checked, " +
+                 "textarea").each(function() {
+      formData[$(this).attr("name")] = $(this).val();
+      $(this).blur();
+    });
+    var isValidated = ($(this).find('.error').length == 0);
+    if (isValidated)
+      $(this).slideUp();
+    return false;
+  });
   if (window.location.search.match(/\?form=1/))
-    document.getElementById("recruitment-form").style.display = "block";
-}
+    $("#recruitment-form").show();
+});
 </script>
