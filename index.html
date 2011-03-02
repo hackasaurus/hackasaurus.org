@@ -2,6 +2,9 @@
 <meta charset="utf-8">
 <title>Hackasaurus</title>
 <style>
+@import url('css/uni-form.css');
+@import url('css/default.uni-form.css');
+
 body {
     font-family: Baskerville, Helvetica, Arial;
     background: #ffd203;
@@ -31,6 +34,26 @@ h1 {
 #content {
   width: 640px;
   margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+div#recruitment-form {
+  width: 100%;
+  background: white;
+}
+
+div#recruitment-form form {
+  width: 640px;
+  margin: 0 auto;
+  padding-top: 0.1em;
+}
+
+div#recruitment-form form .buttonHolder {
+  background: white;
+}
+
+div#recruitment-form a:hover {
+  background: #f0f0f0;
 }
 
 #footer {
@@ -61,12 +84,15 @@ div.tool div.icon, div.tool div.desc {
 }
 
 a {
-  font-weight: bold;
   color: inherit;
+}
+
+#content a {
+  font-weight: bold;
   text-decoration: inherit;
 }
 
-a:hover {
+#content a:hover {
   text-decoration: underline;
 }
 
@@ -124,11 +150,57 @@ The Hackasaurus backpack is currently comprised of the following experimental to
 
 <p>To find out more about Hackasaurus and get involved, check out the <a href="https://wiki.mozilla.org/Drumbeat/Hackasaurus">Hackasaurus Wiki</a>.</p>
 
-<p>If you'd like to be notified of future updates, please follow <a href="http://twitter.com/hackasaurus">@hackasaurus</a> on Twitter, or <a href="http://www.facebook.com/pages/Hackasaurus/140459162682866">Like Hackasaurus</a> on Facebook.</p>
+<p>If you'd like to be notified of future updates, please follow <a href="http://twitter.com/hackasaurus">@hackasaurus</a> on Twitter, <a href="http://www.facebook.com/pages/Hackasaurus/140459162682866">Like Hackasaurus</a> on Facebook, or fill out the form below.</p>
 
+</div>
+<div id="recruitment-form" style="display: none;">
+<form action="#" class="uniForm">
+  <h1>Hackasaurus Wants You!</h1>
+
+  <p>We're recruiting an army of kids, designers, coders, researchers, curriculum experts, educators, and teens to help build the toolkit and curriculum. If you're interested in participating, just leave your email address below and we'll get back to you soon.</p>
+  <fieldset>
+    <div class="ctrlHolder">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" value="" size="35" class="textInput">
+      <p class="formHint">This is what we will call you.</p>
+    </div>
+    <div class="ctrlHolder">
+      <label for="email">Your E-Mail Address</label>
+      <input type="text" id="email" name="email" value="" size="35" class="textInput">
+      <p class="formHint">We promise we won't give it to spammers.</p>
+    </div>
+    <div class="ctrlHolder">
+      <p class="label">Your Interests</p>
+      <ul class="blockLabels">
+        <li><label for="jamInterest"><input type="checkbox" id="jamInterest" name="jamInterest"> I want to host a hack jam.</label></li>
+        <li><label for="toolInterest"><input type="checkbox" id="toolInterest" name="toolInterest"> I want to help build the tools.</label></li>
+        <li><label for="curriculumInterest"><input type="checkbox" id="curriculumInterest" name="curriculumInterest"> I want to help build the curriculum.</label></li>
+        <li><label for="otherInterest"><input type="checkbox" id="otherInterest" name="otherInterest"> I want to help with something else awesome.</label></li>
+      </ul>
+      <p class="formHint">Check all that apply. If you have no idea what a hack jam is, check out this <a href="http://spotlight.macfound.org/featured-stories/entry/at-hackasaurus-jam-mozilla-encourages-young-programmers-to-change-the-web/">MacArthur Spotlight article</a>.</p>
+    </div>
+    <div class="ctrlHolder">
+      <label for="comments">Comments</label>
+      <textarea id="comments" name="comments" rows="25" cols="25"></textarea>
+      <p class="formHint">If you'd like us to know anything about you, feel free to tell us here.</p>
+    </div>
+    <div class="ctrlHolder">
+      <label for="turingAnswer">What's this project called?</label>
+      <input type="text" id="turingAnswer" name="turingAnswer" value="" size="35" class="textInput">
+      <p class="formHint">We just need to make sure you're not a robot.</p>
+    </div>
+    <div class="buttonHolder"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
+  </fieldset>
+</form>
 </div>
 <div id="footer">
   <div class="main-column">
     <a href="http://www.mozilla.org/"><img id="mozilla-logo" src="img/mozilla_wht_small.png"></a><a href="http://digitallearning.macfound.org/"><img id="macfound-logo" src="img/macfound.png"></a>
   </div>
 </div>
+<script>
+onload = function() {
+  if (window.location.search.match(/\?form=1/))
+    document.getElementById("recruitment-form").style.display = "block";
+}
+</script>
