@@ -258,7 +258,6 @@ $(window).ready(function() {
       $(this).blur();
     });
     var isValidated = (self.find('.error').length == 0);
-    isValidated = true;
     if (isValidated) {
       submitRecruitmentForm(formData, function(result) {
         self.find(".throbber").hide();
