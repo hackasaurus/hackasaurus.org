@@ -224,9 +224,21 @@ The Hackasaurus backpack is currently comprised of the following experimental to
   </div>
 </div>
 <script>
-function submitRecruitmentForm(cb) {
-  // TODO: Replace this with an actual XHR.
-  window.setTimeout(function() { cb("SUCCESS"); }, 1000);
+function submitRecruitmentForm(formData, cb) {
+  jQuery.ajax({
+    type: 'POST',
+    url: '/wsgi/recruit-me',
+    data: formData,
+    success: function() {
+      cb("SUCCESS");
+    },
+    error: function(req, textStatus) {
+      if (req.status == 403)
+        cb("TURINGFAIL");
+      else
+        cb("ERROR");
+    }
+  });
 }
 
 $(window).ready(function() {
@@ -246,9 +258,9 @@ $(window).ready(function() {
       $(this).blur();
     });
     var isValidated = (self.find('.error').length == 0);
-
+    isValidated = true;
     if (isValidated) {
-      submitRecruitmentForm(function(result) {
+      submitRecruitmentForm(formData, function(result) {
         self.find(".throbber").hide();
         switch (result) {
           case "SUCCESS":
