@@ -2,30 +2,16 @@
 <meta charset="utf-8">
 <title>Hackasaurus</title>
 <script src="js/jquery.min.js"></script>
+<script src="js/apply-page-template.js"></script>
 <script src="js/uni-form.jquery.js"></script>
 <script src="js/uni-form-validation.jquery.js"></script>
 <style>
+@import url('css/base.css');
 @import url('css/uni-form.css');
 @import url('css/default.uni-form.css');
 
-body {
-    font-family: Baskerville, Helvetica, Arial;
-    background: #ffd203;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-  font-weight: normal;
-}
-
 #header {
   height: 450px;
-}
-
-#topnav {
-  min-height: 75px;
-  background: black;
 }
 
 #logo {
@@ -34,10 +20,9 @@ h1 {
   text-align: center;
 }
 
-#content {
-  width: 640px;
-  margin: 0 auto;
-  padding-bottom: 1em;
+#topnav {
+  min-height: 75px;
+  background: black;
 }
 
 div#recruitment-form {
@@ -78,24 +63,6 @@ div#recruitment-form div.server-success {
   color: green;
 }
 
-#footer {
-  background: black;
-  color: white;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
-#footer .main-column {
-  margin-left: 1em;
-  margin-right: 1em;
-  text-align: right;
-}
-
-#footer img {
-  padding: 5px;
-  height: 20px;
-}
-
 div.tool {
   display: table;
 }
@@ -104,27 +71,10 @@ div.tool div.icon, div.tool div.desc {
   display: table-cell;
   vertical-align: middle;
 }
-
-a {
-  color: inherit;
-}
-
-#content a {
-  font-weight: bold;
-  text-decoration: inherit;
-}
-
-#content a:hover {
-  text-decoration: underline;
-}
-
-img {
-  border: none;
-}
 </style>
 <div id="header">
   <div id="topnav"></div>
-  <div id="logo"><img src="img/hackasaurus_mashed.png"></div>
+  <div id="logo"><img src="/img/hackasaurus_mashed.png"></div>
 </div>
 <div id="content">
 <h1>
@@ -217,11 +167,6 @@ The Hackasaurus backpack is currently comprised of the following experimental to
       <img src="img/ajax-loader.gif" class="throbber"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
   </fieldset>
 </form>
-</div>
-<div id="footer">
-  <div class="main-column">
-    <a href="http://www.mozilla.org/"><img id="mozilla-logo" src="img/mozilla_wht_small.png"></a><a href="http://digitallearning.macfound.org/"><img id="macfound-logo" src="img/macfound.png"></a>
-  </div>
 </div>
 <script>
 function submitRecruitmentForm(formData, cb) {

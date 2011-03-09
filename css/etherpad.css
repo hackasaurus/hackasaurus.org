@@ -1,0 +1,17 @@
+.monospace {
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 9pt;
+}
+
+.etherpad {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  background: white;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.etherpad div {
+  width: 640px;
+  margin: 0 auto;
+}
