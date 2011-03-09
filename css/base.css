@@ -10,13 +10,24 @@ h1, h2 {
 }
 
 #header.default #topnav {
-  min-height: 50px;
   background: black;
+  font-size: 24pt;
+}
+
+#header.default #topnav h1, #header.default #topnav a.logo div {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+#header.default #topnav h1 {
+  font-size: inherit;
+  width: 640px;
+  margin: 0 auto;
+  color: white;
 }
 
 #header.default #topnav a.logo div {
   width: 100px;
-  height: 50px;
   background: url('/img/hackasaurus_mashed.png') 30% 20%;
   float: left;
 }

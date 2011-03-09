@@ -5,6 +5,8 @@ $(window).ready(function() {
   $(document.body).load('/page-template.html', function() {
     if (hasReplacementHeader)
       $("#header").remove();
+    else
+      $("#header .title").text(document.title);
     $(this).find("#contents-placeholder").replaceWith(contents);
   });
 });
