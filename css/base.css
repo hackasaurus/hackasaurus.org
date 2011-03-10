@@ -39,12 +39,16 @@ h1, h2 {
 }
 
 #sidebar {
-  float: left;
+  position: fixed;
+  top: 100px;
+  left: 0px;
   margin-right: 0;
   margin-top: 1em;
   padding: 0.5em;
-  background: rgba(0, 0, 0, 0.6);
+  background: #c60c46;
   color: white;
+  border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
 }
 
 #sidebar a {
