@@ -64,6 +64,10 @@ h1, h2 {
   padding: 0;
 }
 
+#sidebar ul.services {
+  padding-top: 8px;
+}
+
 #sidebar li {
   display: block;
   padding-top: 0.2em;
