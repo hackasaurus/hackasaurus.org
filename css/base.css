@@ -1,12 +1,18 @@
-body {
+html, body {
     font-family: Baskerville, Helvetica, Arial;
     margin: 0;
     padding: 0;
     background: #ffd203;
+    height: 100%;
 }
 
 h1, h2 {
   font-weight: normal;
+}
+
+#container {
+  position: relative;
+  min-height: 100%;
 }
 
 #header.default #topnav {
@@ -75,11 +81,18 @@ h1, h2 {
   text-decoration: underline;
 }
 
+#pre-footer {
+  min-height: 54px;
+}
+
 #footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
   background: black;
   color: white;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #footer .main-column {
