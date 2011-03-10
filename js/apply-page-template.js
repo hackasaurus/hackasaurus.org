@@ -22,7 +22,9 @@ $(window).ready(function() {
     var hash = window.location.hash;
     if (hash.length > 1) {
       window.location.hash = "#";
+      $(document.body).hide();
       window.setTimeout(function() {
+        $(document.body).show();
         window.location.hash = hash;
       }, 100);
     }
