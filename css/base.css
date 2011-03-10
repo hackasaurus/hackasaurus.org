@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 #header.default #topnav a.logo div {
-  width: 100px;
+  width: 150px;
   background: url('/img/hackasaurus_mashed.png') 30% 20%;
   float: left;
 }
@@ -42,9 +42,10 @@ h1, h2 {
   position: fixed;
   top: 100px;
   left: 0px;
+  width: 130px;
   margin-right: 0;
   margin-top: 1em;
-  padding: 0.5em;
+  padding: 10px;
   background: #c60c46;
   color: white;
   border-radius: 0 4px 4px 0;
