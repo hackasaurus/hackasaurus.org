@@ -1,8 +1,8 @@
 body {
     font-family: Baskerville, Helvetica, Arial;
-    background: #ffd203;
     margin: 0;
     padding: 0;
+    background: #ffd203;
 }
 
 h1, h2 {
@@ -30,6 +30,34 @@ h1, h2 {
   width: 100px;
   background: url('/img/hackasaurus_mashed.png') 30% 20%;
   float: left;
+}
+
+#sidebar {
+  float: left;
+  margin-right: 0;
+  margin-top: 1em;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#sidebar a {
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
+}
+
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
+#sidebar li {
+  display: block;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 #content {
