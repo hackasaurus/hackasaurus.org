@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Hackasaurus Blog</title>
+<link rel="alternate" type="application/rss+xml" title="Hackasaurus Blog" href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss">
+<style>
+@import url('/css/base.css');
+
+div#container {
+  background: white !important;
+}
+
+div.entry div.author {
+  font-style: italic;
+}
+
+div.entry div.author:before {
+  content: "By ";
+}
+
+div.entry h2.title a {
+  font-weight: normal !important;
+}
+
+div.entry p a {
+  font-weight: inherit !important;
+  text-decoration: underline !important;
+}
+</style>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/apply-page-template.js"></script>
+<script>
+$(window).ready(function() {
+  var feedURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=json";
+  var items = null;
+
+  pageLoaders.push(jQuery.getJSON(feedURL, function(data) {
+    items = data.value.items;
+  }));
+
+  $(window).bind("beforepagedisplay", function() {
+    var maxWidth = $("#entries").width();
+    items.forEach(function(item) {
+      var entry = $("#templates .entry").clone();
+      entry.find(".title a").text(item['y:title']);
+      entry.find(".title a").attr("href", item['link']);
+      entry.find(".author").text(item['dc:creator']);
+      entry.find(".content").html(item['content:encoded']);
+      entry.find(".content img").load(function() {
+        var width = $(this).width();
+        if (width > maxWidth) {
+          $(this).height($(this).height() * (maxWidth / width));
+          $(this).width(maxWidth);
+        }
+      });
+      $("#entries").append(entry);
+    });
+  });
+});
+</script>
+<div id="content">
+  <div id="entries"></div>
+</div>
+<div id="templates" style="display: none;">
+  <div class="entry">
+    <h2 class="title"><a></a></h2>
+    <div class="author"></div>
+    <div class="content"></div>
+  </div>
+</div>
