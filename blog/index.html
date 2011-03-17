@@ -5,8 +5,15 @@
 <style>
 @import url('/css/base.css');
 
-div#container {
-  background: white !important;
+div#blog {
+  background: white;
+}
+
+div#entries {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 40em;
+  margin: 0 auto;
 }
 
 div.entry div.author {
@@ -18,12 +25,11 @@ div.entry div.author:before {
 }
 
 div.entry h2.title a {
-  font-weight: normal !important;
+  text-decoration: none;
 }
 
-div.entry p a {
-  font-weight: inherit !important;
-  text-decoration: underline !important;
+div.entry h2.title a:hover {
+  text-decoration: underline;
 }
 </style>
 <script src="/js/jquery.min.js"></script>
@@ -57,7 +63,7 @@ $(window).ready(function() {
   });
 });
 </script>
-<div id="content">
+<div id="blog">
   <div id="entries"></div>
 </div>
 <div id="templates" style="display: none;">
