@@ -5,11 +5,11 @@
 <style>
 @import url('/css/base.css');
 
-div#blog {
+div#blog, div#container {
   background: white;
 }
 
-div#entries {
+div.entries {
   padding-top: 1em;
   padding-bottom: 1em;
   width: 40em;
@@ -37,36 +37,52 @@ div.entry h2.title a:hover {
 <script>
 $(window).ready(function() {
   var feedURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=json";
-  var items = null;
+  var blogLoaded = jQuery.Deferred();
+  var entryTemplate = $("#templates .entry");
+  var entries = $('<div class="entries"></div>');
 
-  pageLoaders.push(jQuery.getJSON(feedURL, function(data) {
-    items = data.value.items;
-  }));
+  pageLoaders.push(blogLoaded);
+  jQuery.getJSON(feedURL, function(data) {
+    $(document.body).append(entries);
+    entries.hide();
 
-  $(window).bind("beforepagedisplay", function() {
-    var maxWidth = $("#entries").width();
-    items.forEach(function(item) {
-      var entry = $("#templates .entry").clone();
+    var images = [];
+    var maxWidth = entries.width();
+
+    data.value.items.forEach(function(item) {
+      var entry = entryTemplate.clone();
       entry.find(".title a").text(item['y:title']);
       entry.find(".title a").attr("href", item['link']);
       entry.find(".author").text(item['dc:creator']);
       entry.find(".content").html(item['content:encoded']);
+
+      var imageLoaded = jQuery.Deferred();
+
+      images.push(imageLoaded);
       entry.find(".content img").load(function() {
         var width = $(this).width();
         if (width > maxWidth) {
           $(this).height($(this).height() * (maxWidth / width));
           $(this).width(maxWidth);
         }
+        imageLoaded.resolve();
       });
-      $("#entries").append(entry);
+      entries.append(entry);
     });
+
+    jQuery.when.apply(jQuery, images).then(function() {
+      blogLoaded.resolve();
+    });
+  });
+
+  $(window).bind("beforepagedisplay", function() {
+    $("#blog").append(entries);
+    entries.show();
   });
 });
 </script>
-<div id="blog">
-  <div id="entries"></div>
-</div>
-<div id="templates" style="display: none;">
+<div id="blog"></div>
+<div id="templates">
   <div class="entry">
     <h2 class="title"><a></a></h2>
     <div class="author"></div>

@@ -2,12 +2,15 @@ var pageLoaders = [];
 
 $(window).ready(function() {
   var header = $("#header");
+  var templates = $("#templates");
+
   header.detach();
   if (header.length == 0)
     header = null;
 
   var contents = $(document.body).contents();
   contents.detach();
+  $(document.body).append(templates);
 
   var templateLoaded = jQuery.Deferred();
 

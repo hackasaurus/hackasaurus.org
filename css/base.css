@@ -115,6 +115,10 @@ h1, h2 {
   height: 20px;
 }
 
+#templates {
+  display: none;
+}
+
 a {
   color: inherit;
 }
