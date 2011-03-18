@@ -31,23 +31,25 @@ div.entry h2.title a {
 div.entry h2.title a:hover {
   text-decoration: underline;
 }
+
+div.entry img {
+  max-width: 40em;
+}
 </style>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/apply-page-template.js"></script>
 <script>
 $(window).ready(function() {
   var feedURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=json";
-  var blogLoaded = jQuery.Deferred();
   var entryTemplate = $("#templates .entry");
   var entries = $('<div class="entries"></div>');
 
-  pageLoaders.push(blogLoaded);
-  jQuery.getJSON(feedURL, function(data) {
+  pageLoaders.push(jQuery.getJSON(feedURL, function(data) {
+    // Go ahead and add the entries to a hidden div so that any
+    // images start loading.
+
     $(document.body).append(entries);
     entries.hide();
-
-    var images = [];
-    var maxWidth = entries.width();
 
     data.value.items.forEach(function(item) {
       var entry = entryTemplate.clone();
@@ -55,29 +57,9 @@ $(window).ready(function() {
       entry.find(".title a").attr("href", item['link']);
       entry.find(".author").text(item['dc:creator']);
       entry.find(".content").html(item['content:encoded']);
-
-      var imageLoaded = jQuery.Deferred();
-
-      images.push(imageLoaded);
-      entry.find(".content img").load(function onImgLoad() {
-        $(this).unbind("load", onImgLoad);
-        var width = $(this).width();
-        if (width > maxWidth) {
-          $(this).height($(this).height() * (maxWidth / width));
-          $(this).width(maxWidth);
-        }
-        imageLoaded.resolve();
-      }).each(function() {
-        if (this.complete)
-          $(this).trigger("load");
-      });
       entries.append(entry);
     });
-
-    jQuery.when.apply(jQuery, images).then(function() {
-      blogLoaded.resolve();
-    });
-  });
+  }));
 
   $(window).bind("beforepagedisplay", function() {
     $("#blog").append(entries);
