@@ -40,51 +40,66 @@ div.entry img {
   max-width: 100%;
   height: auto;
 }
+
+div.throbber {
+  width: 640px;
+  margin: 4em auto;
+  min-height: 16px;
+  background: url('/img/throbber.gif') no-repeat;
+}
 </style>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/apply-page-template.js"></script>
 <script>
-$(window).ready(function() {
-  var feedURL = "http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=json";
+var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
+                                "_id=acd9b281e46ad78b6c34873ba277626c&" +
+                                "_render=json");
+var entries = null;
+var entriesInjected = jQuery.Deferred();
+
+pageLoaders.push(entriesInjected);
+
+jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
   var entryTemplate = $("#templates .entry");
-  var entries = $('<div class="entries"></div>');
 
-  pageLoaders.push(jQuery.getJSON(feedURL, function(data) {
-    // Go ahead and add the entries to a hidden div so that any
-    // images start loading.
+  // Go ahead and add the entries to a hidden div so that any
+  // images start loading.
 
-    $(document.body).append(entries);
-    entries.hide();
+  entries = $('<div class="entries"></div>');
+  $(document.body).append(entries);
+  entries.hide();
 
-    data.value.items.forEach(function(item) {
-      var entry = entryTemplate.clone();
-      entry.find(".title a").text(item['y:title']);
+  data[0].value.items.forEach(function(item) {
+    var entry = entryTemplate.clone();
+    entry.find(".title a").text(item['y:title']);
 
-      var link = null;
-      
-      if (typeof(item.link) == 'string')
-        link = item.link;                                     // Wordpress
-      else
-        link = item.link[item.link.length-1];                 // Blogger
-      
-      entry.find(".title a").attr("href", link);
-      entry.find(".author").text(item['dc:creator'] ||        // Wordpress
-                                 (item.author &&              // Blogger
-                                  item.author.name));
-      entry.find(".content").html(item['content:encoded'] ||  // Wordpress
-                                  (item.content &&            // Blogger
-                                   item.content.content));
-      entries.append(entry);
-    });
-  }));
-
-  $(window).bind("beforepagedisplay", function() {
-    $("#blog").append(entries);
-    entries.show();
+    var link = null;
+    
+    if (typeof(item.link) == 'string')
+      link = item.link;                                     // Wordpress
+    else
+      link = item.link[item.link.length-1];                 // Blogger
+    
+    entry.find(".title a").attr("href", link);
+    entry.find(".author").text(item['dc:creator'] ||        // Wordpress
+                               (item.author &&              // Blogger
+                                item.author.name));
+    entry.find(".content").html(item['content:encoded'] ||  // Wordpress
+                                (item.content &&            // Blogger
+                                 item.content.content));
+    entries.append(entry);
   });
+
+  entriesInjected.resolve();
+});
+
+$(window).bind("beforepagedisplay", function() {
+  $("#blog").append(entries);
+  entries.show();
+  $("div.throbber").remove();
 });
 </script>
-<div id="blog"></div>
+<div id="blog"><div class="throbber"></div></div>
 <div id="templates">
   <div class="entry">
     <h2 class="title"><a></a></h2>
