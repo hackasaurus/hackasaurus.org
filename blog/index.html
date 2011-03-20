@@ -32,6 +32,10 @@ div.entry h2.title a:hover {
   text-decoration: underline;
 }
 
+div.entry div.content {
+  padding-top: 1em;
+}
+
 div.entry img {
   max-width: 100%;
   height: auto;
@@ -55,9 +59,23 @@ $(window).ready(function() {
     data.value.items.forEach(function(item) {
       var entry = entryTemplate.clone();
       entry.find(".title a").text(item['y:title']);
-      entry.find(".title a").attr("href", item['link']);
-      entry.find(".author").text(item['dc:creator']);
-      entry.find(".content").html(item['content:encoded']);
+
+      var link = null;
+      
+      if (typeof(item.link) == 'string')
+        // Wordpress feed.
+        link = item.link;
+      else
+        // Blogger feed.
+        link = item.link[item.link.length-1];
+      
+      entry.find(".title a").attr("href", link);
+      entry.find(".author").text(item['dc:creator'] ||
+                                 // Blogger feed.
+                                 (item.author && item.author.name));
+      entry.find(".content").html(item['content:encoded'] ||
+                                  // Blogger feed.
+                                  (item.content && item.content.content));
       entries.append(entry);
     });
   }));
