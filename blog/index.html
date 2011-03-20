@@ -63,19 +63,17 @@ $(window).ready(function() {
       var link = null;
       
       if (typeof(item.link) == 'string')
-        // Wordpress feed.
-        link = item.link;
+        link = item.link;                                     // Wordpress
       else
-        // Blogger feed.
-        link = item.link[item.link.length-1];
+        link = item.link[item.link.length-1];                 // Blogger
       
       entry.find(".title a").attr("href", link);
-      entry.find(".author").text(item['dc:creator'] ||
-                                 // Blogger feed.
-                                 (item.author && item.author.name));
-      entry.find(".content").html(item['content:encoded'] ||
-                                  // Blogger feed.
-                                  (item.content && item.content.content));
+      entry.find(".author").text(item['dc:creator'] ||        // Wordpress
+                                 (item.author &&              // Blogger
+                                  item.author.name));
+      entry.find(".content").html(item['content:encoded'] ||  // Wordpress
+                                  (item.content &&            // Blogger
+                                   item.content.content));
       entries.append(entry);
     });
   }));
