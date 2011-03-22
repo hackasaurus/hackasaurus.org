@@ -61,6 +61,7 @@ div#recruitment-form div.server-error {
 
 div#recruitment-form div.server-success {
   color: green;
+  padding-bottom: 1em;
 }
 
 div.tool {
@@ -152,9 +153,9 @@ div.tool div.icon, div.tool div.desc {
     </div>
     <div class="buttonHolder">
       <div class="server-error server-response">An error occurred. Try again?</div>
-      <div class="server-success server-response">Thanks! We'll get back to you soon.</div>
       <img src="img/ajax-loader.gif" class="throbber"><button type="submit" class="primaryAction">Sign Me Up!</button></div>
   </fieldset>
+  <div class="server-success server-response">Thanks! We'll get back to you soon.</div>
 </form>
 </div>
 <script>
@@ -197,7 +198,9 @@ $(window).bind("beforepagedisplay", function() {
         self.find(".throbber").hide();
         switch (result) {
           case "SUCCESS":
-          self.find(".server-success").fadeIn();
+          self.find("fieldset").slideUp("slow", function() {
+            self.find(".server-success").slideDown();
+          });
           break;
 
           case "TURINGFAIL":
