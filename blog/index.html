@@ -87,6 +87,14 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
     entry.find(".content").html(item['content:encoded'] ||  // Wordpress
                                 (item.content &&            // Blogger
                                  item.content.content));
+
+    // Remove the really gross-looking "Comments: 0" and "Tweet it!"
+    // images that Wordpress adds.
+    entry.find('.content img').each(function() {
+      if ($(this).attr("src").match(/feeds.wordpress.com/))
+        $(this).remove();
+    });
+
     entries.append(entry);
   });
 
