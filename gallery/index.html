@@ -5,6 +5,7 @@
 href="http://api.flickr.com/services/feeds/photos_faves.gne?nsid=60647737@N04&lang=en-us&format=rss_200">
 <style>
 @import url('/css/base.css');
+@import url('/css/tipsy.css');
 
 div#gallery, div#container {
   background: white;
@@ -27,15 +28,20 @@ div.throbber {
   min-width: 16px;
   background: url('/img/throbber.gif') no-repeat;
 }
+
+.tipsy {
+  font-size: 10pt;
+}
 </style>
 <script src="/js/jquery.min.js"></script>
+<script src="/js/tipsy.jquery.js"></script>
 <script src="/js/apply-page-template.js"></script>
 <script>
 var picturesLoaded = jQuery.Deferred();
 
 pageLoaders.push(picturesLoaded);
 
-var flickrURL = "http://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=5f41f9b41fdd2b0a5ede852db98f86e7&user_id=60647737%40N04&format=json&nojsoncallback=1";
+var flickrURL = "http://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=5f41f9b41fdd2b0a5ede852db98f86e7&user_id=60647737%40N04&format=json&nojsoncallback=1&extras=description";
 
 var feedLoaded = jQuery.getJSON(flickrURL);
 
@@ -46,13 +52,24 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
     data[0].photos.photo.forEach(function(photo) {
       var img = $("<img></img>");
       var link = $("<a></a>");
+      var desc = "Lame, this picture has no description.";
       link.attr("href", "http://www.flickr.com/photos/" +
                         photo.owner + "/" + photo.id);
-      link.attr("title", photo.title);
+      if (photo.title.length)
+        desc = photo.title;
+      if (photo.description._content.length)
+        desc = photo.description._content;
+      img.attr("title", desc);
       img.attr("src", "http://farm" + photo.farm + ".static.flickr.com/" +
                       photo.server + "/" + photo.id + "_" + photo.secret + 
                       "_s.jpg");
       content.prepend(img);
+      img.tipsy({
+        gravity: $.fn.tipsy.autoNS,
+        fade: false,
+        opacity: 0.95,
+        html: true
+      });
       img.wrap(link);
     });
   } else {
