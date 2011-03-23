@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Hackasaurus Gallery</title>
+<style>
+@import url('/css/base.css');
+
+div#gallery, div#container {
+  background: white;
+}
+
+div#gallery {
+  width: 640px;
+  margin: 0 auto;
+}
+
+div#gallery img {
+  width: 75px;
+  height: 75px;
+  margin: 10px;
+}
+
+div.throbber {
+  margin: 4em auto;
+  min-height: 16px;
+  min-width: 16px;
+  background: url('/img/throbber.gif') no-repeat;
+}
+</style>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/apply-page-template.js"></script>
+<script>
+var picturesLoaded = jQuery.Deferred();
+
+pageLoaders.push(picturesLoaded);
+
+var flickrURL = "http://api.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=5f41f9b41fdd2b0a5ede852db98f86e7&user_id=60647737%40N04&format=json&nojsoncallback=1";
+
+var feedLoaded = jQuery.getJSON(flickrURL);
+
+jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
+  var content = $("#gallery");
+  content.empty();
+  if (data[0].stat == "ok") {
+    data[0].photos.photo.forEach(function(photo) {
+      var img = $("<img></img>");
+      var link = $("<a></a>");
+      link.attr("href", "http://www.flickr.com/photos/" +
+                        photo.owner + "/" + photo.id);
+      link.attr("title", photo.title);
+      img.attr("src", "http://farm" + photo.farm + ".static.flickr.com/" +
+                      photo.server + "/" + photo.id + "_" + photo.secret + 
+                      "_s.jpg");
+      content.prepend(img);
+      img.wrap(link);
+    });
+  } else {
+    // TODO: Handle error.
+  }
+  picturesLoaded.resolve();
+});
+</script>
+<div id="gallery">
+  <div class="throbber"></div>
+</div>
