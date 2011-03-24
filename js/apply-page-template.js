@@ -1,4 +1,9 @@
+// This is deferred is resolved once page-template.html has been retrieved 
+// and applied to the current page.
 var pageTemplateLoaded = jQuery.Deferred();
+
+// This is an array of all the deferreds to wait on before assuming that the
+// page is ready to be shown to the user.
 var pageLoaders = [pageTemplateLoaded];
 
 $(window).ready(function() {
