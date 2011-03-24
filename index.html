@@ -176,7 +176,7 @@ function submitRecruitmentForm(formData, cb) {
   });
 }
 
-$(window).bind("beforepagedisplay", function() {
+jQuery.when(pageTemplateLoaded).then(function() {
   $("#recruitment-form form").uniform().submit(function() {
     var self = $(this);
 

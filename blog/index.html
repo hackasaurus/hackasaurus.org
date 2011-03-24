@@ -62,12 +62,8 @@ pageLoaders.push(entriesInjected);
 jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
   var entryTemplate = $("#templates .entry");
 
-  // Go ahead and add the entries to a hidden div so that any
-  // images start loading.
-
   entries = $('<div class="entries"></div>');
-  $(document.body).append(entries);
-  entries.hide();
+  $("#blog").empty().append(entries);
 
   data[0].value.items.forEach(function(item) {
     var entry = entryTemplate.clone();
@@ -99,12 +95,6 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
   });
 
   entriesInjected.resolve();
-});
-
-$(window).bind("beforepagedisplay", function() {
-  $("#blog").append(entries);
-  entries.show();
-  $("div.throbber").remove();
 });
 </script>
 <div id="blog"><div class="throbber"></div></div>

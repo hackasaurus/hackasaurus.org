@@ -30,8 +30,6 @@ $(window).ready(function() {
   });
 
   jQuery.when.apply(jQuery, pageLoaders).then(function() {
-    $(window).trigger("beforepagedisplay");
-
     // Ugh, we need to "refresh" the hash if there is one, so the
     // browser tries to jump to named anchors that might be
     // mentioned in the content we recently injected.
