@@ -31,11 +31,7 @@ def error_404(env, start):
 @expose('/update-site')
 def update_site(env, start):
     status = '200 OK'
-    result = os.system('cd /var/hackasaurus/www && git pull')
-    if result == 0:
-        output = 'site updated.'
-    else:
-        output = 'an error occurred while updating the site.'
+    output = 'TODO: Finish this!'
     response_headers = [('Content-type', 'text/plain'),
                         ('Content-Length', str(len(output)))]
     start(status, response_headers)
