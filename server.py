@@ -1,24 +1,50 @@
-#! /usr/bin/python
-
+import sys
 import os
-import BaseHTTPServer
-import SimpleHTTPServer
+from wsgiref.simple_server import make_server
+from wsgiref.util import shift_path_info, FileWrapper
+from mimetypes import guess_type
 
-PORT = 8002
+my_dir = os.path.dirname(__file__)
 
-types = {
-    '.manifest': 'text/cache-manifest'
-}
+sys.path.append(os.path.join(my_dir, 'wsgi-scripts'))
 
-SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map.update(types)
+import hackasaurus_dot_org
 
-def run(server_class=BaseHTTPServer.HTTPServer,
-        handler_class=SimpleHTTPServer.SimpleHTTPRequestHandler,
-        port=PORT):
-    server_address = ('', port)
-    print "Serving files in '%s' on port %d." % (os.getcwd(), port)
-    httpd = server_class(server_address, handler_class)
-    httpd.serve_forever()
+port = 8000
+output_dir = os.path.abspath(os.path.join(my_dir, 'recruitment-forms'))
+static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
+
+if not os.path.exists(output_dir):
+    print "Creating %s." % output_dir
+    os.mkdir(output_dir)
+
+def application(env, start):
+    env['recruitment.max_size'] = 1024
+    env['recruitment.turing_answer'] = 'test'
+    env['recruitment.output_dir'] = output_dir
+
+    if env['PATH_INFO'].startswith('/wsgi/'):
+        shift_path_info(env)
+        return hackasaurus_dot_org.application(env, start)
+    else:
+        filename = env['PATH_INFO']
+        if filename.endswith('/'):
+            filename = '%sindex.html' % filename
+        fileparts = filename[1:].split('/')
+        fullpath = os.path.join(static_files_dir, *fileparts)
+        fullpath = os.path.normpath(fullpath)
+        (mimetype, encoding) = guess_type(fullpath)
+        if (fullpath.startswith(static_files_dir) and
+            not '.git' in fullpath and
+            os.path.isfile(fullpath) and
+            mimetype):
+            filesize = os.stat(fullpath).st_size
+            start('200 OK', [('Content-Type', mimetype),
+                             ('Content-Length', str(filesize))])
+            return FileWrapper(open(fullpath, 'rb'))
+        return hackasaurus_dot_org.error_404(env, start)
 
 if __name__ == '__main__':
-    run()
+    print "serving on port %d" % port
+    httpd = make_server('', port, application)
+    httpd.serve_forever()
