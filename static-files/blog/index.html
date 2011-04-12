@@ -24,6 +24,11 @@ div.entry div.author:before {
   content: "By ";
 }
 
+div.entry div.date {
+  font-style: italic;
+  font-size: 9pt;
+}
+
 div.entry h2.title a {
   text-decoration: none;
 }
@@ -50,6 +55,7 @@ div.throbber {
 </style>
 <script src="/js/jquery.min.js"></script>
 <script src="/js/apply-page-template.js"></script>
+<script src="/js/date.format.js"></script>
 <script>
 var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
                                 "_id=acd9b281e46ad78b6c34873ba277626c&" +
@@ -77,6 +83,12 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
       link = item.link[item.link.length-1];                 // Blogger
     
     entry.find(".title a").attr("href", link);
+
+    var date = new Date(item['pubDate'] ||                  // Wordpress
+                        item.published);                    // Blogger
+
+    entry.find(".date").text(date.format("mmmm dS, yyyy"));
+
     entry.find(".author").text(item['dc:creator'] ||        // Wordpress
                                (item.author &&              // Blogger
                                 item.author.name));
@@ -101,6 +113,7 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
 <div id="templates">
   <div class="entry">
     <h2 class="title"><a></a></h2>
+    <div class="date"></div>
     <div class="author"></div>
     <div class="content"></div>
   </div>
