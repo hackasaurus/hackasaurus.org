@@ -110,6 +110,13 @@ h1, h2 {
   text-align: right;
 }
 
+#footer .notices {
+  text-align: left;
+  font-size: 10pt;
+  float: left;
+  color: gray;
+}
+
 #footer img {
   padding: 5px;
   height: 20px;
