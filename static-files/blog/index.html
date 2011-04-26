@@ -87,7 +87,11 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
     var date = new Date(item['pubDate'] ||                  // Wordpress
                         item.published);                    // Blogger
 
-    entry.find(".date").text(date.format("mmmm dS, yyyy"));
+    if (!isNaN(date))
+      // TODO: non-Firefox browsers don't parse some kinds of
+      // dates; we need to use a library or something to parse
+      // them.
+      entry.find(".date").text(date.format("mmmm dS, yyyy"));
 
     entry.find(".author").text(item['dc:creator'] ||        // Wordpress
                                (item.author &&              // Blogger
