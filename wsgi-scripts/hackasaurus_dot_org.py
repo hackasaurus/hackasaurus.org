@@ -1,7 +1,11 @@
 import os
 import sys
+import subprocess
 from hashlib import sha256
 from cgi import parse_qs
+
+ROOT = os.path.abspath(os.path.dirname(__file__))
+path = lambda *x: os.path.join(ROOT, *x)
 
 endpoints = {}
 
@@ -30,8 +34,9 @@ def error_404(env, start):
 
 @expose('/update-site')
 def update_site(env, start):
+    retval = subprocess.call(['git', 'pull'], cwd=path('..'))
     status = '200 OK'
-    output = 'TODO: Finish this!'
+    output = str(retval)
     response_headers = [('Content-type', 'text/plain'),
                         ('Content-Length', str(len(output)))]
     start(status, response_headers)
