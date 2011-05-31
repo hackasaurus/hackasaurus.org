@@ -16,7 +16,6 @@ body {
 	background-repeat: repeat;
 	}
 
-
 div { 
 	position:relative
 	}
@@ -443,7 +442,7 @@ footer ul li {
 footer .links li {
 	float: left;
 	display: block;
-	margin-right: 7%;
+	margin-right: 5%;
 	clear: none;
 }
 
@@ -553,6 +552,16 @@ footer .links {
     font-size: 1em;
     margin-bottom: 4em;
     padding: 2% 3%;
+}
+
+.inner-page.about .content-secondary {
+	font-size: 0.85em;
+}
+
+.pullout {
+	float: left;
+	width: 50%;
+	margin: 0 2% 1em 0;
 }
 
 .bucket.learners .introduction {

@@ -8,8 +8,10 @@
 $(document).ready(function() {
     $('.slides .flickr').cycle({
 		fx: 'fade',
-		pause: 1,
+		startingSlide: 2,
+		pause: 0,
 		prev: '#prev',
+		speed: 500,
 		next: '#next'
 	});
 });
@@ -19,17 +21,17 @@ $(document).ready(function() {
 
 	<!-- Examples Slideshow -->
 	<div class="examples">
-		<h2>Mix it up + Share it</h2>
+		<h2>Remix, make and share</h2>
 		<p>Hackasaurus makes it easy to remix and change any web page like magic. Or create your own.</p>
 		<div class="slideshow-gallery">
 			<div class="slideshow">
 				<div class="slides">
-					
 					<div class="flickr">
 						<div class="loader">
 							<img src="include/image/loader.gif" alt="loader"/>
 						</div>
-						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=m&layout=x&source=user_set&set=72157626726140401&user=60647737@N04"></script>
+						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=m&layout=x&source=user_set&set=72157626726140401&user=60647737@N04">
+						</script>
 					</div>
 				</div>
 				<p id="next">Next</p>
