@@ -3,7 +3,7 @@
 <?php include_once("include/module/header.php")?>
 
 <!-- Javascript for slideshow -->
-<script type="text/javascript" src="include/script/jquery.cycle/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $('.slides .flickr').cycle({

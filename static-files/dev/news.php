@@ -1,6 +1,9 @@
-<?php include_once("include/head.php")?>
+<?php include_once("include/module/head.php")?>
 
-<?php include_once("include/header.php")?>
+<script src="include/script/jquery.min.js"></script>
+<script src="include/script/apply-page-template.js"></script>
+<script src="include/script/date.format.js"></script>
+
 
 <script>
 var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
@@ -11,12 +14,14 @@ var entriesInjected = jQuery.Deferred();
 
 pageLoaders.push(entriesInjected);
 
-$(document).ready(function() {
+jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
+  var entryTemplate = $("#templates .entry");
 
   entries = $('<div class="entries"></div>');
   $("#blog").empty().append(entries);
 
   data[0].value.items.forEach(function(item) {
+    var entry = entryTemplate.clone();
     entry.find(".title a").text(item['y:title']);
 
     var link = null;
@@ -25,14 +30,17 @@ $(document).ready(function() {
       link = item.link;                                     // Wordpress
     else
       link = item.link[item.link.length-1];                 // Blogger
+    
     entry.find(".title a").attr("href", link);
+
     var date = new Date(item['pubDate'] ||                  // Wordpress
                         item.published);                    // Blogger
+
     if (!isNaN(date))
       // TODO: non-Firefox browsers don't parse some kinds of
       // dates; we need to use a library or something to parse
       // them.
-    entry.find(".date").text(date.format("mmmm dS, yyyy"));
+      entry.find(".date").text(date.format("mmmm dS, yyyy"));
 
     entry.find(".author").text(item['dc:creator'] ||        // Wordpress
                                (item.author &&              // Blogger
@@ -55,22 +63,38 @@ $(document).ready(function() {
 });
 </script>
 
-<section class="inner-page page-gallery" role="main">
+
+	<div class="header">
+		<a href="index.php"><h1>&lt;Hackasaurus&gt;</h1></a>
+		<p>Mess around with the web</p>
+		<a href="http://www.mozilla.org/"><img class="logo-mozilla" src="include/image/logo-mozilla.png" alt="Mozilla"/></a>
+		
+		<nav>
+			<ul>
+				<li><a href="tools.php">Tools</a></li>
+				<li><a href="games.php">Games</a></li>
+				<li><a href="events.php">Events</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<section role="main" class="page-blog">
 
 	<div id="blog">
 		<div class="throbber"></div>
 	</div>
 	
+	</section>
+	
 	<div id="templates">
-	  <div class="entry">
+	  <div class="entry bucket">
 	    <h2 class="title"><a></a></h2>
 	    <div class="date"></div>
 	    <div class="author"></div>
 	    <div class="content"></div>
 	  </div>
 	</div>
-
-		
-	</section>
-
-<?php include_once("include/footer.php")?>
+	
+	
+	
+<?php include_once("include/module/footer.php")?>
