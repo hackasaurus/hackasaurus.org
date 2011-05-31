@@ -29,7 +29,7 @@ $(document).ready(function() {
 						<div class="loader">
 							<img src="include/image/loader.gif" alt="loader"/>
 						</div>
-						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=m&layout=x&source=user&user=60647737@N04"></script>
+						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=m&layout=x&source=user_set&set=72157626726140401&user=60647737@N04"></script>
 					</div>
 				</div>
 				<p id="next">Next</p>
