@@ -21,7 +21,7 @@
 				</li>
 				
 				<li class="bucket tool-htmlpad">
-					<a href="webpad.php">
+					<a href="http://htmlpad.org/">
 						<h3>WebPad</h3>
 						<img src="include/image/icon-htmlpad.png" alt="htmlpad" width="" height="" />
 						<p>Make a web page in seconds. Edit, collaborate, and publish in real time. Easily go back in time to undo mistakes. You don't even need to sign up for an account.</p>
