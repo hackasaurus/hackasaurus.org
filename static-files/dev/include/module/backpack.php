@@ -3,7 +3,7 @@
 	<ul>
 		<li class="tool-goggles">
 			<a href="goggles.php">
-				<h3>Web X-Ray Goggles</h3>
+				<h3>X-Ray Goggles</h3>
 				<img src="include/image/icon-goggles.png" alt="goggles" width="" height="" />
 				<p>See what the Web is made of, and re-mix it. Expose the basic components that make up web pages, simply by mousing over them. It's like seeing into the Matrix.</p>
 			</a>
