@@ -2,9 +2,9 @@
 		<div class="credits">
 			<div class="links">
 				<ul class="nav-secondary">
-					<li><a href="http://hackasaurus.org/blog/">News</a></li>
+					<li><a href="news.php">News</a></li>
 					<li><a href="https://wiki.mozilla.org/Drumbeat/Hackasaurus">Get Involved</a></li>
-					<li><a href="history/">About</a></li>
+					<li><a href="history.php">About</a></li>
 				</ul>
 				<ul class="social">
 					<!-- Social Media Icon set by Paul Robert Lloyd http://paulrobertlloyd.com/2009/06/social_media_icons -->

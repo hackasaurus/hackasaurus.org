@@ -549,6 +549,12 @@ footer .links {
 	right:0;
 }
 
+.page-blog .bucket {
+    font-size: 1em;
+    margin-bottom: 4em;
+    padding: 2% 3%;
+}
+
 .bucket.learners .introduction {
 	margin-left: 550px;
 	width: 41%
@@ -816,6 +822,15 @@ footer .twitter img {
 .home .bucket {
 	padding: 2%;
 	float: left;
+}
+
+#templates {
+	display: none;
+}
+
+.page-blog[role=main] {
+	margin-bottom: 0;
+	padding-bottom: 6em;
 }
 
 .flickr,

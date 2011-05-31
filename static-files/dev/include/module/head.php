@@ -8,8 +8,8 @@
 	<title>Hackasaurus</title>
 	
 	<!-- Links -->
-	<base url="http://localhost:8888/hackasaurus.org/static-files/dev/">
 	<link href="include/style/main.css" rel="stylesheet" type="text/css">
+	<link rel="alternate" type="application/rss+xml" title="Hackasaurus Blog" href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss">
 	<script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
 	
