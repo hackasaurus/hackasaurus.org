@@ -1,6 +1,6 @@
-<?php include_once("include/head.php")?>
+<?php include_once("include/module/head.php")?>
 
-<?php include_once("include/header.php")?>
+<?php include_once("include/module/header.php")?>
 	
 <section class="inner-page tool-goggles" role="main">
 
@@ -9,32 +9,36 @@
 		<h1>X-Ray Goggles</h1>
 		<p>Change and remix your favorite web pages like magic! Here's how:</p>
 		
-		<img class="screenshot" src="image/screenshot-goggles.png" alt="screenshot-goggles" width="" height="" />
-		
 		<h2>Step 1: Install the Goggles</h2>
-		<p>It's easy! Just drag this bookmarklet up to your web browser's bookmarks toolbar:</p>
+		<p>It's easy! Just drag this bookmarklet <a id="bookmarklet-link" href="javascript:(function(){"use strict";var script=document.createElement("script");script.src="https://secure.toolness.com/webxray/webxray.js";script.className="webxray";document.head.appendChild(script);})();">Web X-Ray Goggles</a> up to your web browser's bookmarks toolbar:</p>
 		
-		<a id="bookmarklet-link" href="javascript:(function(){"use strict";var script=document.createElement("script");script.src="https://secure.toolness.com/webxray/webxray.js";script.className="webxray";document.head.appendChild(script);})();">Web X-Ray Goggles</a>
+		
+		
+		<img class="screenshot bookmarklet-demo" src="include/image/bookmarklet.gif" alt="bookmarklet" width="328" height="142" />
+		
+		<!--<img class="screenshot" src="include/image/screenshot-bookmarklet.png" alt="Example of the bookmarklet installed" />-->
 		
 		<h2>Step 2: Turn them on</h2>
 		<p>Click on the X-Ray Goggles in your browser's toolbar.</p>
 		
 		<h2>Step 3: Try them out!</h2>
 		<p>Now go to any web page you like. Move your mouse over the different parts of the page.</p>
+		
+		<img class="screenshot" src="include/image/screenshot-goggles-inspect.png" alt="Using the goggles to inspect the web" />
+		
 		<p>The Goggles will show you how the page is made.  And make it easy for you to mess around with it.</p>
+		
+		<img class="screenshot" src="include/image/screenshot-goggles-remix.png" alt="The goggles in action" />
 	
 	</div>
 	
 	<div class="content-secondary">
 	
-		<img src="image/supergirl.png" alt="supergirl" width="300" height="330" />
+		<img src="include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 		
 		<h3>Having trouble?</h3>
 		<p>Make sure your browser's bookmarks toolbar is turned on.</p>
 		<p>The Goggles will work with Firefox and Chrome. Support for other browsers coming soon.</p>
-		
-		<h3>Third point goes here.</h3>
-		<p>What else do people need to know? What are other common stumbling blocks?</p>
 		
 		<h3>X-Ray Goggles controls:</h3>
 		
@@ -57,4 +61,4 @@ Learn more about element</p>
 	
 </section>
 
-<?php include_once("include/footer.php")?>
+<?php include_once("include/module/footer.php")?>

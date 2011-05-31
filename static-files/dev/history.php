@@ -4,6 +4,7 @@
 	
 <section class="inner-page about" role="main">
 
+	<!-- Main Content -->
 	<div class="content-primary">
 		
 		<h2>July 2010</h2>
@@ -16,22 +17,22 @@
 		
 		<h2>November 2010</h2>
 		
-		<p>During the <a href="http://learningfreedomandtheweb.org/">Drumbeat Festival</a>, Taylor, Jack and Atul develop a tentative curriculum for a Web inspection+remix tool in public libraries and document it at the <a href="2010-11-05-etherpad.html">11-05 Etherpad</a>.</p>
-		<p>On the 22nd, Taylor presents on the project at the weekly Drumbeat meeting and much brainstorming occurs at the <a href="2010-11-22-etherpad.html">11-22 Etherpad</a>. This is the first time <i>Hackasaurus</i> is used to describe the project.</p>
+		<p>During the <a href="http://learningfreedomandtheweb.org/">Drumbeat Festival</a>, Taylor, Jack and Atul develop a tentative curriculum for a Web inspection+remix tool in public libraries and document it at the <a href="include/document/2010-11-05-etherpad.html">11-05 Etherpad</a>.</p>
+		<p>On the 22nd, Taylor presents on the project at the weekly Drumbeat meeting and much brainstorming occurs at the <a href="include/document/2010-11-22-etherpad.html">11-22 Etherpad</a>. This is the first time <i>Hackasaurus</i> is used to describe the project.</p>
 		
 		<p>Late in the month, Atul creates a prototype for an inspection tool he calls <a href="https://secure.toolness.com/webxray/">Web X-Ray Goggles</a>; in early December he adds a 4-minute introductory screencast.</p>
 		
 		<h2>December 2010</h2>
 		
-		<p>On the 7th, Jessica and Atul create the <a href="2010-12-07-googledoc/">12-07 Google Doc</a> containing wireframes for the remix interface, as well as the first references to Hanging Out, Messing Around, and Geeking Out.</p>
-		<p>The next day, Ingrid, Ben, Jack, Chris, Taylor, Jessica, Rafi, and Atul discuss the document and keep notes at the <a href="2010-12-08-etherpad.html">12-08 Etherpad</a>.</p>
+		<p>On the 7th, Jessica and Atul create the <a href="include/document/2010-12-07-googledoc/">12-07 Google Doc</a> containing wireframes for the remix interface, as well as the first references to Hanging Out, Messing Around, and Geeking Out.</p>
+		<p>The next day, Ingrid, Ben, Jack, Chris, Taylor, Jessica, Rafi, and Atul discuss the document and keep notes at the <a href="include/document/2010-12-08-etherpad.html">12-08 Etherpad</a>.</p>
 		
 		<p>Near the end of the month, Jessica and Atul set up infrastructure for the project including a <a href="https://github.com/hackasaurus">GitHub organization</a>, a <a href="http://www.flickr.com/groups/hackasaurus/">Flickr group pool</a>, a <a href="http://hackasaurus.lighthouseapp.com/">Lighthouse project</a>, a <a href="http://groups.google.com/group/hackasaurus/">Google Group</a>, and more.</p>
 		<p>On the 29th, Jessica creates the first <a href="http://www.flickr.com/photos/jessicaklein/5304472723/in/pool-1590086@N21/">Hackasaurus mascot</a>.</p>
 		
 		<h2>February 2011</h2>
 		
-		<p>From the 9th to the 11th, Chris, Jack, Jessica, and Atul lead a series of three inaugural hack jams at branches of the New York Public Library in Manhattan and the Bronx. The first jam involves paper prototyping and use of the goggles, while the next two introduce HTMLpad and a <a href="2011-02-10-htmlpad-mission.html">top secret mission</a> by Ben. MacArthur’s <em>Spotlight on Digital Media and Learning</em> covers the events in their article <a href="http://spotlight.macfound.org/featured-stories/entry/at-hackasaurus-jam-mozilla-encourages-young-programmers-to-change-the-web/">At Hackasaurus Jam, Mozilla Encourages Young Programmers to Change the Web</a>.</p>
+		<p>From the 9th to the 11th, Chris, Jack, Jessica, and Atul lead a series of three inaugural hack jams at branches of the New York Public Library in Manhattan and the Bronx. The first jam involves paper prototyping and use of the goggles, while the next two introduce HTMLpad and a <a href="include/document/2011-02-10-htmlpad-mission.html">top secret mission</a> by Ben. MacArthur’s <em>Spotlight on Digital Media and Learning</em> covers the events in their article <a href="http://spotlight.macfound.org/featured-stories/entry/at-hackasaurus-jam-mozilla-encourages-young-programmers-to-change-the-web/">At Hackasaurus Jam, Mozilla Encourages Young Programmers to Change the Web</a>.</p>
 		<p>On the 17th, Atul and Taylor lead a hack jam at YouMedia Chicago. At this point, basic remix functionality has been added to the goggles, which kids react positively towards. Atul catalogues this in a Google Group post titled <a href="http://groups.google.com/group/hackasaurus/browse_thread/thread/11834680e7d05b9b#">Notes from the Feb 17 jam at YouMedia</a>. The event was later covered in a MacArthur video and story entitled <a href="http://spotlight.macfound.org/studentspeak/entry/Using-Goggles-to-Change-Google-Teens-Power-of-Programming-at-Mozillas-Hac/">Using Goggles to Change Google: Teens Learn the Power of Programming at Mozilla’s Hackasaurus</a>.</p>
 		
 		<p>On the 22nd, at a Bay Area Video Coalition jam for Web Made Movies in San Francisco, the Hackasaurus tools are used to introduce teens to the basics of HTML before they dive into using Web Made Movie tools. Afterwards, Ben blogs about <a href="http://www.benmoskowitz.com/?p=161">Three “Aha!” Moments with BAVC’s Factory program</a>.</p>
@@ -51,18 +52,16 @@
 		
 		<p>On the 12th, Atul prototypes a new feature in the goggles called <em>Tear-Out Page</em>, which provides the user with HTML source code for the current state of the page being viewed/remixed. The feature is intended to make it easier to bridge the gap between the goggles and full-on HTML editing using sites like <a href="http://htmlpad.org/">HTMLpad</a> and <a href="http://jsbin.com/">JS Bin</a>. It also makes it easier to share one's hacks.</p>
 
-	
 	</div>
+	<!-- End Main Content -->
 	
+	<!-- Sidebar -->
 	<div class="content-secondary">
-	
-		<img src="image/supergirl.png" alt="supergirl" width="" height="" />
-
+		<img src="include/image/supergirl.png" alt="supergirl" width="" height="" />
 		<?php include_once("include/backpack.php")?>
-
 		<?php include_once("include/events.php")?>
-		
 	</div>
+	<!-- End Sidebar -->
 	
 </section>
 

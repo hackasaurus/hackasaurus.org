@@ -1,15 +1,23 @@
-<?php include_once("include/head.php")?>
+<?php include_once("include/module/head.php")?>
 
-<?php include_once("include/header.php")?>
+<?php include_once("include/module/header.php")?>
 	
-<section class="inner-page about" role="main">
+	<section class="inner-page games" role="main">
 
+	<h1>Games</h1>
+	
 	<div class="content-primary">
-		
-		<h1>Coming Soon</h1>
-	
+
+		<h2>Coming Soon</h2>
+		<p>Test out our <a href="https://secure.toolness.com/webxray/missions/one/">first mission</a>.</p>
+			
 	</div>
 	
-</section>
+	<div class="content-secondary">
+		<?php include_once("include/module/backpack.php")?>
+		<?php include_once("include/module/events.php")?>
+	</div>
+		
+	</section>
 
-<?php include_once("include/footer.php")?>
+<?php include_once("include/module/footer.php")?>
