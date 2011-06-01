@@ -29,7 +29,7 @@
 	<!-- Goggles Teaser -->
 	<div class="get-started">
 		<h2>Get Started</h2>
-		<p>Activate the <a href="goggles.php">X-Ray Goggles</a> to see inside the web -- and use your superpowers to change it!</p>
+		<p>Activate the <a href="goggles.php">X-Ray Goggles</a> to see inside the web - and use your superpowers to change it!</p>
 		<img src="include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 	</div>
 	<!-- End Goggles Teaser -->

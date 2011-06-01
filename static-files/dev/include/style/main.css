@@ -558,6 +558,15 @@ footer .links {
 	font-size: 0.85em;
 }
 
+.goggle-controls h3 {
+	text-transform: uppercase;
+}
+
+.helper {
+    float: right;
+    width: 44%;
+}
+
 .pullout {
 	float: left;
 	width: 50%;
@@ -732,7 +741,8 @@ section h1 {
 	font-size: 1em;
 }
 
-section.tool-goggles .backpack li.tool-goggles {
+section.tool-goggles .backpack li.tool-goggles,
+section.tool-goggles h1 {
 	display: none;
 }
 
