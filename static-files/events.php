@@ -21,29 +21,28 @@
 			</div>
 			
 		</div>
+
 	
-	<img src="include/image/photo-hackers-04.jpg" alt="photo-hackers-04" width="499" height="273" />
+		<h2>Host your own hack jam</h2>
 	
-		<h2>Spreading digital literacy, web skills and hacker habits.</h2>
+		<p>Hack jams are desiged to make webmaking social, learner-focused and fun. Learners make, create and share together using Hackasaurus tools and un-curriculum.</p>
 	
-		<p>Hackasaurus participants come away with an understanding of computer science and design skills like:</p>
-	
-	    <ul>
-	    	<li>basic HTML & CSS</li>
-			<li>prototyping and the iterative design process</li>
-			<li>web browsers and browser add-ons</li>
-			<li>the Document Object Model (DOM) hierarchy</li>
-			<li>conceptual building blocks of the web.</li>
+	    <p>We're working  on a "Host Your Own Hack Jam" kit to make it easy for anyone to host their own event. In the mean time, check out these resources on hosting your own hack jam:</p>
+
+    	<ul>
+    		<li><a href="http://jessicaklein.blogspot.com/2011/04/youth-design-jams-101-building-your.html">Hack Jams 101: Building Your Toolkit</a></li>
+			<li><a href="http://jessicaklein.blogspot.com/2011/04/earth-day-my-carbon-footprint-3d-design.html">Earth science hack jam at the New York Hall of Science</a></li>
+			<li><a href="http://openmatt.wordpress.com/2011/04/26/best-hackasaurus-event-ever/">The best Hackasaurus event ever</a></li>
+			<li><a href="http://openmatt.wordpress.com/2011/04/20/hackasaurus-attacks-tedx-kids/">Hackasaurus at TEDx Kids</a>
+			<li><a href="http://vimeo.com/21185874">Video from Chicago Hack Jam</a></li>
 		</ul>
-	
-		<p>But just as importantly, Hackasaurus teaches hacker habits and life skills. The ability to innovate and "color outside the lines," seeing the rules, systems, processes and patterns that exist in the digital world, and drawing parallels to their own.</p>
-		
-		<p>In the same way that mathematics and literacy offer broad lessons beyond just reading or math, digital literay and hacker habits teach youth to be successful learners, entreprenues, innovaros and citizens int he 21ste century. And an understanding of what makes the open web better: transparency, hands-on participation, shared control, and the ability to hack, remix and build on others' work.</p>
 
 	</div>
 	
 	
 	<div class="content-secondary">
+		
+	<img class="photo" src="include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
 		<?php include_once("include/module/backpack.php")?>
 	</div>
 		

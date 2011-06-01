@@ -276,6 +276,11 @@ img {
 	box-shadow: 0 0 3px rgba(0,0,0,0.2);
 	}
 
+.inner-page .content-secondary img.photo {
+	max-width: 100%;
+	margin-bottom: 2em;
+}
+
 /* LINKS ------------------------------------ */
 
 a:link,
