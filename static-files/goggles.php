@@ -11,7 +11,7 @@
 		<h2>Step 1) Install X-Ray Goggles</h2>
 		<p>Drag the X-Ray Goggles up to your web browser's bookmarks toolbar:</p>
 		
-		<p><a id="bookmarklet-link" href="javascript:(function(){"use strict";var script=document.createElement("script");script.src="https://secure.toolness.com/webxray/webxray.js";script.className="webxray";document.head.appendChild(script);})();">Web X-Ray Goggles</a></p>
+		<p><a id="bookmarklet-link" href="javascript:(function(){'use strict';var script=document.createElement('script');script.src='https://secure.toolness.com/webxray/webxray.js';script.className='webxray';document.head.appendChild(script);})();">Web X-Ray Goggles</a></p>
 		
 		<img class="screenshot bookmarklet-demo" src="include/image/bookmarklet.gif" alt="bookmarklet" width="328" height="142" />
 	
