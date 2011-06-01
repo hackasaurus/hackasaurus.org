@@ -611,9 +611,12 @@ footer .licence {
 
 	.content-primary .backpack .bucket {
 		font-size: 1em;
-		margin-bottom: 4em;
+		margin-bottom: 4.5em;
  		background-color: transparent;
  		box-shadow: none;
+ 		float: left;
+ 		width: 100%;
+ 		clear: both;
 		}
 
 /* TOOLKIT SIDEBAR ------------------------------------ */
