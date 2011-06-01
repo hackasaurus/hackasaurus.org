@@ -17,21 +17,28 @@
 	
 	<p>Hackasaurus tools make it easy for kids to remix, create and share on the web. The X-Ray Goggles allow learners to see what the web is made of, remix and change their favorite web pages, and share their creations with friends. WebPad makes it easy to take the next step, creating your own web pages in a matter of seconds. And the Hackbook provides bits of code for easy copying and pasting, making it easy to play with the web like lego.</p>
 
-	<h2>&hellip;and at “hack jam” events around the world.</h2>
+	<h2>&hellip;and at "hack jam" events around the world.</h2>
 	<img class="pullout" src="include/image/photo-hackers-02.jpg" alt="photo-hackers-02" />
 	<p>Hack jams make hacking and digital literacy accessible, social and fun. In partnership with libraries, learning centers and youth media centers, learners take part in a flexible DIY curriculum of hands-on projects and making.  Building off pilot events run by the Learning Network in New York and Chicago, the upcoming Hackasaurus Event Kit will make it easy for anyone, anywhere to organize their own jam.</p>
 	
 
 
-	<h2>Turning the web into a remixable learning environment.</h2>
+	<h2>Remixing and tinkering with your favorite web sites</h2>
 	
-	<p>Instead of using “kid-ified” sandboxes or artifical languages, Hackasaurus lets youth hack using familiar web pages and real HTML. This allows them to remix the spaces they already hang out in, and turns the web itself into a giant learning environment. Learners come away with fundamentals like HTML and CSS skills, web browser and add-on basics, prototyping and iterative design, and understanding the web’s conceptual building blocks.</p>
+	<p>Instead of using "kid-ified" sandboxes or artifical languages, Hackasaurus lets youth hack using familiar web pages and real HTML. This allows them to remix the spaces they already hang out in, and turns the web itself into a giant learning environment. Learners come away with fundamentals like HTML and CSS skills, web browser and add-on basics, prototyping and iterative design, and understanding the web’s conceptual building blocks.</p>
 	
-	<h2>Gaining hacker habits and life skills.</h2>
+	<h2>Gaining webmaker skills for the digital world</h2>
 	
-	<p>Beyond technical knowledge, Hackasaurus helps develop “hacker habits” -- the combination of technical and social skills youth need to become active co-creators, shape their environments, and take charge of their own learning.</p>
+	<p>Beyond technical knowledge, Hackasaurus helps develop "hacker habits" -- the combination of technical and social skills youth need to become active co-creators, shape their environments, and take charge of their own learning.</p>
 
-<iframe src="http://player.vimeo.com/video/21185874?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe><p><a href="http://vimeo.com/21185874">StudentSpeak Webiode 23</a> from <a href="http://vimeo.com/spotlight">Spotlight</a> on <a href="http://vimeo.com">Vimeo</a>.</p>	
+	<div class="video-js-box">
+		<video class="video-js" width="480" height="270" poster="http://videos.mozilla.org/serv/webmademovies/hackasaurus-still-from-dml.jpg" controls preload><br />
+			<source src="http://videos.mozilla.org/serv/webmademovies/hackasaurus_spotlight.mp4" type="video/mp4"><br />
+			<source src="http://videos.mozilla.org/serv/webmademovies/hackasaurus_spotlight.ogv" type="video/ogg"><br />
+			<img src="http://videos.mozilla.org/serv/webmademovies/hackasaurus-still-from-dml.jpg" width="480" height="270" alt="Poster Image"><br />
+[<em>There's an HTML video here—load this post with your open-video enabled browser</em>.]<br />
+		</video>
+	</div>
 
 	</div>
 	<!-- End Main Content -->
@@ -54,7 +61,7 @@
 		<h3>February 2011</h3>
 		<p>From the 9th to the 11th, Chris, Jack, Jessica, and Atul lead a series of three inaugural hack jams at branches of the New York Public Library in Manhattan and the Bronx. The first jam involves paper prototyping and use of the goggles, while the next two introduce HTMLpad and a <a href="include/document/2011-02-10-htmlpad-mission.html">top secret mission</a> by Ben. MacArthur’s <em>Spotlight on Digital Media and Learning</em> covers the events in their article <a href="http://spotlight.macfound.org/featured-stories/entry/at-hackasaurus-jam-mozilla-encourages-young-programmers-to-change-the-web/">At Hackasaurus Jam, Mozilla Encourages Young Programmers to Change the Web</a>.</p>
 		<p>On the 17th, Atul and Taylor lead a hack jam at YouMedia Chicago. At this point, basic remix functionality has been added to the goggles, which kids react positively towards. Atul catalogues this in a Google Group post titled <a href="http://groups.google.com/group/hackasaurus/browse_thread/thread/11834680e7d05b9b#">Notes from the Feb 17 jam at YouMedia</a>. The event was later covered in a MacArthur video and story entitled <a href="http://spotlight.macfound.org/studentspeak/entry/Using-Goggles-to-Change-Google-Teens-Power-of-Programming-at-Mozillas-Hac/">Using Goggles to Change Google: Teens Learn the Power of Programming at Mozilla’s Hackasaurus</a>.</p>
-		<p>On the 22nd, at a Bay Area Video Coalition jam for Web Made Movies in San Francisco, the Hackasaurus tools are used to introduce teens to the basics of HTML before they dive into using Web Made Movie tools. Afterwards, Ben blogs about <a href="http://www.benmoskowitz.com/?p=161">Three “Aha!” Moments with BAVC’s Factory program</a>.</p>
+		<p>On the 22nd, at a Bay Area Video Coalition jam for Web Made Movies in San Francisco, the Hackasaurus tools are used to introduce teens to the basics of HTML before they dive into using Web Made Movie tools. Afterwards, Ben blogs about <a href="http://www.benmoskowitz.com/?p=161">Three "Aha!" Moments with BAVC’s Factory program</a>.</p>
 		<p>Towards the end of the month, the Hackasaurus team prepares an ignite talk to present at MacArthur’s Digital Media and Learning Conference. Matt blogs about this in his post entitled <a href="http://openmatt.wordpress.com/2011/02/28/hackasaurus-getting-ready-for-the-digital-media-learning-conference/">Hackasaurus: getting ready for the DML Conference</a>.
 
 		<h3>December 2010</h3>
