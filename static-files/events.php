@@ -22,6 +22,8 @@
 			
 		</div>
 	
+	<img src="include/image/photo-hackers-04.jpg" alt="photo-hackers-04" width="499" height="273" />
+	
 		<h2>Spreading digital literacy, web skills and hacker habits.</h2>
 	
 		<p>Hackasaurus participants come away with an understanding of computer science and design skills like:</p>
