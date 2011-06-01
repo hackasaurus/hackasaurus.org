@@ -2,21 +2,6 @@
 
 <?php include_once("include/module/header.php")?>
 
-<!-- Javascript for slideshow -->
-<script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.slides .flickr').cycle({
-		fx: 'fade',
-		startingSlide: 2,
-		pause: 0,
-		prev: '#prev',
-		speed: 500,
-		next: '#next'
-	});
-});
-</script>
-
 <section role="main" class="home">
 
 	<!-- Examples Slideshow -->
@@ -54,5 +39,20 @@ $(document).ready(function() {
 	<!-- End Events Listing -->
 
 </section>
+
+<!-- Javascript for slideshow -->
+<script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slides .flickr').cycle({
+		fx: 'fade',
+		startingSlide: 2,
+		pause: 0,
+		prev: '#prev',
+		speed: 500,
+		next: '#next'
+	});
+});
+</script>
 
 <?php include_once("include/module/footer.php")?>

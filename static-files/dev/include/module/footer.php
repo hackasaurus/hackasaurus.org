@@ -1,3 +1,4 @@
+</div>
 	<footer>	
 		<div class="credits">
 			<div class="links">
@@ -28,6 +29,23 @@
 			</div>
 		</div>
 	</footer>
-</div>
+
+<!-- This is Google Analytics code. -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22252396-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    if (document.location.hostname != "hackasaurus.org")
+      return;
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
 </body>
 </html>

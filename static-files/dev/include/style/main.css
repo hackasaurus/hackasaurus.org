@@ -10,10 +10,9 @@ body {
 	font-size:14px;
 	line-height:22px;
 	color:#777;
-	background-color: #FFF;
 	min-width: 960px;
-	background-image: url(../image/paper.jpg);
 	background-repeat: repeat;
+	background-color: #000;
 	}
 
 div { 
@@ -298,7 +297,7 @@ footer .credits {
 section[role=main] {
     padding-top: 2em;
     overflow: hidden;
-    margin-bottom: 6em;
+	padding-bottom: 2em;
 }
 
 .header {
@@ -353,10 +352,12 @@ article {
 }
 
 .container {
-	position: absolute;
+	/*position: absolute;
 	min-height: 100%;
 	display: block;
-	width: 100%;
+	width: 100%;*/
+   	background-color: #FFF;
+	background-image: url(../image/paper.jpg);
 }
 
 nav {
@@ -393,17 +394,16 @@ nav ul li a:active {
 }
 
 footer {
+	clear: both;
 	margin: 0;
 	display: block;
 	color: #fff;
 	height: 6em;
 	background-color: #000;
-	clear: both;
-	position: absolute;
-	bottom:0;
+	float: none;
+	position: relative;
 	width: 100%;
 	overflow: hidden;
-	margin-top: 2em;
 	box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.4);
 }
 
