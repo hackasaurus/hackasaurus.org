@@ -11,12 +11,19 @@
 		<div class="slideshow-gallery">
 			<div class="slideshow">
 				<div class="slides">
-					<div class="flickr">
-						<div class="loader">
-							<img src="include/image/loader.gif" alt="loader"/>
-						</div>
-						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=10&display=random&size=m&layout=x&source=user_set&set=72157626726140401&user=60647737@N04">
-						</script>
+					<ul>
+						<li><img src="include/image/slides/9.jpg" alt="" /></li>
+						<li><img src="include/image/slides/8.jpg" alt="" /></li>
+						<li><img src="include/image/slides/2.jpg" alt="" /></li>
+						<li><img src="include/image/slides/7.jpg" alt="" /></li>
+						<li><img src="include/image/slides/3.jpg" alt="" /></li>
+						<li><img src="include/image/slides/1.jpg" alt="" /></li>
+						<li><img src="include/image/slides/4.jpg" alt="" /></li>
+						<li><img src="include/image/slides/6.jpg" alt="" /></li>
+						<li><img src="include/image/slides/5.jpg" alt="" /></li>
+					</ul>
+					<div class="loader">
+						<img src="include/image/loader.gif" alt="loader"/>
 					</div>
 				</div>
 				<p id="next">Next</p>
@@ -44,12 +51,11 @@
 <script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $('.slides .flickr').cycle({
+    $('.slides ul').cycle({
 		fx: 'fade',
-		startingSlide: 2,
 		pause: 0,
 		prev: '#prev',
-		speed: 500,
+		speed: 600,
 		next: '#next'
 	});
 });
