@@ -33,8 +33,6 @@
 
 	<!-- Examples Slideshow -->
 	<div class="examples">
-		<h2>Remix, make and share</h2>
-		<p>Hackasaurus makes it easy to remix and change any web page like magic. Or create your own.</p>
 		<div class="slideshow-gallery">
 			<div class="slideshow">
 				<div class="slides">
