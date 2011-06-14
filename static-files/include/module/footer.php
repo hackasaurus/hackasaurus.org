@@ -18,6 +18,7 @@
 					<li><a href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss"><img src="http://hackasaurus.org/include/image/icons/feed-16x16.png" alt="RSS feed"/></a></li>
 				</ul>
 			</div>
+			
 			<div class="sponsors">
 				<h2>Sponsors</h2>
 				<a href="http://www.mozilla.org/"><img class="logo-mozilla" src="http://hackasaurus.org/include/image/logo-mozilla.gif" alt="Mozilla"/></a>
@@ -27,6 +28,7 @@
 			<div class="licence">
 			<p>Portions of this content are &copy;1998&ndash;2011 by individual mozilla.org contributors. Content available under a <a target="new" href="http://creativecommons.org/licenses/by/3.0/" rel="license">Creative Commons Attribution 3.0 Unported License</a>.</p>
 			</div>
+			
 		</div>
 	</footer>
 
