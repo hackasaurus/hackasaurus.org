@@ -36,7 +36,7 @@
 	<!-- Goggles Teaser -->
 	<div class="get-started">
 		<h2>Get started</h2>
-		<p>Activate the <a href="goggles.php">X-Ray Goggles</a> to see inside the web - and use your superpowers to change it!</p>
+		<p>Activate the <a href="http://hackasaurus.org/goggles">X-Ray Goggles</a> to see inside the web - and use your superpowers to change it!</p>
 		<img src="include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 	</div>
 	<!-- End Goggles Teaser -->

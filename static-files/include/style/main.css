@@ -21,7 +21,7 @@ div {
 
 @font-face {
     font-family: 'MEgalopolisExtra';
-    src: url('../font/MEgalopolisExtra.otf');
+    src: url('http://hackasaurus.org/include/font/MEgalopolisExtra.otf');
     font-weight: normal;
     font-style: normal;
 

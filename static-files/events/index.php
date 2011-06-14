@@ -1,6 +1,6 @@
-<?php include_once("include/module/head.php")?>
+<?php include_once("../include/module/head.php")?>
 
-<?php include_once("include/module/header.php")?>
+<?php include_once("../include/module/header.php")?>
 	
 	<section class="inner-page page-events" role="main">
 	
@@ -42,10 +42,10 @@
 	
 	<div class="content-secondary">
 		
-	<img class="photo" src="include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
-		<?php include_once("include/module/backpack.php")?>
+	<img class="photo" src="http://hackasaurus.org/include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
+		<?php include_once("../include/module/backpack.php")?>
 	</div>
 		
 	</section>
 
-<?php include_once("include/module/footer.php")?>
+<?php include_once("../include/module/footer.php")?>
