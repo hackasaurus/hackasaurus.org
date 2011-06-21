@@ -2,7 +2,7 @@
 <h2>Tools</h2>
 	<ul>
 		<li class="tool-goggles">
-			<a href="goggles">
+			<a href="http://hackasaurus.org/goggles">
 				<h3>X-Ray Goggles</h3>
 				<img src="http://hackasaurus.org/include/image/icon-goggles.png" alt="goggles" width="" height="" />
 				<p>See into the web and change it. Like hacking the Matrix.</p>
