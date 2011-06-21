@@ -3,7 +3,7 @@
 		<div class="credits">
 			<div class="links">
 				<ul class="nav-secondary">
-					<li><a href="news.php">Blog</a></li>
+					<li><a href="news">Blog</a></li>
 					<li><a href="https://wiki.mozilla.org/Drumbeat/Hackasaurus">Get Involved</a></li>
 					<li><a href="about.php">About</a></li>
 				</ul>
