@@ -78,10 +78,15 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
 		</nav>
 	</div>
 	
+	<div class="container">
 	<section role="main" class="page-blog">
 
 	<div id="blog">
-		<div class="throbber"></div>
+		<div class="loader">
+			<img src="../include/image/loader.gif" alt="loader"/>
+			<p>Loading blog posts&hellip;</p>
+		</div>
+	</div>
 	</div>
 	
 	</section>

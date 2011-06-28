@@ -333,7 +333,8 @@ article {
     width: 96%;
 	}
 
-.container {
+.container,
+#container {
 	/*position: absolute;
 	min-height: 100%;
 	display: block;
@@ -570,10 +571,19 @@ footer .licence {
 		height: 32px;
 		display: block;
 		}
+	
+	#blog .loader {
+		width: 100%;
+		text-align: center;
+	}
+	
+	#blog .loader img {
+		margin: 0 auto;
+	}
 
 	/* BUCKETS ------------------------------------ */
 
-	.bucket,
+	.container .bucket,
 	.page-events .vevent {
 	    background-color: #FFFFFF;
 	    border-radius: 3px 3px 3px 3px;
