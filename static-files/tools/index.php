@@ -27,6 +27,14 @@
 						<p>Make your own web page in seconds. Create and collaborate in real time.</p>
 					</a>
 				</li>
+
+				<li class="bucket tool-hackbook">
+					<a href="http://hackasaurus.org/hackbook">
+						<h3>Hackbook</h3>
+						<img src="http://hackasaurus.org/include/image/icon-hackbook.png" alt="htmlpad" width="" height="" />
+						<p>A library of code to copy and paste into your hacks.</p>
+					</a>
+				</li>
 				
 			</ul>
 			
