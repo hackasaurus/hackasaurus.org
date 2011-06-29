@@ -368,6 +368,7 @@ article {
     background-position: center top;
     padding: 0.5em 0 0 0;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border-top:3px solid #6F6F6F;
 	}
 
 .header h1 {
@@ -393,7 +394,7 @@ article {
     margin-top: -1em;
     position: absolute;
     right: 1%;
-    top: 14px;
+    top: 12px;
 	}
 
 .header .logo {
