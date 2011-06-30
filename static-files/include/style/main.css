@@ -143,12 +143,23 @@ section[role="main"] h6 {
 
 .instructions h1,
 .instructions h2,
-.instructions h3,
+.instructions h3 {
+	color: #000000;
+	font-family: JournalRegular;
+	font-size: 2.5em;
+	line-height: 24px;
+	margin: 0;
+	padding: 0 0 0.2em;
+	}
+
 .instructions h4,
 .instructions h5,
 .instructions h6 {
-	font-family: JournalRegular;
-	}
+	font-family: "Trebuchet MS",Helvetica,Arial,sans-serif;
+	font-size:14px;
+	line-height:22px;
+	color:#777;
+}
 
 section[role="main"] h1 {
 	margin-bottom: 0.5em;
