@@ -148,7 +148,7 @@ section[role="main"] h6 {
 	font-family: JournalRegular;
 	font-size: 2.5em;
 	line-height: 24px;
-	margin: 0;
+	margin: 0 0 8px 0;
 	padding: 0 0 0.2em;
 	}
 
@@ -159,6 +159,7 @@ section[role="main"] h6 {
 	font-size:14px;
 	line-height:22px;
 	color:#777;
+	font-weight: bold;
 }
 
 section[role="main"] h1 {
