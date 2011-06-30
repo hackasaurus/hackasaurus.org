@@ -28,7 +28,11 @@ div {
 
 @font-face {
 font-family: 'JournalRegular';
-src: url('http://hackasaurus.org/include/font/MEgalopolisExtra.otf');
+src: url('http://hackasaurus.org/include/font/journal-webfont.eot');
+src: url('http://hackasaurus.org/include/font/journal-webfont.eot?#iefix') format('embedded-opentype'),
+     url('http://hackasaurus.org/include/font/journal-webfont.woff') format('woff'),
+     url('http://hackasaurus.org/include/font/journal-webfont.ttf') format('truetype'),
+     url('http://hackasaurus.org/include/font/journal-webfont.svg#JournalRegular') format('svg');
 font-weight: normal;
 font-style: normal;
 	}
