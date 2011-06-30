@@ -1,4 +1,4 @@
-/* GENERAL STYLES ------------------------------------ */
+/* @group General Styles */
 
 * {
 	margin:0;
@@ -24,8 +24,9 @@ div {
     src: url('http://hackasaurus.org/include/font/MEgalopolisExtra.otf');
     font-weight: normal;
     font-style: normal;
+	}
 
-}
+/* @end */
 
 /* TEXT STYLES ------------------------------------ */
 
@@ -181,6 +182,13 @@ li {
 ul,
 ol {
 	margin-bottom: 1.7em;
+	}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-left: 1em;
 	}
 
 dl {
@@ -581,9 +589,10 @@ footer .licence {
 	#blog .loader img {
 		margin: 0 auto;
 	}
+	
+/* @group Buckets */
 
-	/* BUCKETS ------------------------------------ */
-
+	.instructions,
 	.container .bucket,
 	.page-events .vevent {
 	    background-color: #FFFFFF;
@@ -634,56 +643,88 @@ footer .licence {
  		width: 100%;
  		clear: both;
 		}
+	
+	/* @end */
 
-/* TOOLKIT SIDEBAR ------------------------------------ */
+	
+	/* @group TOOLKIT SIDEBAR */
 
-.backpack li {
-	position: relative;
-	margin-bottom: 1em;
-	margin-top: 15px;
+	.backpack li {
+		position: relative;
+		margin-bottom: 1em;
+		margin-top: 15px;
+		list-style-type: none;
+		}
+	
+	.backpack li a:link,
+	.backpack li a:visited,
+	.backpack li a:hover,
+	.backpack li a:focus,
+	.backpack li a:active {
+		text-decoration: none;
+		}
+	
+	.backpack li p,
+	.backpack li h3 {
+		margin-left: 110px;
+		margin-bottom: 0;
+		}
+	
+	.backpack li p {
+	    line-height: 1.2em;
+	    margin-bottom: 0;
+	    margin-left: 110px;
+	    }
+	
+	.backpack img {
+		width: 127px;
+		height: 126px;
+		display: block;
+		margin: -30px 0 0 -20px;
+		float: left;
+		}
+	
+	.inner-page .backpack ul {
+		margin: 0;
+		padding: 0;
+		}
+		
+	/* @end */
+
+/* @group Instructions */
+	
+	.instructions {
+		background-image: url("../image/notepaper.jpg");
+		background-position: left top;
+		background-repeat: repeat-y;
+		font-size: 14px;
+		line-height: 20px;
+		margin: 2em 0;
+		max-height: none;
+		overflow: hidden;
+		padding: 20px 6% 0;
+		width: 83%;
+		}
+	
+	section[role="main"] .instructions h1,
+	section[role="main"] .instructions h2,
+	section[role="main"] .instructions h3,
+	section[role="main"] .instructions h4,
+	section[role="main"] .instructions h5,
+	section[role="main"] .instructions h6 {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	
+	.instructions p {
+		line-height: 1.5em;
+		margin-bottom: 1.3em;
 	}
 
-.backpack li a:link,
-.backpack li a:visited,
-.backpack li a:hover,
-.backpack li a:focus,
-.backpack li a:active {
-	text-decoration: none;
-	}
+/* @end */
 
-.backpack li p,
-.backpack li h3 {
-	margin-left: 110px;
-	margin-bottom: 0;
-	}
-
-.backpack li p {
-    line-height: 1.2em;
-    margin-bottom: 0;
-    margin-left: 110px;
-    }
-
-.backpack img {
-	width: 127px;
-	height: 126px;
-	display: block;
-	margin: -30px 0 0 -20px;
-	float: left;
-	}
-
-.inner-page .backpack ul {
-	margin: 0;
-	padding: 0;
-	}
-
-.inner-page .backpack ul li {
-	margin-left: 0;
-	list-style-type: none;
-	padding: 0;
-	float: left;
-	}
-
-/* EVENTS ------------------------------------ */
+	
+	/* EVENTS ------------------------------------ */
 
 .inner-page .events {
 	clear: right;
