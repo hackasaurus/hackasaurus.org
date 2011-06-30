@@ -162,6 +162,12 @@ section[role="main"] h6 {
 	font-weight: bold;
 }
 
+.instructions ul,
+.instructions ol {
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
 section[role="main"] h1 {
 	margin-bottom: 0.5em;
 	}
@@ -737,16 +743,6 @@ footer .licence {
 		padding: 20px 6% 0;
 		width: 83%;
 		}
-	
-	section[role="main"] .instructions h1,
-	section[role="main"] .instructions h2,
-	section[role="main"] .instructions h3,
-	section[role="main"] .instructions h4,
-	section[role="main"] .instructions h5,
-	section[role="main"] .instructions h6 {
-		margin-bottom: 0;
-		padding-bottom: 0;
-	}
 	
 	.instructions p {
 		line-height: 1.5em;
