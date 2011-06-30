@@ -26,6 +26,13 @@ div {
     font-style: normal;
 	}
 
+@font-face {
+font-family: 'JournalRegular';
+src: url('http://hackasaurus.org/include/font/MEgalopolisExtra.otf');
+font-weight: normal;
+font-style: normal;
+	}
+
 /* @end */
 
 /* TEXT STYLES ------------------------------------ */
@@ -128,6 +135,15 @@ section[role="main"] h5,
 section[role="main"] h6 {
 	text-shadow: 1px 1px 0 #FAFAFA;
 	margin-bottom: 0.3em;
+	}
+
+.instructions h1,
+.instructions h2,
+.instructions h3,
+.instructions h4,
+.instructions h5,
+.instructions h6 {
+	font-family: JournalRegular;
 	}
 
 section[role="main"] h1 {
