@@ -16,7 +16,7 @@
 	<cite><a href="http://www.tes.co.uk/teaching-resource/Web-X-Ray-Goggles-by-Hackasaurus-6074624/">Teacher on the TES website</a></cite>
 	
 	
-	<img src="http://hackasaurus.org/image/hackasaurus-kids.jpg" alt="kids using the Hackasaurus tools">
+	<img src="http://hackasaurus.org/include/image/hackasaurus-kids.jpg" alt="kids using the Hackasaurus tools">
 	
 	<p>Photo from <a href="http://www.flickr.com/photos/tedxkidsbrussels/5799584050/in/photostream">TEDx Kids</a></p>
 	
