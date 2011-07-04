@@ -91,11 +91,16 @@ blockquote {
 
 blockquote,
 dl {
-	margin-left:2em;
-	border-left:4px solid #CCC;
+	margin-left:0;
+	border-left:4px solid #33CDFA;
 	padding-left:1em;
-	margin-bottom:1em;
+	margin-bottom:0;
 	}
+
+cite {
+	float: right;
+	margin-bottom: 1em;
+}
 
 /* Keyboard key style */
 kbd {
@@ -403,6 +408,10 @@ article {
 	width: 32%;
 	margin-bottom: 2em;
 	}
+
+.inner-page .content-secondary ol {
+	margin-left: 1.5em;
+}
 
 /* HEADER ------------------------------------ */
 
