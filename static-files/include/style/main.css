@@ -988,6 +988,12 @@ section.tool-goggles .bookmarklet-demo {
 		padding: 2%!important;
 		font-size: 1em;
 		}
+	
+	.page-events ol.lanyrd-listing li.vevent:nth-of-type(4n),
+	.page-events ol.lanyrd-listing li.vevent:nth-of-type(7n),
+	.page-events ol.lanyrd-listing li.vevent:nth-of-type(10n) {
+		clear: both;
+	}
 
 	/* GOGGLES PAGE ------------------------------------ */
 	section.tool-goggles .backpack li.tool-goggles,

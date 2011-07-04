@@ -9,7 +9,7 @@
 		<h1>Upcoming Events</h1>
 			
 		<div class="lanyrd-target-splat">
-			<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-template-detailed" rel="me"><span class="fallback">All events</span></a>
+			<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-number-30 lanyrd-template-detailed" rel="me"><span class="fallback">All events</span></a>
 		</div>
 		
 		<div class="events-previous">
@@ -17,7 +17,7 @@
 		<h2>Previous Events</h2>
 	
 			<div class="lanyrd-target-splat">
-				<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-context-past" rel="me"><span class="fallback">All previous events</span></a>
+				<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-number-30 lanyrd-context-past" rel="me"><span class="fallback">All previous events</span></a>
 			</div>
 			
 		</div>
@@ -25,7 +25,7 @@
 	
 		<h2>Host your own hack jam</h2>
 	
-		<p>Hack jams are desiged to make webmaking social, learner-focused and fun. Learners make, create and share together using Hackasaurus tools and un-curriculum.</p>
+		<p>Hack jams are designed to make webmaking social, learner-focused and fun. Learners make, create and share together using Hackasaurus tools and un-curriculum.</p>
 	
 	    <p>We're working  on a "Host Your Own Hack Jam" kit to make it easy for anyone to host their own event. In the mean time, check out these resources on hosting your own hack jam:</p>
 
