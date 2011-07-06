@@ -26,10 +26,10 @@
 	<script type="text/javascript">		
 		$(document).ready(function() {
 			/* Sets the cookie */
-			var color = $.cookie("color");
+			/*var color = $.cookie("color");
   			if (color != "") {
 				$("body").attr('class', color);
-  			}
+  			}*/
   			
 			/* Adds hasjs class to html tag if javascript is on */
 			jQuery(function($) {
@@ -48,7 +48,6 @@
 			$('.snippet h1').click(
 			function() {
 				var checkElement = $(this).next();
-				window.location.hash = $(this).parent('id');
 				if((checkElement.is('.examples')) && (checkElement.is(':visible'))) {
 					return false;
 				}

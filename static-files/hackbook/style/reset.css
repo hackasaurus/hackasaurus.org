@@ -386,6 +386,9 @@ nav.sites .goggles {
     height: 32px;
     margin-right: 5px;
     width: 45px;
+    float: left;
+    display: inline-block;
+    clear: none;
 }
 
 nav.sites .hackasaurus:hover,
@@ -1032,12 +1035,12 @@ article.snippet .preview * {
     padding: 0;
     margin: 0;
     background-color: transparent;
+    background-image: none;
     border: none;
 }
 
 #snippet-template-1 .preview img,
 #snippet-template-2 .preview img {
-    height: 100%;
     max-width: 100%;
 }
 
@@ -1056,12 +1059,13 @@ article.snippet .preview * {
     clear: both;
     color: #FFFFFF;
     display: block;
-    font-family: "Calypso E Light",Rockwell,Georgia,serif;
+    font-family: "TitilliumText22LLight";
     font-size: 1.1em;
-    padding: 3px 0 2px;
+    padding: 0.5em 0 0.3em;
     text-decoration: none;
     text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.3);
     width: 100%;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.35);
 }
 
 #snippet-color-1 .preview h1 {

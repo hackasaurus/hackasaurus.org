@@ -11,16 +11,16 @@
 	<h1>Word colors</h1>
 	
 	<ul class="colors">
-		<li><span style="background-color:Red">Red</span>
+		<li><span style="background-color:Red; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Red</span>
 			<ul>
-				<li style="background-color:IndianRed">IndianRed</li>
+				<li style="background-color:IndianRed; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">IndianRed</li>
 				<li style="background-color:LightCoral">LightCoral</li>
 				<li style="background-color:Salmon">Salmon</li>
 				<li style="background-color:DarkSalmon">DarkSalmon</li>
 				<li style="background-color:LightSalmon">LightSalmon</li>
-				<li style="background-color:Crimson">Crimson</li>
-				<li style="background-color:FireBrick">FireBrick</li>
-				<li style="background-color:DarkRed">DarkRed</li>
+				<li style="background-color:Crimson; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Crimson</li>
+				<li style="background-color:FireBrick; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">FireBrick</li>
+				<li style="background-color:DarkRed; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkRed</li>
 			</ul>
 		</li>
 	</ul>
@@ -31,7 +31,7 @@
 				<li style="background-color:LightSalmon">LightSalmon</li>
 				<li style="background-color:Coral">Coral</li> 	 	
 				<li style="background-color:Tomato">Tomato</li>
-				<li style="background-color:OrangeRed">OrangeRed</li>
+				<li style="background-color:OrangeRed; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">OrangeRed</li>
 				<li style="background-color:DarkOrange">DarkOrange</li>
 			</ul>
 		</li>
@@ -55,7 +55,7 @@
 	</ul>
 
 	<ul class="colors">
-		<li><span style="background-color:Green">Green</span>
+		<li><span style="background-color:Green; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Green</span>
 			<ul>
 				<li style="background-color:GreenYellow">GreenYellow </li>
 				<li style="background-color:Chartreuse">Chartreuse</li>
@@ -66,25 +66,25 @@
 				<li style="background-color:LightGreen">LightGreen</li>
 				<li style="background-color:MediumSpringGreen">MediumSpringGreen</li>
 				<li style="background-color:SpringGreen">SpringGreen </li>
-				<li style="background-color:MediumSeaGreen">MediumSeaGreen </li>
-				<li style="background-color:SeaGreen">SeaGreen</li>
-				<li style="background-color:ForestGreen">ForestGreen </li>
-				<li style="background-color:DarkGreen">DarkGreen</li>
+				<li style="background-color:MediumSeaGreen; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">MediumSeaGreen </li>
+				<li style="background-color:SeaGreen; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">SeaGreen</li>
+				<li style="background-color:ForestGreen; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">ForestGreen </li>
+				<li style="background-color:DarkGreen; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkGreen</li>
 				<li style="background-color:YellowGreen">YellowGreen </li>
-				<li style="background-color:OliveDrab">OliveDrab</li>
-				<li style="background-color:Olive">Olive </li>
-				<li style="background-color:DarkOliveGreen">DarkOliveGreen </li>
+				<li style="background-color:OliveDrab; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">OliveDrab</li>
+				<li style="background-color:Olive; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Olive </li>
+				<li style="background-color:DarkOliveGreen; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkOliveGreen </li>
 				<li style="background-color:MediumAquamarine">MediumAquamarine</li>
 				<li style="background-color:DarkSeaGreen">DarkSeaGreen </li>
 				<li style="background-color:LightSeaGreen">LightSeaGreen </li>
-				<li style="background-color:DarkCyan">DarkCyan</li>
-				<li style="background-color:Teal">Teal </li>
+				<li style="background-color:DarkCyan; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkCyan</li>
+				<li style="background-color:Teal; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Teal </li>
 			</ul>
 		</li>
 	</ul>
 
 	<ul class="colors">
-		<li><span style="background-color:Blue">Blue</span>
+		<li><span style="background-color:Blue; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Blue</span>
 			<ul>
 				<li style="background-color:Aqua">Aqua </li>
 				<li style="background-color:Cyan">Cyan </li>
@@ -118,15 +118,15 @@
 			<ul>
 				<li style="background-color:LightPink">LightPink</li>
 				<li style="background-color:HotPink">HotPink</li>
-				<li style="background-color:DeepPink">DeepPink</li>
-				<li style="background-color:MediumVioletRed">MediumVioletRed</li>
-				<li style="background-color:PaleVioletRed">PaleVioletRed</li>
+				<li style="background-color:DeepPink; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DeepPink</li>
+				<li style="background-color:MediumVioletRed; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">MediumVioletRed</li>
+				<li style="background-color:PaleVioletRed; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">PaleVioletRed</li>
 			</ul>
 		</li>
 	</ul>
 	
 	<ul class="colors">
-		<li><span style="background-color:Purple">Purple</span>
+		<li><span style="background-color:Purple; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Purple</span>
 			<ul>
 				<li style="background-color:Lavender">Lavender</li>
 				<li style="background-color:Thistle">Thistle</li>
@@ -135,22 +135,22 @@
 				<li style="background-color:Orchid">Orchid</li>
 				<li style="background-color:Fuchsia">Fuchsia</li>
 				<li style="background-color:Magenta">Magenta</li>
-				<li style="background-color:MediumOrchid">MediumOrchid</li>
-				<li style="background-color:MediumPurple">MediumPurple</li>
-				<li style="background-color:BlueViolet">BlueViolet</li>
-				<li style="background-color:DarkViolet">DarkViolet</li>
-				<li style="background-color:DarkOrchid">DarkOrchid</li>
-				<li style="background-color:DarkMagenta">DarkMagenta</li>
-				<li style="background-color:Indigo">Indigo</li>
-				<li style="background-color:DarkSlateBlue">DarkSlateBlue</li>
-				<li style="background-color:SlateBlue">SlateBlue</li>
-				<li style="background-color:MediumSlateBlue">MediumSlateBlue</li>
+				<li style="background-color:MediumOrchid; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">MediumOrchid</li>
+				<li style="background-color:MediumPurple; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">MediumPurple</li>
+				<li style="background-color:BlueViolet; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">BlueViolet</li>
+				<li style="background-color:DarkViolet; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkViolet</li>
+				<li style="background-color:DarkOrchid; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkOrchid</li>
+				<li style="background-color:DarkMagenta; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkMagenta</li>
+				<li style="background-color:Indigo; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Indigo</li>
+				<li style="background-color:DarkSlateBlue; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkSlateBlue</li>
+				<li style="background-color:SlateBlue; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">SlateBlue</li>
+				<li style="background-color:MediumSlateBlue; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">MediumSlateBlue</li>
 			</ul>
 		</li>
 	</ul>
 
 	<ul class="colors">
-		<li><span style="background-color:Brown">Brown</span>
+		<li><span style="background-color:Brown; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Brown</span>
 			<ul>
 				<li style="background-color:Cornsilk">Cornsilk</li>
 				<li style="background-color:BlanchedAlmond">BlanchedAlmond</li>
@@ -164,10 +164,10 @@
 				<li style="background-color:Goldenrod">Goldenrod</li>
 				<li style="background-color:DarkGoldenrod">DarkGoldenrod</li>
 				<li style="background-color:Peru">Peru</li>
-				<li style="background-color:Chocolate">Chocolate</li>
-				<li style="background-color:SaddleBrown">SaddleBrown</li>
-				<li style="background-color:Sienna">Sienna</li>
-				<li style="background-color:Maroon">Maroon</li>
+				<li style="background-color:Chocolate; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Chocolate</li>
+				<li style="background-color:SaddleBrown; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">SaddleBrown</li>
+				<li style="background-color:Sienna; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Sienna</li>
+				<li style="background-color:Maroon; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Maroon</li>
 			</ul>
 		</li>
 	</ul>
@@ -196,17 +196,17 @@
 	</ul>
 
 	<ul class="colors">
-		<li><span style="background-color:Gray">Gray</span>
+		<li><span style="background-color:Gray; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Gray</span>
 			<ul>
 				<li style="background-color:Gainsboro">Gainsboro</li>
 				<li style="background-color:LightGrey">LightGrey</li>
 				<li style="background-color:Silver">Silver</li>
 				<li style="background-color:DarkGray">DarkGray</li>
-				<li style="background-color:DimGray">DimGray</li>
-				<li style="background-color:LightSlateGray">LightSlateGray</li>
-				<li style="background-color:SlateGray">SlateGray</li>
-				<li style="background-color:DarkSlateGray">DarkSlateGray</li>
-				<li style="background-color:Black">Black</li>
+				<li style="background-color:DimGray; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DimGray</li>
+				<li style="background-color:LightSlateGray; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">LightSlateGray</li>
+				<li style="background-color:SlateGray; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">SlateGray</li>
+				<li style="background-color:DarkSlateGray; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">DarkSlateGray</li>
+				<li style="background-color:Black; color:white; text-shadow:-1px -1px 0 rgba(0,0,0,0.4)">Black</li>
 			</ul>
 		</li>
 	</ul>
