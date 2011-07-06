@@ -64,7 +64,7 @@
 			<h2>How it looks</h2>
 			<div class="preview">
 			</div>
-			<a class="button" href="http://jsbin.com/egowat/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/egowat/2/edit">Hack This</a>
 		</div>
 	</div>
 </article>
