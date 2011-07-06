@@ -312,6 +312,14 @@ article#resources {
 	background-color: #FFD203;
 }
 
+#resources a:link,
+#resources a:visited,
+#resources a:hover,
+#resources a:focus,
+#resources a:active {
+	color: #333;
+}
+
 header .logo {
     background-image: url("../image/logo-hackbook.png");
     background-position: left 7px;
@@ -650,11 +658,6 @@ li.tool {
     margin: 0 auto;
     padding: 2em;
     text-align: center;
-}
-
-#resources .instructions {
-	float: left;
-	width: 45%;
 }
 
 #resources ul {
