@@ -15,16 +15,28 @@
          url('../include/type/titillium/TitilliumText22L002-webfont.svg#TitilliumText22LLight') format('svg');
     font-weight: normal;
     font-style: normal;
+	}
 
-}
+@font-face {
+    font-family: 'TitilliumTextBold';
+    src: url('../include/type/titillium/TitilliumText22L004-webfont.eot');
+    src: url('../include/type/titillium/TitilliumText22L004-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../include/type/titillium/TitilliumText22L004-webfont.woff') format('woff'),
+         url('../include/type/titillium/TitilliumText22L004-webfont.ttf') format('truetype'),
+         url('../include/type/titillium/TitilliumText22L004-webfont.svg#TitilliumText22LLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
 
 body {
 	font-size:14px;
 	line-height:22px;
 	color:#EEE;
+	/*background-image: url(http://hackasaurus.org/include/image/paper.jpg);*/
 	/*background-image: url(../image/paper.png);*/
-	background-image: url(../image/bg-grid-trans.png);
-	background-color: #6FAACC;
+	/*background-image: url(../image/bg-grid-trans.png);
+	background-color: #6FAACC;*/
+	background-color: #FFF6ED;
 	font-family: Helvetica, Arial, sans-serif;
 	border-top: 2px solid #707070;
 	}
@@ -111,8 +123,21 @@ h4,
 h5,
 h6,
 nav { 
-font-family:"TitilliumText22LLight", "Calypso E Light", Rockwell, Georgia, serif; font-size-adjust:0.605; font-weight:200; font-style:normal;
-color: #FFF;
+font-family:"TitilliumText22LLight", "Calypso E Light", Rockwell, Georgia, serif; font-size-adjust:0.605; 
+font-weight:200;
+font-style:normal;
+/*color: #FFF;*/
+color: #333;
+}
+
+.tagline {
+	text-shadow: 1px 1px 0 rgba(250,250,250,0.6);
+}
+
+h1,
+h2 {
+/*text-shadow: -1px -1px 0 rgba(0,0,0,0.2);*/
+text-shadow: 1px 1px 0 rgba(250,250,250,0.6);	
 }
 
 h1 {
@@ -120,7 +145,6 @@ h1 {
     line-height: 1.2em;
     margin: 13px 0 7px;
     text-align: center;
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.2);
 	}
 
 article.snippet h1 {
@@ -145,7 +169,6 @@ h2 {
     font-size: 1.3em;
     line-height: 1.2em;
     margin: 7px 0 10px;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
 	}
 
 h5 {
@@ -244,7 +267,10 @@ footer {
 }
 
 header {
-	background-image: url(../image/hackasaurus-header.png);
+	/*background-image: url(../image/bg-grid-trans.png);*/
+	/*background-image: url(http://hackasaurus.org/include/style/../image/header.png);*/
+	/*background-image: url(../image/header-red.png);*/
+	background-color: #FFD203;
 	background-repeat: repeat-x;
 	background-position: top center;
 	padding: 27px 2% 0px;
@@ -272,7 +298,7 @@ article {
     margin: 0 auto 1em;
     overflow: hidden;
     border-radius: 5px;
-    background-image: url(../image/alpha/black-20.png);
+    background-image: url(../image/alpha/black-10.png);
     background-repeat: repeat;
     border-radius: 4px 4px 4px 4px;
         padding: 0 1%;
@@ -281,11 +307,13 @@ article {
 }
 
 article#resources {
-	background-image: url(../image/alpha/black-40.png);
+	/*background-image: url(../image/alpha/black-25.png);*/
+	background-image: none;
+	background-color: #FFD203;
 }
 
 header .logo {
-    background-image: url("../image/hackbook.png");
+    background-image: url("../image/logo-hackbook.png");
     background-position: left 7px;
     background-repeat: no-repeat;
     display: block;
@@ -659,6 +687,8 @@ li.tool {
     margin: 0 0 31px 4%;
     text-align: center;
     width: 28%;
+    background-image: url(../image/alpha/black-25.png);
+    border-radius: 4px;
 }
 
 .nav-library li:nth-of-type(3n) {
@@ -684,8 +714,8 @@ li.tool {
 	width: 100%;
 	display: block;
 	height: 209px;
-	background-color: rgba(0, 0, 0, 0.15);
 	padding: 0;
+	margin: 0;
 	text-indent: -9999px;
 }
 
@@ -1088,17 +1118,20 @@ a.button:visited,
 a.button:hover,
 a.button:focus,
 a.button:active {
-    background-image: url(../image/alpha/black-40.png);
+    /*background-image: url(../image/alpha/black-40.png);*/
+    background-color: #FFD203;
     background-repeat: repeat;
     border-radius: 3px 3px 3px 3px;
     clear: both;
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
+    color: #333;
     display: block;
-    font-family: "TitilliumText22LLight";
-    font-size: 1.1em;
+    font-family: "TitilliumTextBold";
+    font-size: 1.4em;
     padding: 0.5em 0 0.3em;
     text-decoration: none;
-    text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.3);
+    /*text-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.3);*/
+    text-shadow: -1px -1px 0 rgba(250, 250, 250, 0.6);
     width: 100%;
     border-bottom: 2px solid rgba(0, 0, 0, 0.35);
     text-align: center;
