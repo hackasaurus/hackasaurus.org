@@ -226,9 +226,20 @@
 				<h1>Blue Heading</h1>
 				<h2>Green heading with a pink background</h2>
 			</div>
+			<a class="button" href="http://jsbin.com/uquzig/1/edit">Hack This</a>
 		</div>
 	</div>
+</article>
 
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/8-colour-theory/">Opera Web Standards Curriculum: Color Theory</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/10-colour-schemes-and-design-mockups/">Opera Web Standards Curriculum: Color Schemes</a></li>
+			<li class="tool"><a href="http://kuler.adobe.com/">Adobe color scheme picker (requires Flash)</a></li>
+		</ul>
+	</div>
 </article>
 
 <!--<article class="snippet" id="color-hes">

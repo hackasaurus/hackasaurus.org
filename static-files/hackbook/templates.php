@@ -17,7 +17,8 @@
 			<h2>How it looks</h2>
 			<div class="preview">
 				<img src="library/asset/template-1.png" alt="Screenshot of template 1" />
-				<a href="library/demo/template-1.html">View example</a>
+				<!--<a href="library/demo/template-1.html">View example</a>-->
+				<a class="button" href="http://jsbin.com/osajac/1/edit">Hack this</a>
 			</div>
 		</div>
 	</div>
@@ -34,11 +35,21 @@
 			<h2>How it looks</h2>
 			<div class="preview">
 				<img src="library/asset/template-2.png" alt="Screenshot of template 2" />
-				<a href="library/demo/template-2.html">View example</a>
+				<!--<a href="library/demo/template-2.html">View example</a>-->
+				<a class="button" href="http://jsbin.com/ehebip/1/edit">Hack This</a>
 			</div>
 		</div>
 	</div>
-	
+</article>
+
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/12-the-basics-of-html/">Opera Web Standards Curriculum: The basics of HTML</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/7-what-does-a-good-web-page-need/">Opera Web Standards Curriculum: What does a good web page need?</a></li>
+		</ul>
+	</div>
 </article>
 
 </section>

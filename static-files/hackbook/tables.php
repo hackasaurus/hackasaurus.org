@@ -30,6 +30,7 @@
 					</tr>
 				</table>
 			</div>
+			<a class="button" href="http://jsbin.com/ijunis/1/edit">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -45,6 +46,16 @@
 				</dl>
 			</div>
 		</div>
+	</div>
+</article>
+
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/19-html-tables/">Opera Web Standards Curriculum: HTML Tables</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/33-styling-tables/">Opera Web Standards Curriculum: Styling Tables</a></li>
+		</ul>
 	</div>
 </article>
 

@@ -15,6 +15,7 @@
 				<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				<p>Boom shackalack funky fresh, crackalackin.</p>
 			</div>
+			<a class="button" href="http://jsbin.com/oripic/1/edit">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -32,6 +33,7 @@
 				<div class="preview snippet-paragraph-2a">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
+				<a class="button" href="http://jsbin.com/etejoh/1/edit">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -49,6 +51,7 @@
 				<div class="preview snippet-paragraph-2b">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
+				<a class="button" href="http://jsbin.com/igitiy/1/edit">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -61,6 +64,7 @@
 				<div class="preview snippet-paragraph-2c">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
+				<a class="button" href="http://jsbin.com/utivep/1/edit">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -82,6 +86,7 @@
 					<li>List item 3</li>
 				</ul>
 			</div>
+			<a class="button" href="http://jsbin.com/ebahuj/1/edit">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -109,7 +114,19 @@
 					<li>List item 3</li>
 				</ul>
 			</div>
+			<a class="button" href="http://jsbin.com/ebahuj/2/edit">Hack This</a>
 		</div>
+	</div>
+</article>
+
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/15-marking-up-textual-content-in-html/">Opera Web Standards Curriculum: Marking up textual content in HTML</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/16-html-lists/">Opera Web Standards Curriculum: HTML lists</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/32-styling-lists-and-links/">Opera Web Standards Curriculum: Styling lists and links</a></li>
+		</ul>
 	</div>
 </article>
 

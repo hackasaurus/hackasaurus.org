@@ -18,10 +18,12 @@
 			<div class="preview">
 				<a href="http://google.com">This is a link to google.com</a>
 			</div>
+			<a class="button" href="http://jsbin.com/ewizaw/1/edit">Hack This</a>
 		</div>
 	</div>
 </article>
 
+<?php /* 
 <article class="snippet" id="snippet-link-2">
 	<h1>Link to page in same website</h1>
 	<div class="examples">
@@ -53,6 +55,7 @@
 		</div>
 	</div>
 </article>
+*/ ?>
 
 <article class="snippet" id="snippet-link-4">
 	<h1>Different coloured link</h1>
@@ -66,7 +69,18 @@
 			<div class="preview">
 				<a href="">This is a link to google.com</a>
 			</div>
+			<a class="button" href="http://jsbin.com/akucuk/1/edit">Hack This</a>
 		</div>
+	</div>
+</article>
+
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/32-styling-lists-and-links/">Opera Web Standards Curriculum: Styling lists and links</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/18-html-links-let-s-build-a-web/">Opera Web Standards Curriculum: HTML links</a></li>
+		</ul>
 	</div>
 </article>
 

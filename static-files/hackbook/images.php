@@ -27,8 +27,9 @@
 		<div class="how-it-looks">
 			<h2>How it looks</h2>
 			<div class="preview">
-				<img src="library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
+				<img src="http://hackasaurus.org/hackbook/library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
 			</div>
+			<a class="button" href="http://jsbin.com/edoven/1/edit">Hack This</a>
 		</div>
 	</div>
 </article>
@@ -46,7 +47,35 @@
 			<div class="snippet-preview snippet-image-2">
 				<a style="" href="http://google.com"><img src="library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" /></a>
 			</div>
+			<a class="button" href="http://jsbin.com/anewoz/1/edit">Hack This</a>
 		</div>
+	</div>
+</article>
+
+<article class="snippet" id="snippet-image-background-1">
+	<h1>Background image</h1>
+	<div class="examples">
+		<div class="how-it-works">
+			<h2>The code</h2>
+			<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-1.html') ?></code></pre>
+		</div>
+	
+		<div class="how-it-looks">
+			<h2>How it looks</h2>
+			<div class="preview">
+			</div>
+			<a class="button" href="http://jsbin.com/egowat/1/edit">Hack This</a>
+		</div>
+	</div>
+</article>
+
+<article class="snippet" id="resources">
+	<h1>Resources</h1>
+	<div class="examples">
+		<ul>
+			<li class="article"><a href="http://dev.opera.com/articles/view/17-images-in-html/">Opera Web Standards Curriculum: Images in HTML</a></li>
+			<li class="article"><a href="http://dev.opera.com/articles/view/31-css-background-images/">Opera Web Standards Curriculum: CSS background images</a></li>
+		</ul>
 	</div>
 </article>
 
