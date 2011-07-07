@@ -52,19 +52,34 @@
 	</div>
 </article>
 
-<article class="snippet" id="snippet-image-background-1">
+<article class="snippet">
 	<h1>Background image</h1>
 	<div class="examples">
-		<div class="how-it-works">
-			<h2>The code</h2>
-			<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-1.html') ?></code></pre>
-		</div>
-	
-		<div class="how-it-looks">
-			<h2>How it looks</h2>
-			<div class="preview">
+		<div class="example">
+			<div class="how-it-works">
+				<h2>The code</h2>
+				<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-1.html') ?></code></pre>
 			</div>
-			<a class="button" href="http://jsbin.com/egowat/2/edit#html,live">Hack This</a>
+		
+			<div class="how-it-looks">
+				<h2>How it looks</h2>
+				<div class="preview" id="snippet-image-background-1">
+				</div>
+				<a class="button" href="http://jsbin.com/egowat/2/edit#html,live">Hack This</a>
+			</div>
+		</div>
+		<div class="example">
+			<div class="how-it-works">
+				<h2>The code</h2>
+				<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-2.html') ?></code></pre>
+			</div>
+		
+			<div class="how-it-looks">
+				<h2>How it looks</h2>
+				<div class="preview" id="snippet-image-background-2">
+				</div>
+				<a class="button" href="http://jsbin.com/egowat/3/edit#html,live">Hack This</a>
+			</div>
 		</div>
 	</div>
 </article>

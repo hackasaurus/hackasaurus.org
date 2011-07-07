@@ -1151,9 +1151,18 @@ a.button:active {
 	background-color: Pink;
 }
 
-#snippet-image-background-1 .preview {
+#snippet-image-background-1 {
 	background-image: url(../library/asset/hackgirl.jpg);
 	background-repeat: repeat;
 	height: 145px;
 	background-position: center;
+	background-color: #FFF;
+}
+
+#snippet-image-background-2 {
+	background-image: url(../library/asset/hackgirl.jpg);
+	background-repeat: no-repeat;
+	height: 145px;
+	background-position: top center;
+	background-color: #FFF;
 }
