@@ -4,14 +4,14 @@
 	
 	<header>
 		<a href="index.php"><img src="./image/logo.png" alt="Hackbook" /></a>
-		<p class="tagline">A library of code to copy and paste into your hacks</p>
+		<p class="tagline">A library of code for your hacks</p>
 	</header>
 	
 		<nav class="sites">
 			<ul>
 				<li class="mozilla"><a href="http://mozilla.org">Mozilla</a></li>
-				<li class="hackasaurus"><a href="http://hackasaurus.org">Hackasaurus</a></li>
 				<li class="webpad"><a href="http://hackasaurus.org">WebPad</a></li>
+				<li class="hackasaurus"><a href="http://hackasaurus.org">Hackasaurus</a></li>
 			</ul>
 		</nav>
 

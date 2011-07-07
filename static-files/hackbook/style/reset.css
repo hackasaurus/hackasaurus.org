@@ -336,20 +336,19 @@ header .logo {
 
 
 nav.primary {
-	background-image: url(../image/header.jpg);
+	background-color: #626262;
+	background-position: center bottom;
 	background-repeat: repeat-x;
-	background-position: bottom center;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	overflow: hidden;
 	padding: 3px 4% 0;
 	width: 92%;
-    overflow: hidden;
-    border-top: 1px solid #777777;
 }
 
 nav.primary li {
 	background-image: url(../image/nav-li.png);
 	background-position: left bottom;
 	background-repeat: no-repeat;
-	margin-bottom: 1px;
 }
 
 nav.primary li:last-of-type a {
@@ -427,8 +426,7 @@ nav.sites .goggles {
     height: 32px;
     margin-right: 5px;
     width: 45px;
-    float: left;
-    display: inline-block;
+    display: block;
     clear: none;
 }
 
@@ -685,13 +683,13 @@ li.tool {
 }
 
 .nav-library li {
+background-image: url("../image/alpha/black-10.png");
     clear: none;
     display: block;
     float: left;
     margin: 0 0 31px 4%;
     text-align: center;
     width: 28%;
-    background-image: url(../image/alpha/black-25.png);
     border-radius: 4px;
 }
 
@@ -723,9 +721,9 @@ li.tool {
 	text-indent: -9999px;
 }
 
-.nav-library li a:hover,
-.nav-library li a:focus,
-.nav-library li a:active {
+.nav-library li:hover,
+.nav-library li:focus,
+.nav-library li:active {
 	margin-top:-2px;
 }
 
