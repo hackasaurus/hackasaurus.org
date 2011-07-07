@@ -18,7 +18,7 @@
 			<div class="preview">
 				<a href="http://google.com">This is a link to google.com</a>
 			</div>
-			<a class="button" href="http://jsbin.com/ewizaw/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/ewizaw/1/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>
@@ -69,7 +69,7 @@
 			<div class="preview">
 				<a href="">This is a link to google.com</a>
 			</div>
-			<a class="button" href="http://jsbin.com/akucuk/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/akucuk/1/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>

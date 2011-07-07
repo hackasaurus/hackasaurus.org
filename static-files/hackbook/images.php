@@ -29,7 +29,7 @@
 			<div class="preview">
 				<img src="http://hackasaurus.org/hackbook/library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
 			</div>
-			<a class="button" href="http://jsbin.com/edoven/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/edoven/1/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>
@@ -47,7 +47,7 @@
 			<div class="snippet-preview snippet-image-2">
 				<a style="" href="http://google.com"><img src="library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" /></a>
 			</div>
-			<a class="button" href="http://jsbin.com/anewoz/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/anewoz/1/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>
@@ -64,7 +64,7 @@
 			<h2>How it looks</h2>
 			<div class="preview">
 			</div>
-			<a class="button" href="http://jsbin.com/egowat/2/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/egowat/2/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>

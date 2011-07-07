@@ -15,7 +15,7 @@
 				<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				<p>Boom shackalack funky fresh, crackalackin.</p>
 			</div>
-			<a class="button" href="http://jsbin.com/oripic/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/oripic/1/edit#html,live">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -33,7 +33,7 @@
 				<div class="preview snippet-paragraph-2a">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
-				<a class="button" href="http://jsbin.com/etejoh/1/edit">Hack This</a>
+				<a class="button" href="http://jsbin.com/etejoh/1/edit#html,live">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -51,7 +51,7 @@
 				<div class="preview snippet-paragraph-2b">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
-				<a class="button" href="http://jsbin.com/igitiy/1/edit">Hack This</a>
+				<a class="button" href="http://jsbin.com/igitiy/1/edit#html,live">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -64,7 +64,7 @@
 				<div class="preview snippet-paragraph-2c">
 					<p>Lorem ipsum shizznit sit amizzle, consectetuer cool.</p>
 				</div>
-				<a class="button" href="http://jsbin.com/utivep/1/edit">Hack This</a>
+				<a class="button" href="http://jsbin.com/utivep/1/edit#html,live">Hack This</a>
 			</div>
 			<div class="how-it-works">
 				<h2>The code</h2>
@@ -86,7 +86,7 @@
 					<li>List item 3</li>
 				</ul>
 			</div>
-			<a class="button" href="http://jsbin.com/ebahuj/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/ebahuj/1/edit#html,live">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -114,7 +114,7 @@
 					<li>List item 3</li>
 				</ul>
 			</div>
-			<a class="button" href="http://jsbin.com/ebahuj/2/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/ebahuj/2/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>

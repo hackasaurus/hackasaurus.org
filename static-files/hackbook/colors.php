@@ -226,7 +226,7 @@
 				<h1>Blue Heading</h1>
 				<h2>Green heading with a pink background</h2>
 			</div>
-			<a class="button" href="http://jsbin.com/uquzig/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/uquzig/1/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>

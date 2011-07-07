@@ -18,7 +18,7 @@
 			<div class="preview">
 				<img src="library/asset/template-1.png" alt="Screenshot of template 1" />
 				<!--<a href="library/demo/template-1.html">View example</a>-->
-				<a class="button" href="http://jsbin.com/osajac/1/edit">Hack this</a>
+				<a class="button" href="http://jsbin.com/osajac/1/edit#html,live">Hack this</a>
 			</div>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 			<div class="preview">
 				<img src="library/asset/template-2.png" alt="Screenshot of template 2" />
 				<!--<a href="library/demo/template-2.html">View example</a>-->
-				<a class="button" href="http://jsbin.com/ehebip/1/edit">Hack This</a>
+				<a class="button" href="http://jsbin.com/ehebip/1/edit#html,live">Hack This</a>
 			</div>
 		</div>
 	</div>

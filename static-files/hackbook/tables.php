@@ -30,7 +30,7 @@
 					</tr>
 				</table>
 			</div>
-			<a class="button" href="http://jsbin.com/ijunis/1/edit">Hack This</a>
+			<a class="button" href="http://jsbin.com/ijunis/1/edit#html,live">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>
