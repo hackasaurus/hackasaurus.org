@@ -131,7 +131,8 @@ color: #333;
 }
 
 .tagline {
-	text-shadow: 1px 1px 0 rgba(250,250,250,0.6);
+	color: #FFF;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.4);
 }
 
 h1,
@@ -268,9 +269,9 @@ footer {
 
 header {
 	/*background-image: url(../image/bg-grid-trans.png);*/
-	/*background-image: url(http://hackasaurus.org/include/style/../image/header.png);*/
+	background-image: url(../image/hackasaurus-header.png);
 	/*background-image: url(../image/header-red.png);*/
-	background-color: #FFD203;
+	background-color: #6DDDFF;
 	background-repeat: repeat-x;
 	background-position: top center;
 	padding: 27px 2% 0px;
@@ -309,7 +310,7 @@ article {
 article#resources {
 	/*background-image: url(../image/alpha/black-25.png);*/
 	background-image: none;
-	background-color: #FFD203;
+	background-color: #34CEFF;
 }
 
 #resources a:link,
@@ -1080,7 +1081,7 @@ article.snippet .preview * {
 }
 
 #snippet-image-1 .preview img {
-    height: 100%;
+    max-height: 100%;
     max-width: 100%;
     }
 
@@ -1090,7 +1091,7 @@ article.snippet .preview * {
 #snippet-image-2 .preview a:focus img, 
 #snippet-image-2 .preview a:active img {
 	border: 2px solid blue;
-	height: 100%;
+	max-height: 100%;
     max-width: 100%;
 }
 
@@ -1122,7 +1123,7 @@ a.button:hover,
 a.button:focus,
 a.button:active {
     /*background-image: url(../image/alpha/black-40.png);*/
-    background-color: #FFD203;
+    background-color: #34CEFF;
     background-repeat: repeat;
     border-radius: 3px 3px 3px 3px;
     clear: both;

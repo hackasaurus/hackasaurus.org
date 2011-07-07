@@ -3,7 +3,7 @@
 	<div class="container">
 	
 	<header>
-		<a href="index.php"><img src="./image/logo-hackasaurus.png" alt="Hackbook" /></a>
+		<a href="index.php"><img src="./image/logo.png" alt="Hackbook" /></a>
 		<p class="tagline">A library of code to copy and paste into your hacks</p>
 	</header>
 	
