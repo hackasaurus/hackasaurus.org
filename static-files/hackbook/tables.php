@@ -12,7 +12,7 @@
 		<div class="how-it-looks">
 			<h2>How it looks</h2>
 			<div class="preview">
-				<table summary="a description of what's in the table">
+				<table>
 					<tr>
 						<th>Heading 1</th>
 						<th>Heading 2</th>
@@ -30,7 +30,7 @@
 					</tr>
 				</table>
 			</div>
-			<a class="button" href="http://jsbin.com/ijunis/1/edit#html,live">Hack This</a>
+			<a class="button" href="http://jsbin.com/ijunis/3/edit#html,live">Hack This</a>
 		</div>
 		<div class="how-it-works">
 			<h2>The code</h2>

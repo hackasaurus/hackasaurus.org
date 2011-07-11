@@ -59,6 +59,12 @@
 			<div class="how-it-works">
 				<h2>The code</h2>
 				<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-1.html') ?></code></pre>
+				<div class="instructions">
+					<dl>
+						<dt><code>background-repeat: repeat;</code></dt>
+						<dd>This tiles the image on the background. You can change this to <code>background-repeat: no-repeat;</code> to stop the image repeating.</dd>
+					</dl>
+				</div>
 			</div>
 		
 			<div class="how-it-looks">
@@ -72,6 +78,12 @@
 			<div class="how-it-works">
 				<h2>The code</h2>
 				<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/image-background-2.html') ?></code></pre>
+				<div class="instructions">
+					<dl>
+						<dt><code>background-position: top center;</code></dt>
+						<dd>This positions the image in the top center of the screen. Try mixing it up using <code>left</code>, <code>right</code>, <code>top</code> and <code>bottom</code></dd>
+					</dl>
+				</div>
 			</div>
 		
 			<div class="how-it-looks">
