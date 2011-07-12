@@ -54,7 +54,7 @@
 			<div class="preview">
 				<img src="library/asset/template-3.png" alt="Screenshot of template 3" />
 				<!--<a href="library/demo/template-2.html">View example</a>-->
-				<a class="button" href="http://jsbin.com/eqetow/1/edit#html,live">Hack This</a>
+				<a class="button" href="http://jsbin.com/eqetow/2/edit#html,live">Hack This</a>
 			</div>
 		</div>
 	</div>
