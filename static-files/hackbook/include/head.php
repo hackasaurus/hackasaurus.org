@@ -9,6 +9,7 @@
 	
 	<!-- Links -->
 	<link href="style/reset.css" rel="stylesheet" type="text/css">
+	<link href="style/snippets.css" rel="stylesheet" type="text/css">
 	<!--<link rel="stylesheet" href="http://f.fontdeck.com/s/css/E7uOHrgs0nw2MqW6o/fP2Vg4IGg/maban.co.uk/6992.css" type="text/css" />-->
 	
 	<!-- Browser compatibility -->
