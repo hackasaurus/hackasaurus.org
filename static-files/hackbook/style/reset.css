@@ -347,6 +347,11 @@ article#resources {
 	background-color: #34CEFF;
 }
 
+article#tutorials {
+	background-color: #F7DE21;
+	background-image: none;
+}
+
 #resources a:link,
 #resources a:visited,
 #resources a:hover,
@@ -687,20 +692,6 @@ li.tool {
     border-top: 2px dotted rgba(0, 200, 0, 0.2);
     border-bottom: 2px dotted rgba(0, 200, 0, 0.2);
     padding: 0 3% 10px;
-}
-
-.snippet .preview,
-.snippet-preview {
-	background-image: url(../image/alpha/white-50.png);
-	background-repeat: repeat;
-    border: 1px dashed rgba(250, 250, 250, 0.8);
-    border-radius: 3px 3px 3px 3px;
-    color: #000000;
-    display: block;
-    font-family: times New Roman;
-    margin: 0 auto;
-    padding: 2em;
-    text-align: center;
 }
 
 #resources ul {
@@ -1072,4 +1063,26 @@ section.home h2 {
 	width: 48%;
 	float: left;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/* Video */
+
+#video {
+	float: left;
+}
+
+#captions {
+	color: #333333;
+    font-size: 1.2em;
+    margin-left: 515px;
+    padding: 100px 10px 10px 10px;
+    text-shadow: 1px 1px 0 rgba(250, 250, 250, 0.6);
+	background-image: url(../image/alpha/white-50.png);
+	min-height: 230px;
+	margin-bottom: 0.7em;
+	border-radius: 2px;
+}
+
+#captions a {
+	color: #2D90E0;
 }

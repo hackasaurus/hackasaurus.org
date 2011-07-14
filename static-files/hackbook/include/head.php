@@ -21,8 +21,9 @@
 	<link href="script/syntax-highlighter/src/prettify.css" type="text/css" rel="stylesheet" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 	<script type="text/javascript" src="script/syntax-highlighter/src/prettify.js"></script>
-	<script type="text/javascript" src="script/cookie.js"></script>
+	<!--<script type="text/javascript" src="script/cookie.js"></script>-->
 	<script type="text/javascript" src="script/accordion.js"></script>
+	<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
 			
 	<script type="text/javascript">		
 		$(document).ready(function() {
@@ -73,6 +74,7 @@
 					return false;
 				}
 			});
+			
 		});
 
 </script>

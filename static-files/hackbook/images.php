@@ -7,7 +7,7 @@
 <h1>Images</h1>
 		
 <article class="snippet" id="snippet-image-1">
-	<h1>Image</h1>
+	<h1>Image</h1>	
 	<div class="examples">
 		<div class="how-it-works">
 			<h2>The code</h2>
@@ -29,7 +29,7 @@
 			<div class="preview">
 				<img src="http://hackasaurus.org/hackbook/library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
 			</div>
-			<a class="button" href="http://jsbin.com/edoven/1/edit#html,live">Hack This</a>
+			<a class="button" href="http://jsbin.com/edoven/10/edit#html,live">Hack This</a>
 		</div>
 	</div>
 </article>
@@ -96,6 +96,14 @@
 	</div>
 </article>
 
+<article class="snippet" id="tutorials">
+	<h1>How to add an image</h1>
+	<div class="examples">
+		<div id="video"></div>
+		<div id="captions"></div>
+	</div>
+</article>
+
 <article class="snippet" id="resources">
 	<h1>Resources</h1>
 	<div class="examples">
@@ -107,5 +115,43 @@
 </article>
 
 </section>
+
+<script>
+	// Create a popcorn instance by calling the Vimeo player plugin
+	var example = Popcorn(Popcorn.vimeo(
+		'video',
+		'http://player.vimeo.com/video/26331923',
+		{ width: 300 } ) 
+	);
+	
+	example.footnote({
+		start: 4,
+		end: 12,
+		text: "Right click on the image and select \"copy image location\"",
+		target: "captions"
+	});
+
+	example.footnote({
+		start: 12,
+		end: 17,
+		text: "switch to the tab with your hack. This one is at <a href=\"http://jsbin.com/edoven/10/edit#html,live\">http://jsbin.com/edoven/10/edit#html,live</a>",
+		target: "captions"
+	});
+
+	example.footnote({
+		start: 17,
+		end: 22,
+		text: "select the text within the src=, not including the quote marks",
+		target: "captions"
+	});
+	
+	example.footnote({
+		start: 22,
+		end: 27,
+		text: "Paste the link to the image within the quote marks, and you're done!",
+		target: "captions"
+	});
+	
+</script>
 
 <?php include_once("include/footer.php")?>

@@ -1,5 +1,28 @@
 /* Snippets */
 
+.snippet .preview,
+.snippet-preview {
+	background-image: url(../image/alpha/white-50.png);
+	background-repeat: repeat;
+    border: 1px dashed rgba(250, 250, 250, 0.8);
+    border-radius: 3px 3px 3px 3px;
+    color: #000000;
+    display: block;
+    font-family: times New Roman;
+    margin: 0 auto;
+    padding: 2em;
+    text-align: center;
+	}
+
+.snippet .preview h1,
+.snippet .preview h2,
+.snippet .preview h3,
+.snippet .preview h4,
+.snippet .preview h5,
+.snippet .preview h6 {
+	font-family: times New Roman;
+	}
+
 article.snippet .preview * {
 	text-shadow: none;
 	background-color: transparent;
@@ -56,6 +79,38 @@ article.snippet .preview * {
 	text-align: left;
 	color: red;
 	font-style: italic;
+}
+
+#snippet-heading-1 .preview {
+	text-align: left;
+}
+
+#snippet-heading-1 .preview p {
+	margin-bottom: 10px;
+}
+
+#snippet-heading-1 .preview h1 {
+	text-align: left;
+	background-image: none;
+	cursor: default;
+	margin: 0 0 5px;
+	font-size: 23px;
+	line-height: 1.2em;
+}
+
+#snippet-heading-1 .preview h2 {
+	margin: 0 0 4px;
+	font-size: 20px;
+}
+
+#snippet-heading-1 .preview h3 {
+	margin: 0 0 3px;
+	font-size: 17px;
+}
+
+#snippet-heading-1 .preview h4 {
+	margin: 0 0 2px;
+	font-size: 14px;
 }
 
 #snippet-list-1 .preview ul {
