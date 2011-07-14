@@ -127,6 +127,12 @@ article.snippet .preview * {
 	list-style-type: square;
 }
 
+#snippet-list-3 .preview ol {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
 #snippet-image-1 .preview img {
     max-height: 100%;
     max-width: 100%;

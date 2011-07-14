@@ -164,6 +164,28 @@
 	</div>
 </article>
 
+<article class="snippet" id="snippet-list-3">
+	<h1>Numbered list</h1>
+	<div class="examples">
+		<div class="how-it-works">
+			<h2>The code</h2>
+			<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/list-3.html') ?></code></pre>
+		</div>
+		<div class="how-it-looks">
+			<h2>How it looks</h2>
+			<div class="preview">
+				<ol>
+					<li>List item 1</li>
+					<li>List item 2</li>
+					<li>List item 3</li>
+				</ol>
+			</div>
+			<a class="button" href="http://jsbin.com/ifebuk/1/edit#html,live">Hack This</a>
+		</div>
+	</div>
+</article>
+
+
 <article class="snippet" id="resources">
 	<h1>Resources</h1>
 	<div class="examples">
