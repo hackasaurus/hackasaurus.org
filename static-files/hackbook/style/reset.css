@@ -144,7 +144,7 @@ color: #333;
 
 .tagline {
 	color: #FFF;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.4);
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 }
 
 h1,
@@ -390,7 +390,7 @@ nav.primary li {
 	background-repeat: no-repeat;
 }
 
-nav.primary li:last-of-type a {
+nav.primary li:last-of-type a span {
 	background-image: url(../image/nav-li.png);
 	background-repeat: no-repeat;
 	background-position: right bottom;
@@ -410,6 +410,10 @@ nav ul li {
 	padding: 0;
 }
 
+nav.primary ul li {
+	margin-right: -4px;
+}
+
 nav.primary ul li a:link,
 nav.primary ul li a:visited,
 nav.primary ul li a:hover,
@@ -418,8 +422,27 @@ nav.primary ul li a:active {
     border-radius: 1px 1px 0 0;
     color: #FFFFFF;
     display: block;
-    padding: 7px 13px 6px 15px;
+    padding: 0;
     text-decoration: none;
+}
+
+nav.primary ul li span {
+	display: block;
+	padding: 7px 18px 8px 17px;
+}
+
+body.page-templates nav li.page-templates a,
+body.page-text nav li.page-text a,
+body.page-images nav li.page-images a,
+body.page-links nav li.page-links a,
+body.page-colors nav li.page-colors a,
+body.page-tables nav li.page-tables a,
+nav.primary li a:hover,
+nav.primary li a:focus,
+nav.primary li a:active {
+	background-image: url(../image/bg-nav-selected.png);
+	background-repeat: repeat;
+	background-position: bottom center;
 }
 
 nav.secondary li {

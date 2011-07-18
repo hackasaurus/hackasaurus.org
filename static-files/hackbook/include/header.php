@@ -1,5 +1,3 @@
-<body class="" onload="prettyPrint()">
-	
 	<div class="container">
 	
 	<header>
@@ -17,13 +15,13 @@
 
 		<nav class="primary">
 			<ul>
-				<li><a href="templates.php">Templates</a></li>
-				<li><a href="text.php">Text</a></li>
-				<li><a href="images.php">Images</a></li>
-				<li><a href="links.php">Links</a></li>
+				<li class="page-templates"><a href="templates.php"><span>Templates</span></a></li>
+				<li class="page-text"><a href="text.php"><span>Text</span></a></li>
+				<li class="page-images"><a href="images.php"><span>Images</span></a></li>
+				<li class="page-links"><a href="links.php"><span>Links</span></a></li>
 				<!--<li><a href="buttons.php">Buttons</a></li>-->
-				<li><a href="colors.php">Colors</a></li>
-				<li><a href="tables.php">Tables</a></li>
+				<li class="page-colors"><a href="colors.php"><span>Colors</span></a></li>
+				<li class="page-tables"><a href="tables.php"><span>Tables</span></a></li>
 			</ul>
 		</nav>
 		

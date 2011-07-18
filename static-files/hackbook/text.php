@@ -1,5 +1,7 @@
 <?php include_once("include/head.php")?>
 
+<body class="page-text" onload="prettyPrint()">
+
 <?php include_once("include/header.php")?>
 
 <section role="main" class="text">	
