@@ -156,6 +156,17 @@ article.snippet .preview * {
 	color:red;
 } 
 
+#snippet-link-icon-1 .preview a:link,
+#snippet-link-icon-1 .preview a:visited,
+#snippet-link-icon-1 .preview a:hover,
+#snippet-link-icon-1 .preview a:focus,
+#snippet-link-icon-1 .preview a:active {
+	background-image: url(../library/asset/twitter-16.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 20px;
+} 
+
 #snippet-template-1 .preview,
 #snippet-template-2 .preview,
 #snippet-template-3 .preview  {

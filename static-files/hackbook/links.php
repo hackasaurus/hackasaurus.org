@@ -74,6 +74,23 @@
 	</div>
 </article>
 
+<article class="snippet" id="snippet-link-icon-1">
+	<h1>Link with icon</h1>
+	<div class="examples">
+		<div class="how-it-works">
+			<h2>The code</h2>
+			<pre class="code"><code class="prettyprint lang-html"><?php include_once('library/snippet/link-icon-1.html') ?></code></pre>
+		</div>
+		<div class="how-it-looks">
+			<h2>How it looks</h2>
+			<div class="preview">
+				<a class="twitter" href="http://twitter.com/hackasaurus">Hackasaurus Tweets</a>
+			</div>
+			<a class="button" href="http://jsbin.com/omedih/1/edit#html,live">Hack This</a>
+		</div>
+	</div>
+</article>
+
 <article class="snippet" id="resources">
 	<h1>Resources</h1>
 	<div class="examples">

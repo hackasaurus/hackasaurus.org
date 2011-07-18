@@ -22,6 +22,9 @@
 			
 		</div>
 
+		<h2>Hackasaurus for teachers</h2>
+		
+		<p>Want to teach your students how to build stuff for the web? <a href="/teachers">Have a look at our lesson plan for teachers.</a></p>
 	
 		<h2>Host your own hack jam</h2>
 	
