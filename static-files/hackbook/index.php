@@ -22,7 +22,7 @@
 			<div class="preview">
 				<img src="library/asset/template-1.png" alt="Screenshot of template 1" />
 				<!--<a href="library/demo/template-1.html">View example</a>-->
-				<a class="button" href="http://jsbin.com/osajac/1/edit#html,live">Hack this</a>
+				<a class="button" href="http://jsbin.com/osajac/36/edit#html,live">Hack this</a>
 				<p class="helper-text">Click "Hack This" to play with the code</p>
 			</div>
 		</div>
