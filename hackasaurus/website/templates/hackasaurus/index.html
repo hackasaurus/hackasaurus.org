@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section role="main" class="home">
+
+	<!-- Examples Slideshow -->
+	<div class="examples">
+		<h2>Remix, make and share</h2>
+		<p>Hackasaurus makes it easy to remix and change any web page like magic. Or create your own.</p>
+		<div class="slideshow-gallery">
+			<div class="slideshow">
+				<div class="slides">
+					<ul>
+						<li><img src="{{ STATIC_URL }}image/slides/9.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/8.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/2.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/7.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/3.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/1.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/4.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/6.jpg" alt="" /></li>
+						<li><img src="{{ STATIC_URL }}image/slides/5.jpg" alt="" /></li>
+					</ul>
+					<div class="loader">
+						<img src="{{ STATIC_URL }}image/loader.gif" alt="loader"/>
+					</div>
+				</div>
+				<p id="next">Next</p>
+				<p id="prev">Prev</p>
+			</div>
+		</div>
+	</div>
+	<!-- End Examples Slideshow -->
+
+	<!-- Goggles Teaser -->
+	<div class="get-started">
+		<h2>Get started</h2>
+		<p>Activate the <a href="/goggles/">X-Ray Goggles</a> to see inside the web - and use your superpowers to change it!</p>
+		<img src="{{ STATIC_URL }}image/supergirl.png" alt="supergirl" width="300" height="330" />
+	</div>
+	<!-- End Goggles Teaser -->
+
+	<!-- Events Listing -->
+	<script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
+  <div class="events">
+  	<h2>Upcoming events</h2>
+  	<div class="lanyrd-target-splat">
+  		<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat" rel="me"><span class="fallback">All events</span></a>
+  	</div>
+  </div>
+	<!-- End Events Listing -->
+</section>
+
+<!-- Javascript for slideshow -->
+<script type="text/javascript" src="{{ STATIC_URL }}script/jquery.cycle.all.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.slides ul').cycle({
+		fx: 'fade',
+		pause: 0,
+		prev: '#prev',
+		speed: 600,
+		next: '#next'
+	});
+});
+</script>
+
+{% endblock %}
