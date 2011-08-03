@@ -4,4 +4,5 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'hackasaurus.views.home', name='home'),
     url(r'^$', 'hackasaurus.website.views.home'),
+    url(r'^blog/$', 'hackasaurus.website.views.blog'),
 )
