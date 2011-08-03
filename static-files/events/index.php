@@ -45,7 +45,7 @@
 	
 	<div class="content-secondary">
 		
-	<img class="photo" src="http://hackasaurus.org/include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
+	<img class="photo" src="/include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
 		<?php include_once("../include/module/backpack.php")?>
 	</div>
 		

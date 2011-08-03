@@ -7,7 +7,7 @@
 	
 		<nav class="sites">
 			<ul>
-				<li class="hackasaurus"><a href="http://hackasaurus.org">Hackasaurus</a></li>
+				<li class="hackasaurus"><a href="/">Hackasaurus</a></li>
 				<li class="webpad"><a href="http://htmlpad.org/">WebPad</a></li>
 				<li class="mozilla"><a href="http://mozilla.org">Mozilla</a></li>
 			</ul>

@@ -29,7 +29,7 @@
 		<div class="how-it-looks">
 			<h2>How it looks</h2>
 			<div class="preview">
-				<img src="http://hackasaurus.org/hackbook/library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
+				<img src="/hackbook/library/asset/dinosaur.jpg" alt="dinosaur" width="240px" height="180" />
 			</div>
 			<a class="button" href="http://jsbin.com/edoven/10/edit#html,live">Hack This</a>
 		</div>

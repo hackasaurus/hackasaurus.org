@@ -16,7 +16,7 @@
 	<cite><a href="http://www.tes.co.uk/teaching-resource/Web-X-Ray-Goggles-by-Hackasaurus-6074624/">Teacher on the TES website</a></cite>
 	
 	
-	<img src="http://hackasaurus.org/include/image/hackasaurus-kids.jpg" alt="kids using the Hackasaurus tools">
+	<img src="/include/image/hackasaurus-kids.jpg" alt="kids using the Hackasaurus tools">
 	
 	<p>Photo from <a href="http://www.flickr.com/photos/tedxkidsbrussels/5799584050/in/photostream">TEDx Kids</a></p>
 	
@@ -42,7 +42,7 @@
 			<li>Laptops or PCs for students or teams of students</li>
 			<li>Projector</li>
 			<li>Latest version of Firefox, Safari, or Chrome</li>
-			<li>Hacker Goggles: http://hackasaurus.org/goggles/</li>
+			<li>Hacker Goggles: /goggles/</li>
 		</ul>
 	
 		<h3>Deliverables:</h3>
@@ -83,7 +83,7 @@
 		<h3>Conclusion</h3>
 		<p>If you have time, have students present their work. If you are short on time- have each participant go around and say 1 thing that they learned in the lesson.</p>
 		<ul>
-			<li><a href="http://hackasaurus.org/">The Hackasaurus website</a></li>
+			<li><a href="/">The Hackasaurus website</a></li>
 			<li><a href="https://wiki.mozilla.org/Drumbeat/Hackasaurus">Our wiki page</a></li>
 		</ul>
 	

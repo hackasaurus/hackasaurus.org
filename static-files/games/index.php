@@ -8,7 +8,7 @@
 	
 	<div class="content-primary">
 
-				<img src="http://hackasaurus.org/include/image/photo-hackers-03.jpg"
+				<img src="/include/image/photo-hackers-03.jpg"
     alt="photo-hackers-03" /> <h2>Coming Soon</h2>
 		
 		 <p>Hackasaurus games make it fun and easy to learn about the basic

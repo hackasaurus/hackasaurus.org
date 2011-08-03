@@ -13,7 +13,7 @@
 		
 		<p><a id="bookmarklet-link" href="javascript:(function(){'use strict';var script=document.createElement('script');script.src='https://secure.toolness.com/webxray/webxray.js';script.className='webxray';document.head.appendChild(script);})();">Web X-Ray Goggles</a></p>
 		
-		<img class="screenshot bookmarklet-demo" src="http://hackasaurus.org/include/image/bookmarklet.gif" alt="bookmarklet" width="328" height="142" />
+		<img class="screenshot bookmarklet-demo" src="/include/image/bookmarklet.gif" alt="bookmarklet" width="328" height="142" />
 	
 	<div class="helper">
 	<h3>Having trouble?</h3>
@@ -23,7 +23,7 @@
 		<h2>Step 2: Turn them on</h2>
 		<p>Click on the X-Ray Goggles to activate. (Warning: may alter reality.)</p>
 
-<img class="screenshot" src="http://hackasaurus.org/include/image/screenshot-bookmarklet.png" alt="Example of the bookmarklet installed" />
+<img class="screenshot" src="/include/image/screenshot-bookmarklet.png" alt="Example of the bookmarklet installed" />
 		
 		<h2>Step 3: Bust your hack</h2>
 		<p>Go to your favorite web page. Mouse over any element. Hit "R" to remix it.</p>
@@ -35,13 +35,13 @@
 			<div class="slideshow">
 				<div class="slides">
 					<ul>
-						<li><img src="http://hackasaurus.org/include/image/slides/8.jpg" alt="" /></li>
-						<li><img src="http://hackasaurus.org/include/image/slides/7.jpg" alt="" /></li>
-						<li><img src="http://hackasaurus.org/include/image/slides/1.jpg" alt="" /></li>
-						<li><img src="http://hackasaurus.org/include/image/slides/6.jpg" alt="" /></li>
+						<li><img src="/include/image/slides/8.jpg" alt="" /></li>
+						<li><img src="/include/image/slides/7.jpg" alt="" /></li>
+						<li><img src="/include/image/slides/1.jpg" alt="" /></li>
+						<li><img src="/include/image/slides/6.jpg" alt="" /></li>
 					</ul>
 					<div class="loader">
-						<img src="http://hackasaurus.org/include/image/loader.gif" alt="loader"/>
+						<img src="/include/image/loader.gif" alt="loader"/>
 					</div>
 				</div>
 				<p id="next">Next</p>
@@ -56,7 +56,7 @@
 	
 	<div class="content-secondary goggle-controls">
 	
-		<img src="http://hackasaurus.org/include/image/supergirl.png" alt="supergirl" width="300" height="330" />
+		<img src="/include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 		
 		<h2>X-Ray Goggles controls:</h2>
 		
@@ -80,7 +80,7 @@
 	
 </section>
 
-<script type="text/javascript" src="http://hackasaurus.org/include/script/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="/include/script/jquery.cycle.all.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $('.slides ul').cycle({
