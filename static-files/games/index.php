@@ -1,6 +1,6 @@
-<?php include_once("../include/module/head.php")?>
+<?php include_once("../include/module/head.php") ?>
 
-<?php include_once("../include/module/header.php")?>
+<?php include_once("../include/module/header.php") ?>
 	
 	<section class="inner-page games" role="main">
 
@@ -19,10 +19,10 @@
 	</div>
 	
 	<div class="content-secondary">
-		<?php include_once("../include/module/backpack.php")?>
-		<?php include_once("../include/module/events.php")?>
+		<?php include_once("../include/module/backpack.php") ?>
+		<?php include_once("../include/module/events.php") ?>
 	</div>
 		
 	</section>
 
-<?php include_once("../include/module/footer.php")?>
+<?php include_once("../include/module/footer.php") ?>
