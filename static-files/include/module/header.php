@@ -2,7 +2,7 @@
 	
 	<div class="header">
 		<a href="http://hackasaurus.org"><h1>&lt;Hackasaurus&gt;</h1></a>
-		<p>Mess around with the web</p>
+		<p>Web-making for the rest of us</p>
 		<a href="http://www.mozilla.org/"><img class="logo-mozilla" src="http://hackasaurus.org/include/image/logo-mozilla.png" alt="Mozilla"/></a>
 		
 		<nav>
