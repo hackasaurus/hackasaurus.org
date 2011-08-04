@@ -25,10 +25,10 @@
 			</ul>
 		</nav>
 		
-		<?php /*<div class="colour">
+		<!-- <div class="colour">
 			<ul>
 				<li class="red">Red</li>
-				<!--<li class="orange">Orange</li>-->
+				<li class="orange">Orange</li>
 				<li class="yellow">Yellow</li>
 				<li class="green">Green</li>
 				<li class="blue">Blue</li>
@@ -36,6 +36,6 @@
 				<li class="pink">Pink</li>
 				<li class="grey">Grey</li>
 			</ul>
-		</div> */ ?>
+		</div> -->
 		
 		
