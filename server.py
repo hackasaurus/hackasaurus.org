@@ -17,8 +17,8 @@ php_include = re.compile(r'<\?php\s+include_once\s*\(["\'](.*)["\']\s*\)\s*\?>')
 
 mimetypes.add_type('application/x-font-woff', '.woff')
 
-def load_php(root_dir, filename):
-    print "load_php %s" % filename
+def load_php(root_dir, filename, indent=0):
+    print "%sload_php %s" % ("  " * indent, filename[len(root_dir):])
     contents = open(filename, 'r').read()
     cwd = os.path.dirname(filename)
 
@@ -26,7 +26,7 @@ def load_php(root_dir, filename):
         phpfile = match.group(1)
         if phpfile[0] == '/':
             return load_php(root_dir, root_dir + phpfile)
-        return load_php(root_dir, os.path.join(cwd, phpfile))
+        return load_php(root_dir, os.path.join(cwd, phpfile), indent+1)
 
     return php_include.sub(include, contents)
 
