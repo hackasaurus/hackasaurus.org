@@ -1,2 +1,2 @@
-redirect 302 /news /blog/
-redirect 302 /news/ /blog/
+redirect 302 /news /blog
+redirect 302 /news/ /blog
