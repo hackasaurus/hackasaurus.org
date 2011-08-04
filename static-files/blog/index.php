@@ -1,26 +1,20 @@
-<?php include_once("../include/module/head.php")?>
+<?php include_once("../include/module/head.php") ?>
 
-<script src="../include/script/jquery.min.js"></script>
-<script src="../include/script/apply-page-template.js"></script>
 <script src="../include/script/date.format.js"></script>
-
 
 <script>
 var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
                                 "_id=acd9b281e46ad78b6c34873ba277626c&" +
                                 "_render=json");
 var entries = null;
-var entriesInjected = jQuery.Deferred();
 
-pageLoaders.push(entriesInjected);
-
-jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
+jQuery.when(feedLoaded).then(function(data) {
   var entryTemplate = $("#templates .entry");
 
   entries = $('<div class="entries"></div>');
   $("#blog").empty().append(entries);
 
-  data[0].value.items.forEach(function(item) {
+  data.value.items.forEach(function(item) {
     var entry = entryTemplate.clone();
     entry.find(".title a").text(item['y:title']);
 
@@ -58,48 +52,29 @@ jQuery.when(feedLoaded, pageTemplateLoaded).then(function(data) {
 
     entries.append(entry);
   });
-
-  entriesInjected.resolve();
 });
 </script>
 
+<?php include_once("../include/module/header.php") ?>
 
-	<div class="header">
-		<a href="/"><h1>&lt;Hackasaurus&gt;</h1></a>
-		<p>Mess around with the web</p>
-		<a href="http://www.mozilla.org/"><img class="logo-mozilla" src="../include/image/logo-mozilla.png" alt="Mozilla"/></a>
-		
-		<nav>
-			<ul>
-				<li><a href="/tools">Tools</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/events">Events</a></li>
-			</ul>
-		</nav>
-	</div>
-	
-	<div class="container">
-	<section role="main" class="page-blog">
+<section role="main" class="page-blog">
 
-	<div id="blog">
-		<div class="loader">
-			<img src="../include/image/loader.gif" alt="loader"/>
-			<p>Loading blog posts&hellip;</p>
-		</div>
+<div id="blog">
+	<div class="loader">
+		<img src="/include/image/loader.gif" alt="loader"/>
+		<p>Loading blog posts&hellip;</p>
 	</div>
-	</div>
-	
-	</section>
-	
-	<div id="templates">
-	  <div class="entry bucket">
-	    <h2 class="title"><a></a></h2>
-	    <div class="date"></div>
-	    <div class="author"></div>
-	    <div class="content"></div>
-	  </div>
-	</div>
-	
-	
+</div>
+
+</section>
+
+<div id="templates" style="display: none;">
+  <div class="entry bucket">
+    <h2 class="title"><a></a></h2>
+    <div class="date"></div>
+    <div class="author"></div>
+    <div class="content"></div>
+  </div>
+</div>
 	
 <?php include_once("../include/module/footer.php")?>
