@@ -2,6 +2,7 @@ import sys
 import os
 import re
 import mimetypes
+import httplib
 from wsgiref.simple_server import make_server
 from wsgiref.util import shift_path_info, FileWrapper
 
@@ -16,6 +17,19 @@ static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
 php_include = re.compile(r'<\?php\s+include_once\s*\(["\'](.*)["\']\s*\)\s*\?>')
 
 mimetypes.add_type('application/x-font-woff', '.woff')
+
+def apply_htaccess(env, start):
+    for line in open(os.path.join(static_files_dir, ".htaccess"), "r"):
+        parts = line.split()
+        if parts[0] == "redirect":
+            code, redirect_from, redirect_to = parts[1:]
+            if env['PATH_INFO'] == redirect_from:
+                w3c_name = httplib.responses[int(code)]
+                start('%s %s' % (code, w3c_name), [('Location', redirect_to)])
+                return []
+        else:
+            print "unknown htaccess rule: %s" % rule
+    return None
 
 def load_php(root_dir, filename, indent=0):
     print "%sload_php %s" % ("  " * indent, filename[len(root_dir):])
@@ -58,6 +72,9 @@ def application(env, start):
         shift_path_info(env)
         return hackasaurus_dot_org.application(env, start)
     else:
+        result = apply_htaccess(env, start)
+        if result is not None:
+            return result
         filename = env['PATH_INFO']
         if filename.endswith('/'):
             for index in ['index.html', 'index.php']:
