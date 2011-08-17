@@ -34,9 +34,11 @@ def error_404(env, start):
 
 @expose('/update-site')
 def update_site(env, start):
-    retval = subprocess.call(['git', 'pull'], cwd=path('..'))
+    retvals = []
+    for cmds in [['pull'], ['submodule', 'init'], ['submodule', 'update']]:
+        retvals.append(subprocess.call(['git'] + cmds, cwd=path('..')))        
     status = '200 OK'
-    output = str(retval)
+    output = str(retvals)
     response_headers = [('Content-type', 'text/plain'),
                         ('Content-Length', str(len(output)))]
     start(status, response_headers)
