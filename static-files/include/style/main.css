@@ -21,18 +21,18 @@ div {
 
 @font-face {
     font-family: 'MEgalopolisExtra';
-    src: url('/include/font/MEgalopolisExtra.otf');
+    src: url('http://hackasaurus.org/include/font/MEgalopolisExtra.otf');
     font-weight: normal;
     font-style: normal;
 	}
 
 @font-face {
 font-family: 'JournalRegular';
-src: url('/include/font/journal-webfont.eot');
-src: url('/include/font/journal-webfont.eot?#iefix') format('embedded-opentype'),
-     url('/include/font/journal-webfont.woff') format('woff'),
-     url('/include/font/journal-webfont.ttf') format('truetype'),
-     url('/include/font/journal-webfont.svg#JournalRegular') format('svg');
+src: url('http://hackasaurus.org/include/font/journal-webfont.eot');
+src: url('http://hackasaurus.org/include/font/journal-webfont.eot?#iefix') format('embedded-opentype'),
+     url('http://hackasaurus.org/include/font/journal-webfont.woff') format('woff'),
+     url('http://hackasaurus.org/include/font/journal-webfont.ttf') format('truetype'),
+     url('http://hackasaurus.org/include/font/journal-webfont.svg#JournalRegular') format('svg');
 font-weight: normal;
 font-style: normal;
 	}
@@ -933,6 +933,53 @@ section.tool-goggles .bookmarklet-demo {
 .slideshow #prev:hover {
 	cursor: pointer;
 	}
+
+/* BROWSER */
+
+.browser-warning {
+	display: none;
+	background-color: #F2BFBF;
+	border: 1px solid #E59999;
+	padding: 1em;
+	margin-bottom: 2em;
+	overflow: hidden;
+	position: relative;
+	color: #000;
+	font-size: 1.1em;
+}
+
+.browserIE .browser-warning
+/*.browserIE6 .browser-warning,
+.browserIE7 .browser-warning,
+.browserIE8 .browser-warning*/ {
+	display: block;
+}
+
+.browser-warning h2,
+.browser-warning p {
+	float: left;
+	margin-left: 22%;
+}
+
+section[role="main"] .browser-warning h1,
+section[role="main"] .browser-warning h2,
+section[role="main"] .browser-warning h3,
+section[role="main"] .browser-warning h4,
+section[role="main"] .browser-warning h5,
+section[role="main"] .browser-warning h6 {
+	font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+	text-shadow: none;
+	color: #000;
+	line-height: 1.2em;
+	margin-bottom: 0.7em;
+}
+
+.browser-warning .firefox-plug {
+	position: absolute;
+	width: 18%;
+	left: 1em;
+	top: 1em;
+}
 
 /* PAGE OVERRIDES ------------------------------------ */
 	/* HOME PAGE OVERRIDES ------------------------------------ */
