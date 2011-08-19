@@ -130,7 +130,9 @@ if __name__ == '__main__':
         print "exporting static site"
         export_site()
     elif cmd == 'serve':
+        url = "http://127.0.0.1:%s/" % port
         print "serving on port %d" % port
+        print "to access your development server, visit %s" % url
         httpd = make_server('', port, application)
         httpd.serve_forever()
     else:

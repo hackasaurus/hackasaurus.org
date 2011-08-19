@@ -14,8 +14,12 @@ Note that PHP should *only* be used for server-side includes via the
 
 If you have PHP and Apache, point the document root of your Apache configuration to the `static-files` directory.
 
-If you have Python, just run `python server.py` and point your browser to
-http://localhost:8000/.
+If you have Python, just run this at the terminal prompt:
+
+    cd hackasaurus.org
+    python server.py
+
+Then, point your browser to http://localhost:8000/.
 
 ## Security
 
