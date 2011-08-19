@@ -1,3 +1,12 @@
+"""
+    Affordances for simulating a very limited subset of LAMP
+    (Linux/Apache/MySQL/PHP) stack functionality in Python.
+
+    This is intended only to simplify development of solutions that rely on
+    LAMP technologies; the code should never be deployed in production
+    environments.
+"""
+
 import os
 import re
 import httplib
