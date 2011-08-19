@@ -2,6 +2,7 @@ import sys
 import os
 import re
 import mimetypes
+import traceback
 import httplib
 from wsgiref.simple_server import make_server
 from wsgiref.util import shift_path_info, FileWrapper
@@ -81,24 +82,40 @@ def try_loading(filename, env, start):
             return []
     return None
 
+def handle_500(env, start):
+    exc_type, exc_value, exc_tb = sys.exc_info()
+    filepath = os.path.join(my_dir, 'templates', '500.html')
+    template = jinja2.Template(open(filepath, 'r').read())
+    contents = template.render(
+        exception=traceback.format_exception_only(exc_type, exc_value)[0],
+        traceback=traceback.format_exc()
+        ).encode('utf-8')
+    start('500 Internal Server Error',
+          [('Content-Type', 'text/html'),
+           ('Content-Length', str(len(contents)))])
+    return [contents]
+
 def application(env, start):
-    if env['PATH_INFO'].startswith('/wsgi/'):
-        shift_path_info(env)
-        return hackasaurus_dot_org.application(env, start)
-    else:
-        result = apply_htaccess(env, start)
-        if result is not None:
-            return result
-        filename = env['PATH_INFO']
-        if filename.endswith('/'):
-            for index in ['index.html', 'index.php']:
-                result = try_loading(filename + index, env, start)
-                if result is not None:
-                    return result
-        result = try_loading(filename, env, start)
-        if result is not None:
-            return result
-        return hackasaurus_dot_org.error_404(env, start)
+    try:
+        if env['PATH_INFO'].startswith('/wsgi/'):
+            shift_path_info(env)
+            return hackasaurus_dot_org.application(env, start)
+        else:
+            result = apply_htaccess(env, start)
+            if result is not None:
+                return result
+            filename = env['PATH_INFO']
+            if filename.endswith('/'):
+                for index in ['index.html', 'index.php']:
+                    result = try_loading(filename + index, env, start)
+                    if result is not None:
+                        return result
+            result = try_loading(filename, env, start)
+            if result is not None:
+                return result
+            return hackasaurus_dot_org.error_404(env, start)
+    except Exception, e:
+        return handle_500(env, start)
 
 def export_site():
     import shutil

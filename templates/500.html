@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>{{ exception|e }}</title>
+<style>
+html, body {
+  font-family: Futura, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 10px;
+}
+
+div.details {
+  padding: 10px;
+}
+
+pre {
+  font-family: Monaco, "Lucida Console", monospace;
+  font-size: 9pt;
+  color: gray;
+}
+</style>
+<h1>{{ exception|e }}</h1>
+<div class="details">
+  <p>Alas, an error has occurred. The full traceback is below.</p>
+  <pre>{{ traceback|e }}</pre>
+</div>
