@@ -8,9 +8,11 @@ from wsgiref.util import shift_path_info, FileWrapper
 
 my_dir = os.path.dirname(__file__)
 
-sys.path.append(os.path.join(my_dir, 'wsgi-scripts'))
+for custom_dir in ['wsgi-scripts', 'vendor']:
+    sys.path.append(os.path.join(my_dir, custom_dir))
 
 import hackasaurus_dot_org
+import jinja2
 
 port = 8000
 static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
@@ -44,6 +46,12 @@ def load_php(root_dir, filename, indent=0):
 
     return php_include.sub(include, contents)
 
+def load_jinja2_template(root_dir, filename):
+    loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
+    env = jinja2.Environment(loader=loader)
+    template = env.get_template(filename)
+    return template.render().encode('utf-8')
+
 def try_loading(filename, env, start):
     fileparts = filename[1:].split('/')
     fullpath = os.path.join(static_files_dir, *fileparts)
@@ -52,7 +60,13 @@ def try_loading(filename, env, start):
     if (fullpath.startswith(static_files_dir) and
         not '.git' in fullpath):
         if os.path.isfile(fullpath):
-            if mimetype:
+            if mimetype == 'text/html':
+                relpath = fullpath[len(static_files_dir):]
+                contents = load_jinja2_template(static_files_dir, relpath)
+                start('200 OK', [('Content-Type', 'text/html'),
+                                 ('Content-Length', str(len(contents)))])                
+                return [contents]
+            elif mimetype:
                 filesize = os.stat(fullpath).st_size
                 start('200 OK', [('Content-Type', mimetype),
                                  ('Content-Length', str(filesize))])
@@ -86,7 +100,38 @@ def application(env, start):
             return result
         return hackasaurus_dot_org.error_404(env, start)
 
+def export_site():
+    import shutil
+    
+    def ignore(dirname, filenames):
+        return [filename for filename in filenames
+                if filename in ['.git', 'hackbook']
+                or filename.endswith('.php')]
+        
+    build_dir = os.path.abspath(os.path.join(my_dir, 'build'))
+    if os.path.exists(build_dir):
+        shutil.rmtree(build_dir)
+    shutil.copytree(static_files_dir, build_dir, ignore=ignore)
+    for dirpath, dirnames, filenames in os.walk(build_dir):
+        html_files = [os.path.join(dirpath, filename)[len(build_dir)+1:]
+                      for filename in filenames
+                      if filename.endswith('.html')]
+        for filepath in html_files:
+            print "processing template: %s" % filepath
+            contents = load_jinja2_template(static_files_dir, filepath)
+            open(os.path.join(build_dir, filepath), 'w').write(contents)
+    print "done.\n\nyour new static site is located at:\n%s" % build_dir
+
 if __name__ == '__main__':
-    print "serving on port %d" % port
-    httpd = make_server('', port, application)
-    httpd.serve_forever()
+    cmd = 'serve'
+    if len(sys.argv) == 2:
+        cmd = sys.argv[1]
+    if cmd == 'export':
+        print "exporting static site"
+        export_site()
+    elif cmd == 'serve':
+        print "serving on port %d" % port
+        httpd = make_server('', port, application)
+        httpd.serve_forever()
+    else:
+        print 'unknown command: %s' % cmd
