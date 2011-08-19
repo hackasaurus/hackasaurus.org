@@ -1,9 +1,7 @@
 import sys
 import os
-import re
 import mimetypes
 import traceback
-import httplib
 from wsgiref.simple_server import make_server
 from wsgiref.util import shift_path_info, FileWrapper
 
@@ -14,38 +12,12 @@ for custom_dir in ['wsgi-scripts', 'vendor']:
 
 import hackasaurus_dot_org
 import jinja2
+from lamp_emulation import apply_htaccess, load_php
 
 port = 8000
 static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
-php_include = re.compile(r'<\?php\s+include_once\s*\(["\'](.*)["\']\s*\)\s*\?>')
-
+htaccess_path = os.path.join(static_files_dir, ".htaccess")
 mimetypes.add_type('application/x-font-woff', '.woff')
-
-def apply_htaccess(env, start):
-    for line in open(os.path.join(static_files_dir, ".htaccess"), "r"):
-        parts = line.split()
-        if parts[0] == "redirect":
-            code, redirect_from, redirect_to = parts[1:]
-            if env['PATH_INFO'] == redirect_from:
-                w3c_name = httplib.responses[int(code)]
-                start('%s %s' % (code, w3c_name), [('Location', redirect_to)])
-                return []
-        else:
-            print "unknown htaccess rule: %s" % rule
-    return None
-
-def load_php(root_dir, filename, indent=0):
-    print "%sload_php %s" % ("  " * indent, filename[len(root_dir):])
-    contents = open(filename, 'r').read()
-    cwd = os.path.dirname(filename)
-
-    def include(match):
-        phpfile = match.group(1)
-        if phpfile[0] == '/':
-            return load_php(root_dir, root_dir + phpfile)
-        return load_php(root_dir, os.path.join(cwd, phpfile), indent+1)
-
-    return php_include.sub(include, contents)
 
 def load_jinja2_template(root_dir, filename):
     loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
@@ -101,7 +73,7 @@ def application(env, start):
             shift_path_info(env)
             return hackasaurus_dot_org.application(env, start)
         else:
-            result = apply_htaccess(env, start)
+            result = apply_htaccess(env, start, open(htaccess_path, "r"))
             if result is not None:
                 return result
             filename = env['PATH_INFO']
