@@ -1,12 +1,10 @@
-<?php include_once("../include/module/head.php")?>
+{% extends "base.html" %}
 
-<?php include_once("../include/module/header.php")?>
+	{% block section_class %}inner-page tools{% endblock %}
 	
-	<section class="inner-page tool" role="main">
+	{% block content_primary %}
 
 	<h1>Tools</h1>
-	
-	<div class="content-primary">
 
 		<div class="backpack">
 			
@@ -39,12 +37,9 @@
 			</ul>
 			
 		</div>
-	</div>
 	
-	<div class="content-secondary">
-		<?php include_once("../include/module/events.php")?>
-	</div>
-		
-	</section>
-
-<?php include_once("../include/module/footer.php")?>
+	{% endblock %}
+	
+	{% block content_secondary %}
+		{% include 'include/module/events.html' %}
+	{% endblock %}

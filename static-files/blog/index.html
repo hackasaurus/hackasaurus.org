@@ -1,4 +1,8 @@
-<?php include_once("../include/module/head.php") ?>
+{% extends "base.html" %}
+
+	{% block section_class %}page-blog{% endblock %}
+	
+	{% block content_primary %}
 
 <script src="../include/script/date.format.js"></script>
 
@@ -55,18 +59,12 @@ jQuery.when(feedLoaded).then(function(data) {
 });
 </script>
 
-<?php include_once("../include/module/header.php") ?>
-
-<section role="main" class="page-blog">
-
 <div id="blog">
 	<div class="loader">
 		<img src="/include/image/loader.gif" alt="loader"/>
 		<p>Loading blog posts&hellip;</p>
 	</div>
 </div>
-
-</section>
 
 <div id="templates" style="display: none;">
   <div class="entry bucket">
@@ -76,5 +74,5 @@ jQuery.when(feedLoaded).then(function(data) {
     <div class="content"></div>
   </div>
 </div>
-	
-<?php include_once("../include/module/footer.php")?>
+
+{% endblock %}

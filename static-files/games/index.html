@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+	{% block section_class %}inner-page games{% endblock %}
+	
+	{% block content_primary %}
+
+	<h1>Games</h1>
+
+	<img src="/include/image/photo-hackers-03.jpg" alt="photo-hackers-03" /> 
+    <h2>Coming Soon</h2>
+		
+		 <p>Hackasaurus games make it fun and easy to learn about the basic
+    building blocks of the web. They're still in development. But in the mean
+    time, <a href="http://toolness.github.com/hackasaurus-parable/">here's a
+    sneak peek at our first Hackasaurus mission</a>.</p>
+
+{% endblock %}
+
+{% block content_secondary %}
+	
+	{% include 'include/module/backpack.html' %}
+	{% include 'include/module/events.html' %}
+	
+{% endblock %}

@@ -1,10 +1,8 @@
-<?php include_once("../include/module/head.php")?>
+{% extends "base.html" %}
 
-<?php include_once("../include/module/header.php")?>
+	{% block section_class %}inner-page games{% endblock %}
 	
-<section class="inner-page tool-goggles" role="main">
-
-	<div class="content-primary">
+	{% block content_primary %}
 	
 		<div class="browser-warning">
 			<h2>Houston, we have a problem.</h2>
@@ -65,9 +63,9 @@
 	<!-- End Examples Slideshow -->
 
 	
-	</div>
+	{% endblock %}
 	
-	<div class="content-secondary goggle-controls">
+	{% block content_secondary %}
 	
 		<img src="http://hackasaurus.org/include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 		
@@ -88,10 +86,8 @@
 		<h3>Off</h3>				
 		<kbd>Esc</kbd>	
 		<p>Hit "Esc" to deactivate.</p>
-		
-	</div>
 	
-</section>
+	{% endblock %}
 
 <script type="text/javascript" src="http://hackasaurus.org/include/script/jquery.cycle.all.min.js"></script>
 <script type="text/javascript">
@@ -106,5 +102,3 @@ $(document).ready(function() {
 	});
 });
 </script>
-
-<?php include_once("../include/module/footer.php")?>
