@@ -1,8 +1,8 @@
-<?php include_once("include/module/head.php")?>
+{% extends "base.html" %}
 
-<?php include_once("include/module/header.php")?>
-
-<section role="main" class="home">
+	{% block section_class %}home{% endblock %}
+	
+	{% block content_primary %}
 
 	<!-- Examples Slideshow -->
 	<div class="examples">
@@ -40,25 +40,24 @@
 		<img src="include/image/supergirl.png" alt="supergirl" width="300" height="330" />
 	</div>
 	<!-- End Goggles Teaser -->
-
+	{% endblock %}
+	
+	{% block content_secondary %}
 	<!-- Events Listing -->
-	<?php include_once("include/module/events.php")?>
+		{% include 'include/module/events.html' %}
 	<!-- End Events Listing -->
-
-</section>
-
-<!-- Javascript for slideshow -->
-<script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('.slides ul').cycle({
-		fx: 'fade',
-		pause: 0,
-		prev: '#prev',
-		speed: 600,
-		next: '#next'
+	
+	<!-- Javascript for slideshow -->
+	<script type="text/javascript" src="include/script/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('.slides ul').cycle({
+			fx: 'fade',
+			pause: 0,
+			prev: '#prev',
+			speed: 600,
+			next: '#next'
+		});
 	});
-});
-</script>
-
-<?php include_once("include/module/footer.php")?>
+	</script>
+	{% endblock %}

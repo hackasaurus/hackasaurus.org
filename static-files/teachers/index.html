@@ -1,10 +1,8 @@
-<?php include_once("../include/module/head.php")?>
+{% extends "base.html" %}
 
-<?php include_once("../include/module/header.php")?>
+	{% block section_class %}inner-page teachers{% endblock %}
 	
-	<section class="inner-page games" role="main">
-	
-	<div class="content-primary">
+	{% block content_primary %}
 
 	<h1>Hackasaurus for Teachers</h1>
 	
@@ -89,22 +87,18 @@
 	
 	</div>
 	
-	</div>
+	{% endblock %}
 	
-	<div class="content-secondary">
-<h2>Hackasaurus I.T. checklist</h2>
-<ol>
-	<li>Make sure that the space has a stable internet connection.</li>
-	<li>Have laptops or PCs available for students or teams of students.</li>
-	<li>Install the most up-to-date browsers on the computers.  Right now the Hackasaurus tools work reliably on the latest versions of  Firefox, Chrome, and Safari, but support for more browsers is on the  way.</li>
-	<li>Provide a projector that connects to a computer so that students can work publicly.</li>
-	<li>Test all tools to be used in the jams before-hand.</li>	
-</ol>
-
-<?php include_once("../include/module/backpack.php")?>
-
-	</div>
+	{% block content_secondary %}
+		<h2>Hackasaurus I.T. checklist</h2>
+		<ol>
+			<li>Make sure that the space has a stable internet connection.</li>
+			<li>Have laptops or PCs available for students or teams of students.</li>
+			<li>Install the most up-to-date browsers on the computers.  Right now the Hackasaurus tools work reliably on the latest versions of  Firefox, Chrome, and Safari, but support for more browsers is on the  way.</li>
+			<li>Provide a projector that connects to a computer so that students can work publicly.</li>
+			<li>Test all tools to be used in the jams before-hand.</li>	
+		</ol>
 		
-	</section>
+		{% include 'include/module/backpack.html' %}
 
-<?php include_once("../include/module/footer.php")?>
+	{% endblock %}

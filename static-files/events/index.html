@@ -1,10 +1,8 @@
-<?php include_once("../include/module/head.php")?>
+{% extends "base.html" %}
 
-<?php include_once("../include/module/header.php")?>
+	{% block section_class %}inner-page page-events{% endblock %}
 	
-	<section class="inner-page page-events" role="main">
-	
-	<div class="content-primary">
+	{% block content_primary %}
 	
 		<h1>Upcoming Events</h1>
 			
@@ -40,15 +38,11 @@
 			<li><a href="http://vimeo.com/21185874">Video from Chicago Hack Jam</a></li>
 		</ul>
 
-	</div>
+	{% endblock %}
 	
-	
-	<div class="content-secondary">
+	{% block content_secondary %}
 		
 	<img class="photo" src="/include/image/photo-hackers-04.jpg" alt="photo-hackers-04" />
-		<?php include_once("../include/module/backpack.php")?>
-	</div>
+	{% include 'include/module/backpack.html' %}
 		
-	</section>
-
-<?php include_once("../include/module/footer.php")?>
+	{% endblock %}

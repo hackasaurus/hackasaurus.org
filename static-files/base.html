@@ -1,4 +1,62 @@
-</div>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	
+	<!-- Meta Data -->
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Hackasaurus</title>
+	
+	<!-- Links -->
+	<link href="http://hackasaurus.org/include/style/main.css?201108171359" rel="stylesheet" type="text/css">
+	<link rel="alternate" type="application/rss+xml" title="Hackasaurus Blog" href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss">
+	<script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+	<script src="http://hackasaurus.org/include/script/browser-detect.js"></script>
+	
+	<!-- Browser compatibility -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	
+	<div class="header">
+		<a href="/"><h1>&lt;Hackasaurus&gt;</h1></a>
+		<p>Web-making for the rest of us</p>
+		<a href="http://www.mozilla.org/"><img class="logo-mozilla" src="/include/image/logo-mozilla.png" alt="Mozilla"/></a>
+		
+		<nav>
+			<ul>
+				<li><a href="/tools">Tools</a></li>
+				<li><a href="/games">Games</a></li>
+				<li><a href="/events">Events</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<div class="container">
+	
+		<section class="{% block section_class %}{% endblock %}" role="main">
+	
+			<div class="content-primary">
+		
+				{% block content_primary %}{% endblock %}
+				
+			</div>
+			
+			<div class="content-secondary">
+			
+				{% block content_secondary %}{% endblock %}
+			
+			</div>
+			
+		</section>
+		
+	</div>
+	
 	<footer>	
 		<div class="credits">
 			<div class="links">
@@ -32,22 +90,23 @@
 		</div>
 	</footer>
 
-<!-- This is Google Analytics code. -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-22252396-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    if (document.location.hostname != "hackasaurus.org")
-      return;
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
+	<!-- This is Google Analytics code. -->
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22252396-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    if (document.location.hostname != "hackasaurus.org")
+	      return;
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
 
 </body>
+	
 </html>
