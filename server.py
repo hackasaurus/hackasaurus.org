@@ -21,12 +21,19 @@ port = 8000
 static_files_dir = path('static-files')
 mimetypes.add_type('application/x-font-woff', '.woff')
 
+def simple_response(start, contents, code='200 OK', mimetype='text/plain'):
+    start(code, [('Content-Type', mimetype),
+                 ('Content-Length', str(len(contents)))])
+    return [contents]
+
 def handle_request(env, start, handlers):
     try:
         for handler in handlers:
             response = handler(env, start)
             if response is not None:
                 return response
+        return simple_response(start, "Not Found: %s" % env['PATH_INFO'],
+                               code='404 Not Found')
     except Exception, e:
         return handle_500(env, start)
 
@@ -54,9 +61,7 @@ class BasicFileServer(object):
                 handler = self.ext_handlers.get(ext)
                 if handler:
                     mimetype, contents = handler(static_files_dir, fullpath)
-                    start('200 OK', [('Content-Type', mimetype),
-                                     ('Content-Length', str(len(contents)))])
-                    return [contents]
+                    return simple_response(start, contents, mimetype=mimetype)
                 (mimetype, encoding) = mimetypes.guess_type(fullpath)
                 if mimetype:
                     filesize = os.stat(fullpath).st_size
@@ -85,10 +90,8 @@ def handle_500(env, start):
         exception=traceback.format_exception_only(exc_type, exc_value)[0],
         traceback=traceback.format_exc()
         ).encode('utf-8')
-    start('500 Internal Server Error',
-          [('Content-Type', 'text/html'),
-           ('Content-Length', str(len(contents)))])
-    return [contents]
+    return simple_response(start, contents, code='500 Internal Server Error',
+                           mimetype='text/html')
 
 def handle_html_file_as_jinja2_template(root_dir, fullpath):
     relpath = fullpath[len(root_dir):]
@@ -112,17 +115,13 @@ def application(env, start):
         htaccess_path = os.path.join(static_files_dir, ".htaccess")
         return apply_htaccess(env, start, open(htaccess_path, "r"))
 
-    def not_found_handler(env, start):
-        return hackasaurus_dot_org.error_404(env, start)
-
     file_server = BasicFileServer(static_files_dir)
     file_server.default_filenames.append('index.php')
     file_server.ext_handlers.update(EXT_HANDLERS)
     return handle_request(env, start, handlers=[
         wsgi_api_handler,
         htaccess_handler,
-        file_server.handle_request,
-        not_found_handler
+        file_server.handle_request
     ])
 
 def export_site(build_dir, static_files_dir, ext_handlers, ignore=None):
