@@ -126,15 +126,14 @@ def application(env, start):
         not_found_handler
     ])
 
-def export_site():
+def export_site(build_dir):
     import shutil
     
     def ignore(dirname, filenames):
         return [filename for filename in filenames
                 if filename in ['.git', 'hackbook']
                 or filename.endswith('.php')]
-        
-    build_dir = path('build')
+
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
     shutil.copytree(static_files_dir, build_dir, ignore=ignore)
@@ -154,7 +153,7 @@ if __name__ == '__main__':
         cmd = sys.argv[1]
     if cmd == 'export':
         print "exporting static site"
-        export_site()
+        export_site(path('build'))
     elif cmd == 'serve':
         url = "http://127.0.0.1:%s/" % port
         print "serving on port %d" % port
