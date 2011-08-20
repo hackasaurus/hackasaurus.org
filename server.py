@@ -16,8 +16,16 @@ from lamp_emulation import apply_htaccess, load_php
 
 port = 8000
 static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
-htaccess_path = os.path.join(static_files_dir, ".htaccess")
 mimetypes.add_type('application/x-font-woff', '.woff')
+
+def handle_request(env, start, handlers):
+    try:
+        for handler in handlers:
+            response = handler(env, start)
+            if response is not None:
+                return response
+    except Exception, e:
+        return handle_500(env, start)
 
 def load_jinja2_template(root_dir, filename):
     loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
@@ -67,27 +75,34 @@ def handle_500(env, start):
            ('Content-Length', str(len(contents)))])
     return [contents]
 
+def wsgi_api_handler(env, start):
+    if env['PATH_INFO'].startswith('/wsgi/'):
+        shift_path_info(env)
+        return hackasaurus_dot_org.application(env, start)
+
+def htaccess_handler(env, start):
+    htaccess_path = os.path.join(static_files_dir, ".htaccess")
+    return apply_htaccess(env, start, open(htaccess_path, "r"))
+
+def file_serving_handler(env, start):
+    filename = env['PATH_INFO']
+    if filename.endswith('/'):
+        for index in ['index.html', 'index.php']:
+            result = try_loading(filename + index, env, start)
+            if result is not None:
+                return result
+    return try_loading(filename, env, start)
+
+def not_found_handler(env, start):
+    return hackasaurus_dot_org.error_404(env, start)
+
 def application(env, start):
-    try:
-        if env['PATH_INFO'].startswith('/wsgi/'):
-            shift_path_info(env)
-            return hackasaurus_dot_org.application(env, start)
-        else:
-            result = apply_htaccess(env, start, open(htaccess_path, "r"))
-            if result is not None:
-                return result
-            filename = env['PATH_INFO']
-            if filename.endswith('/'):
-                for index in ['index.html', 'index.php']:
-                    result = try_loading(filename + index, env, start)
-                    if result is not None:
-                        return result
-            result = try_loading(filename, env, start)
-            if result is not None:
-                return result
-            return hackasaurus_dot_org.error_404(env, start)
-    except Exception, e:
-        return handle_500(env, start)
+    return handle_request(env, start, handlers=[
+        wsgi_api_handler,
+        htaccess_handler,
+        file_serving_handler,
+        not_found_handler
+    ])
 
 def export_site():
     import shutil
