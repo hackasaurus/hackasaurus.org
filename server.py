@@ -36,11 +36,6 @@ def load_jinja2_template(root_dir, filename):
     template = env.get_template(filename)
     return template.render().encode('utf-8')
 
-def serve_html(start, contents):
-    start('200 OK', [('Content-Type', 'text/html'),
-                     ('Content-Length', str(len(contents)))])                
-    return [contents]
-
 class BasicFileServer(object):
     def __init__(self, static_files_dir):
         self.ext_handlers = {}
@@ -58,8 +53,10 @@ class BasicFileServer(object):
                 ext = os.path.splitext(fullpath)[1]
                 handler = self.ext_handlers.get(ext)
                 if handler:
-                    return handler(env, start, self.static_files_dir,
-                                   fullpath)                
+                    mimetype, contents = handler(static_files_dir, fullpath)
+                    start('200 OK', [('Content-Type', mimetype),
+                                     ('Content-Length', str(len(contents)))])
+                    return [contents]
                 (mimetype, encoding) = mimetypes.guess_type(fullpath)
                 if mimetype:
                     filesize = os.stat(fullpath).st_size
@@ -94,12 +91,12 @@ def handle_500(env, start):
     return [contents]
 
 def application(env, start):
-    def serve_html_file_as_jinja2_template(env, start, root_dir, fullpath):
+    def serve_html_file_as_jinja2_template(root_dir, fullpath):
         relpath = fullpath[len(root_dir):]
-        return serve_html(start, load_jinja2_template(root_dir, relpath))
+        return ('text/html', load_jinja2_template(root_dir, relpath))
 
-    def serve_php_file(env, start, root_dir, fullpath):
-        return serve_html(start, load_php(root_dir, fullpath))
+    def serve_php_file(root_dir, fullpath):
+        return ('text/html', load_php(root_dir, fullpath))
 
     def wsgi_api_handler(env, start):
         if env['PATH_INFO'].startswith('/wsgi/'):
