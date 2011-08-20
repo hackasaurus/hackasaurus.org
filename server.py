@@ -33,34 +33,49 @@ def load_jinja2_template(root_dir, filename):
     template = env.get_template(filename)
     return template.render().encode('utf-8')
 
-def try_loading(filename, env, start):
-    fileparts = filename[1:].split('/')
-    fullpath = os.path.join(static_files_dir, *fileparts)
-    fullpath = os.path.normpath(fullpath)
-    (mimetype, encoding) = mimetypes.guess_type(fullpath)
-    if (fullpath.startswith(static_files_dir) and
-        not '.git' in fullpath):
-        if os.path.isfile(fullpath):
-            if mimetype == 'text/html':
-                relpath = fullpath[len(static_files_dir):]
-                contents = load_jinja2_template(static_files_dir, relpath)
-                start('200 OK', [('Content-Type', 'text/html'),
-                                 ('Content-Length', str(len(contents)))])                
-                return [contents]
-            elif mimetype:
-                filesize = os.stat(fullpath).st_size
-                start('200 OK', [('Content-Type', mimetype),
-                                 ('Content-Length', str(filesize))])
-                return FileWrapper(open(fullpath, 'rb'))
-            elif fullpath.endswith('.php'):
-                contents = load_php(static_files_dir, fullpath)
-                start('200 OK', [('Content-Type', 'text/html'),
-                                 ('Content-Length', str(len(contents)))])
-                return [contents]
-        elif os.path.isdir(fullpath) and not filename.endswith('/'):
-            start('302 Found', [('Location', filename + '/')])
-            return []
-    return None
+def serve_html(start, contents):
+    start('200 OK', [('Content-Type', 'text/html'),
+                     ('Content-Length', str(len(contents)))])                
+    return [contents]
+
+class BasicFileServer(object):
+    def __init__(self, static_files_dir):
+        self.ext_handlers = {}
+        self.default_filenames = ['index.html']
+        self.static_files_dir = static_files_dir
+
+    def try_loading(self, filename, env, start):
+        static_files_dir = self.static_files_dir
+        fileparts = filename[1:].split('/')
+        fullpath = os.path.join(static_files_dir, *fileparts)
+        fullpath = os.path.normpath(fullpath)
+        if (fullpath.startswith(static_files_dir) and
+            not fullpath.startswith('.')):
+            if os.path.isfile(fullpath):
+                ext = os.path.splitext(fullpath)[1]
+                handler = self.ext_handlers.get(ext)
+                if handler:
+                    return handler(env, start, self.static_files_dir,
+                                   fullpath)                
+                (mimetype, encoding) = mimetypes.guess_type(fullpath)
+                if mimetype:
+                    filesize = os.stat(fullpath).st_size
+                    start('200 OK', [('Content-Type', mimetype),
+                                     ('Content-Length', str(filesize))])
+                    return FileWrapper(open(fullpath, 'rb'))
+            elif os.path.isdir(fullpath) and not filename.endswith('/'):
+                start('302 Found', [('Location', filename + '/')])
+                return []
+        return None
+
+    def handle_request(self, env, start):
+        filename = env['PATH_INFO']
+        if filename.endswith('/'):
+            for index in self.default_filenames:
+                result = self.try_loading(filename + index, env, start)
+                if result is not None:
+                    return result
+        return self.try_loading(filename, env, start)
 
 def handle_500(env, start):
     exc_type, exc_value, exc_tb = sys.exc_info()
@@ -75,32 +90,36 @@ def handle_500(env, start):
            ('Content-Length', str(len(contents)))])
     return [contents]
 
-def wsgi_api_handler(env, start):
-    if env['PATH_INFO'].startswith('/wsgi/'):
-        shift_path_info(env)
-        return hackasaurus_dot_org.application(env, start)
-
-def htaccess_handler(env, start):
-    htaccess_path = os.path.join(static_files_dir, ".htaccess")
-    return apply_htaccess(env, start, open(htaccess_path, "r"))
-
-def file_serving_handler(env, start):
-    filename = env['PATH_INFO']
-    if filename.endswith('/'):
-        for index in ['index.html', 'index.php']:
-            result = try_loading(filename + index, env, start)
-            if result is not None:
-                return result
-    return try_loading(filename, env, start)
-
-def not_found_handler(env, start):
-    return hackasaurus_dot_org.error_404(env, start)
-
 def application(env, start):
+    def serve_html_file_as_jinja2_template(env, start, root_dir, fullpath):
+        relpath = fullpath[len(root_dir):]
+        return serve_html(start, load_jinja2_template(root_dir, relpath))
+
+    def serve_php_file(env, start, root_dir, fullpath):
+        return serve_html(start, load_php(root_dir, fullpath))
+
+    def wsgi_api_handler(env, start):
+        if env['PATH_INFO'].startswith('/wsgi/'):
+            shift_path_info(env)
+            return hackasaurus_dot_org.application(env, start)
+
+    def htaccess_handler(env, start):
+        htaccess_path = os.path.join(static_files_dir, ".htaccess")
+        return apply_htaccess(env, start, open(htaccess_path, "r"))
+
+    def not_found_handler(env, start):
+        return hackasaurus_dot_org.error_404(env, start)
+
+    file_server = BasicFileServer(static_files_dir)
+    file_server.default_filenames.append('index.php')
+    file_server.ext_handlers.update({
+        '.html': serve_html_file_as_jinja2_template,
+        '.php': serve_php_file
+    })
     return handle_request(env, start, handlers=[
         wsgi_api_handler,
         htaccess_handler,
-        file_serving_handler,
+        file_server.handle_request,
         not_found_handler
     ])
 
