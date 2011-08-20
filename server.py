@@ -153,8 +153,8 @@ if __name__ == '__main__':
         export_site(path('build'))
     elif cmd == 'serve':
         url = "http://127.0.0.1:%s/" % port
-        print "serving on port %d" % port
-        print "to access your development server, visit %s" % url
+        print "development server started at %s" % url
+        print "press CTRL-C to stop it"
         httpd = make_server('', port, application)
         httpd.serve_forever()
     else:
