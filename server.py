@@ -5,17 +5,20 @@ import traceback
 from wsgiref.simple_server import make_server
 from wsgiref.util import shift_path_info, FileWrapper
 
-my_dir = os.path.dirname(__file__)
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
-for custom_dir in ['wsgi-scripts', 'vendor']:
-    sys.path.append(os.path.join(my_dir, custom_dir))
+def path(*a):
+    return os.path.join(ROOT, *a)
+
+sys.path.insert(0, path('wsgi-scripts'))
+sys.path.insert(0, path('vendor'))
 
 import hackasaurus_dot_org
 import jinja2
 from lamp_emulation import apply_htaccess, load_php
 
 port = 8000
-static_files_dir = os.path.abspath(os.path.join(my_dir, 'static-files'))
+static_files_dir = path('static-files')
 mimetypes.add_type('application/x-font-woff', '.woff')
 
 def handle_request(env, start, handlers):
@@ -79,7 +82,7 @@ class BasicFileServer(object):
 
 def handle_500(env, start):
     exc_type, exc_value, exc_tb = sys.exc_info()
-    filepath = os.path.join(my_dir, 'templates', '500.html')
+    filepath = path('templates', '500.html')
     template = jinja2.Template(open(filepath, 'r').read())
     contents = template.render(
         exception=traceback.format_exception_only(exc_type, exc_value)[0],
@@ -131,7 +134,7 @@ def export_site():
                 if filename in ['.git', 'hackbook']
                 or filename.endswith('.php')]
         
-    build_dir = os.path.abspath(os.path.join(my_dir, 'build'))
+    build_dir = path('build')
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
     shutil.copytree(static_files_dir, build_dir, ignore=ignore)
