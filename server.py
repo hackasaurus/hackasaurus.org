@@ -55,9 +55,6 @@ if __name__ == '__main__':
             ext_handlers=EXT_HANDLERS
             )
     elif cmd == 'serve':
-        url = "http://127.0.0.1:%s/" % DEFAULT_PORT
-        print "development server started at %s" % url
-        print "press CTRL-C to stop it"
         tinysite.run_server(
             port=DEFAULT_PORT,
             static_files_dir=static_files_dir,

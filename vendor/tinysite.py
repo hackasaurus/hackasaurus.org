@@ -79,6 +79,11 @@ def run_server(port, static_files_dir, handlers=None, ext_handlers=None,
         return handle_request(env, start, handlers=handlers)
 
     httpd = make_server('', port, application)
+
+    url = "http://127.0.0.1:%s/" % port
+    print "development server started at %s" % url
+    print "press CTRL-C to stop it"
+
     httpd.serve_forever()
 
 def export_site(build_dir, static_files_dir, ext_handlers, ignore=None):
