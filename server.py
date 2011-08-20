@@ -90,14 +90,19 @@ def handle_500(env, start):
            ('Content-Length', str(len(contents)))])
     return [contents]
 
+def handle_html_file_as_jinja2_template(root_dir, fullpath):
+    relpath = fullpath[len(root_dir):]
+    return ('text/html', load_jinja2_template(root_dir, relpath))
+
+def handle_php_file(root_dir, fullpath):
+    return ('text/html', load_php(root_dir, fullpath))
+
+EXT_HANDLERS = {
+    '.html': handle_html_file_as_jinja2_template,
+    '.php': handle_php_file
+    }
+
 def application(env, start):
-    def serve_html_file_as_jinja2_template(root_dir, fullpath):
-        relpath = fullpath[len(root_dir):]
-        return ('text/html', load_jinja2_template(root_dir, relpath))
-
-    def serve_php_file(root_dir, fullpath):
-        return ('text/html', load_php(root_dir, fullpath))
-
     def wsgi_api_handler(env, start):
         if env['PATH_INFO'].startswith('/wsgi/'):
             shift_path_info(env)
@@ -112,10 +117,7 @@ def application(env, start):
 
     file_server = BasicFileServer(static_files_dir)
     file_server.default_filenames.append('index.php')
-    file_server.ext_handlers.update({
-        '.html': serve_html_file_as_jinja2_template,
-        '.php': serve_php_file
-    })
+    file_server.ext_handlers.update(EXT_HANDLERS)
     return handle_request(env, start, handlers=[
         wsgi_api_handler,
         htaccess_handler,
@@ -123,25 +125,22 @@ def application(env, start):
         not_found_handler
     ])
 
-def export_site(build_dir):
+def export_site(build_dir, static_files_dir, ext_handlers, ignore=None):
     import shutil
     
-    def ignore(dirname, filenames):
-        return [filename for filename in filenames
-                if filename in ['.git', 'hackbook']
-                or filename.endswith('.php')]
-
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
     shutil.copytree(static_files_dir, build_dir, ignore=ignore)
     for dirpath, dirnames, filenames in os.walk(build_dir):
-        html_files = [os.path.join(dirpath, filename)[len(build_dir)+1:]
-                      for filename in filenames
-                      if filename.endswith('.html')]
-        for filepath in html_files:
-            print "processing template: %s" % filepath
-            contents = load_jinja2_template(static_files_dir, filepath)
-            open(os.path.join(build_dir, filepath), 'w').write(contents)
+        files = [os.path.join(dirpath, filename)[len(build_dir)+1:]
+                 for filename in filenames
+                 if os.path.splitext(filename)[1] in ext_handlers]
+        for relpath in files:
+            print "processing special file: %s" % relpath
+            abspath = os.path.join(static_files_dir, relpath)
+            handler = ext_handlers[os.path.splitext(relpath)[1]]
+            mimetype, contents = handler(static_files_dir, abspath)
+            open(os.path.join(build_dir, relpath), 'w').write(contents)
     print "done.\n\nyour new static site is located at:\n%s" % build_dir
 
 if __name__ == '__main__':
@@ -150,7 +149,7 @@ if __name__ == '__main__':
         cmd = sys.argv[1]
     if cmd == 'export':
         print "exporting static site"
-        export_site(path('build'))
+        export_site(path('build'), static_files_dir, EXT_HANDLERS)
     elif cmd == 'serve':
         url = "http://127.0.0.1:%s/" % port
         print "development server started at %s" % url
