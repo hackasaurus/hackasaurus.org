@@ -34,8 +34,9 @@ def handle_request(env, start, handlers):
                 return response
         return simple_response(start, "Not Found: %s" % env['PATH_INFO'],
                                code='404 Not Found')
-    except Exception, e:
-        return handle_500(env, start)
+    except Exception:
+        msg = "500 INTERNAL SERVER ERROR\n\n%s" % traceback.format_exc()
+        return simple_response(start, msg, code='500 Internal Server Error')
 
 def load_jinja2_template(root_dir, filename):
     loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
@@ -81,17 +82,6 @@ class BasicFileServer(object):
                 if result is not None:
                     return result
         return self.try_loading(filename, env, start)
-
-def handle_500(env, start):
-    exc_type, exc_value, exc_tb = sys.exc_info()
-    filepath = path('templates', '500.html')
-    template = jinja2.Template(open(filepath, 'r').read())
-    contents = template.render(
-        exception=traceback.format_exception_only(exc_type, exc_value)[0],
-        traceback=traceback.format_exc()
-        ).encode('utf-8')
-    return simple_response(start, contents, code='500 Internal Server Error',
-                           mimetype='text/html')
 
 def handle_html_file_as_jinja2_template(root_dir, fullpath):
     relpath = fullpath[len(root_dir):]
