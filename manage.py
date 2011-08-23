@@ -44,9 +44,13 @@ def htaccess_handler(env, start):
 HANDLERS = [wsgi_api_handler, htaccess_handler]
 
 if __name__ == '__main__':
-    cmd = 'serve'
-    if len(sys.argv) == 2:
-        cmd = sys.argv[1]
+    if len(sys.argv) < 2:
+        print "commands:\n"
+        print "  runserver - start development server"
+        print "  build - build static site"
+        sys.exit(1)
+    
+    cmd = sys.argv[1]
     if cmd == 'build':
         print "build static site"
         tinysite.export_site(
@@ -54,7 +58,7 @@ if __name__ == '__main__':
             static_files_dir=static_files_dir,
             ext_handlers=EXT_HANDLERS
             )
-    elif cmd == 'serve':
+    elif cmd == 'runserver':
         tinysite.run_server(
             port=DEFAULT_PORT,
             static_files_dir=static_files_dir,
