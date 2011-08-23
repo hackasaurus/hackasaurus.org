@@ -47,8 +47,8 @@ if __name__ == '__main__':
     cmd = 'serve'
     if len(sys.argv) == 2:
         cmd = sys.argv[1]
-    if cmd == 'export':
-        print "exporting static site"
+    if cmd == 'build':
+        print "build static site"
         tinysite.export_site(
             build_dir=path('build'),
             static_files_dir=static_files_dir,
