@@ -1,8 +1,6 @@
 import os
 import sys
 import subprocess
-from hashlib import sha256
-from cgi import parse_qs
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 path = lambda *x: os.path.join(ROOT, *x)
