@@ -2,22 +2,14 @@ This is the content for the website at [hackasaurus.org].
 
 ## Prerequisites
 
-You need either:
-
-1. PHP and Apache, or
-2. Python.
-
-Note that PHP should *only* be used for server-side includes via the
-`include_once()` function.
+You need Python version 2.6 or higher.
 
 ## Setup
-
-If you have PHP and Apache, point the document root of your Apache configuration to the `static-files` directory.
 
 If you have Python, just run this at the terminal prompt:
 
     cd hackasaurus.org
-    python server.py
+    python manage.py runserver
 
 Then, point your browser to http://localhost:8000/.
 
