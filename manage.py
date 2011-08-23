@@ -12,6 +12,7 @@ sys.path.insert(0, path('vendor'))
 
 import hackasaurus_dot_org
 import jinja2
+import argparse
 from hackasaurus import tinysite
 from hackasaurus.lamp_emulation import apply_htaccess, load_php
 
@@ -43,28 +44,34 @@ def htaccess_handler(env, start):
 
 HANDLERS = [wsgi_api_handler, htaccess_handler]
 
+def cmd_build(args):
+    "build static site"
+
+    tinysite.export_site(
+        build_dir=path('build'),
+        static_files_dir=static_files_dir,
+        ext_handlers=EXT_HANDLERS
+        )
+
+def cmd_runserver(args):
+    "run development server"
+
+    tinysite.run_server(
+        port=args.port,
+        static_files_dir=static_files_dir,
+        handlers=HANDLERS,
+        ext_handlers=EXT_HANDLERS,
+        default_filenames=['index.html', 'index.php']
+        )
+
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print "commands:\n"
-        print "  runserver - start development server"
-        print "  build - build static site"
-        sys.exit(1)
-    
-    cmd = sys.argv[1]
-    if cmd == 'build':
-        print "build static site"
-        tinysite.export_site(
-            build_dir=path('build'),
-            static_files_dir=static_files_dir,
-            ext_handlers=EXT_HANDLERS
-            )
-    elif cmd == 'runserver':
-        tinysite.run_server(
-            port=DEFAULT_PORT,
-            static_files_dir=static_files_dir,
-            handlers=HANDLERS,
-            ext_handlers=EXT_HANDLERS,
-            default_filenames=['index.html', 'index.php']
-            )
-    else:
-        print 'unknown command: %s' % cmd
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers()
+    build = subparsers.add_parser('build', help=cmd_build.__doc__)
+    build.set_defaults(func=cmd_build)
+    runserver = subparsers.add_parser('runserver', help=cmd_runserver.__doc__)
+    runserver.add_argument('--port', help='port to serve on',
+                           type=int, default=8000)
+    runserver.set_defaults(func=cmd_runserver)
+    args = parser.parse_args()
+    args.func(args)
