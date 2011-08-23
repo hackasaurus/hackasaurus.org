@@ -12,8 +12,8 @@ sys.path.insert(0, path('vendor'))
 
 import hackasaurus_dot_org
 import jinja2
-import tinysite
-from lamp_emulation import apply_htaccess, load_php
+from hackasaurus import tinysite
+from hackasaurus.lamp_emulation import apply_htaccess, load_php
 
 DEFAULT_PORT = 8000
 static_files_dir = path('static-files')
