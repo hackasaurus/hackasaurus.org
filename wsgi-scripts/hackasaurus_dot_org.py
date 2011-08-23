@@ -37,8 +37,6 @@ def update_site(env, start):
     retvals = []
     for cmds in [['pull'], ['submodule', 'init'], ['submodule', 'update']]:
         retvals.append(subprocess.call(['git'] + cmds, cwd=path('..')))        
-    for cmds in [['checkout', 'master'], ['pull']]:
-        retvals.append(subprocess.call(['git'] + cmds, cwd=path('../static-files/hackbook')))        
     status = '200 OK'
     output = str(retvals)
     response_headers = [('Content-type', 'text/plain'),
