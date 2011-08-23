@@ -35,6 +35,8 @@ def update_site(env, start):
     retvals = []
     for cmds in [['pull'], ['submodule', 'init'], ['submodule', 'update']]:
         retvals.append(subprocess.call(['git'] + cmds, cwd=path('..')))        
+    retvals.append(subprocess.call(['python', 'manage.py', 'build'],
+                                   cwd=path('..')))
     status = '200 OK'
     output = str(retvals)
     response_headers = [('Content-type', 'text/plain'),
