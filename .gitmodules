@@ -1,3 +1,0 @@
-[submodule "static-files/hackbook"]
-	path = static-files/hackbook
-	url = git://github.com/hackasaurus/hackbook.git
