@@ -1,2 +1,4 @@
 redirect 302 /news /blog
 redirect 302 /news/ /blog
+redirect 302 /hackbook http://hackbook.hackasaurus.org/
+redirect 302 /hackbook/ http://hackbook.hackasaurus.org/
