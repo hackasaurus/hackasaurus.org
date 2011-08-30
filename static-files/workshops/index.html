@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+	{% block section_class %}home{% endblock %}
+	
+	{% block content_primary %}
+	
+	<h1>Workshops</h1>
+
+	<ul>
+		<li><a href="http://www.slideshare.net/slideshow/hackasaurus-how-to-hack-the-web">How to Hack the Web</a></li>
+	</ul>
+	
+	{% endblock %}
+	
+	{% block content_secondary %}
+	<!-- Events Listing -->
+		{% include 'include/module/events.html' %}
+	<!-- End Events Listing -->
+	{% endblock %}
