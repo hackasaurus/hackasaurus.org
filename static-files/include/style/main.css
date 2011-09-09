@@ -636,6 +636,38 @@ footer .licence {
 	#blog .loader img {
 		margin: 0 auto;
 	}
+
+/* @group Step-by-step */
+
+	.step-by-step li {
+		list-style-type: none;
+		background-image: url("../image/bullet-points/step-1.png");
+	    background-position: left top;
+	    background-repeat: no-repeat;
+	    clear: both;
+	    padding-left: 81px;
+	    padding-top: 3px;
+	    margin-bottom: 5em;
+	    min-height: 70px;
+		}
+	
+	.step-by-step li.step-2 {
+		background-image: url("../image/bullet-points/step-2.png");
+		}
+	
+	.step-by-step li.step-3 {
+		background-image: url("../image/bullet-points/step-3.png");
+		}
+	
+	.step-by-step li.step-4 {
+		background-image: url("../image/bullet-points/step-4.png");
+		}
+	
+	.step-by-step li.step-5 {
+		background-image: url("../image/bullet-points/step-5.png");
+		}
+
+/* @end Step-by-step */
 	
 /* @group Buckets */
 
@@ -820,7 +852,7 @@ ol.lanyrd-listing a.flag-mini:active {
 
 /* BOOKMARKELT LINK ------------------------------------ */
 
-section.tool-goggles #bookmarklet-link {
+ #bookmarklet-link {
     background-color: #EEEEEE;
     background-image: url("../image/icon-goggles-tiny.png");
     background-position: 5px 4px;
