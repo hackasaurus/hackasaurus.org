@@ -599,7 +599,7 @@ footer .licence {
 
 .helper {
     float: right;
-    width: 44%;
+    width: 37%;
 	}
 
 .pullout {
@@ -850,7 +850,7 @@ ol.lanyrd-listing a.flag-mini:active {
 	margin-right: 0;
 	}
 
-/* BOOKMARKELT LINK ------------------------------------ */
+/* BOOKMARKLET LINK ------------------------------------ */
 
  #bookmarklet-link {
     background-color: #EEEEEE;
@@ -862,15 +862,44 @@ ol.lanyrd-listing a.flag-mini:active {
     color: #333333;
 	display: inline;
     display: inline-block;
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin: 0 0.3em 0 0.3em;
-    padding: 0.4em 0.4em 0.3em 35px;
+    padding: 0.3em 0.4em 0.3em 37px;
     text-decoration: none;
     text-shadow: 1px 1px 0 rgba(250, 250, 250, 0.5);
 	}
 
+.goggles-v2 #bookmarklet-link {
+	float: left;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	margin-right: 9px;
+	background-color: transparent;
+	background-image: none;
+	border: none;
+	padding: 0;
+	margin-top: 0;
+}
+
+.goggles-v2 #bookmarklet-link span {
+	background-color: #EEEEEE;
+	background-image: url("../image/icon-goggles-tiny.png");
+	background-position: 5px 4px;
+	background-repeat: no-repeat;
+	border: 2px dashed #CCCCCC;
+	border-radius: 4px 4px 4px 4px;
+	float: left;
+	padding: 0.3em 0.4em 0.3em 37px;
+	margin-right: 10px;
+	margin-top: 18px;
+}
+
 section.tool-goggles .bookmarklet-demo {
     border: 1px solid #999999;
+	}
+	
+	.bookmarklet-drag-instructions {
+		float: left;
 	}
 
 /* SLIDESHOW ------------------------------------ */
@@ -1013,6 +1042,70 @@ section[role="main"] .browser-warning h6 {
 	top: 1em;
 }
 
+/* TABS ------------------------------------ */
+
+.tabs li {
+	background-image: none;
+	padding: 0;
+	margin: 0;
+	float: left;
+	clear: none;
+	min-height: 10px;
+}
+
+.tabs li a {
+	padding: 7px 10px 7px 41px;
+	display: block;
+	background-color: #AAA;
+	border-radius: 5px 5px 0 0;
+	margin-right: 10px;
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #fff;
+	background-image: url(../image/browser-icons.png);
+	background-repeat: no-repeat;
+	background-position: 5px 3px;
+}
+
+.tabs li.browser-safari a {
+	background-position: 3px -99px;
+}
+
+.tabs li.browser-chrome a {
+	background-position: 3px -196px;
+}
+
+.tabs li.current a {
+	background-color: #CCC;
+	color: #333;
+	text-shadow: 1px 1px 0 rgba(250,250,250,0.4);
+}
+
+.tabcontainer {
+	clear: both;
+	background-color: #CCC;
+	box-shadow: 0px 3px 0px rgba(0,0,0,0.4);
+	padding: 15px;
+	border-radius: 5px;
+	text-shadow: 1px 1px 0 rgba(250,250,250,0.4);
+	font-size: 1.1em;
+	}
+
+.tabcontainer p {
+	margin-bottom: 0;
+	color: #333;
+	margin-top: 0.3em;
+}
+
+.tabcontainer .tabcontent img {
+	border: 4px solid rgba(51, 205, 250, 0.6);
+	width: 99%;
+	border-radius: 3px;
+}
+
+.tabcontainer .tabcontent { display: none; }
+.tabcontainer .current { display: block; }  
+
 /* PAGE OVERRIDES ------------------------------------ */
 	/* HOME PAGE OVERRIDES ------------------------------------ */
 	.home .examples {
@@ -1083,6 +1176,13 @@ section[role="main"] .browser-warning h6 {
 	.goggle-controls h3 {
 		text-transform: uppercase;
 		}
+	
+	.goggle-controls li {
+		clear: both;
+		display: block;
+		list-style: none;
+		font-size: 1.1em;
+	}
 
 /* MEDIA QUERIES ------------------------------------ */
 @media (max-width:52em) {
