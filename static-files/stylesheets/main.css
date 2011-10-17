@@ -1,0 +1,6 @@
+@import url(fonts/stylesheet.css);
+
+h1, h2 {
+  font-weight: normal;
+  font-family: 'TrashHandRegular';
+}
