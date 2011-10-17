@@ -1,6 +1,27 @@
 @import url(fonts/stylesheet.css);
 
-h1, h2 {
+html, body {
+  background: -moz-linear-gradient(top, #ffef8d, white 30%);
+  font-family: Georgia, serif;
+  margin: 0px;
+}
+
+#header .content, #body .content, #footer .content {
+  width: 980px;
+  margin: 0 auto;
+}
+
+#body h1, #body h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';
+}
+
+#footer .content {
+  background-image: url(images/squiggle.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+#footer {
+  background: #1a3763;
 }
