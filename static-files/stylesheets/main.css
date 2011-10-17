@@ -1,20 +1,90 @@
 @import url(fonts/stylesheet.css);
 
+/* Global rules */
+
 html, body {
-  background: -moz-linear-gradient(top, #ffef8d, white 30%);
+  background: -moz-linear-gradient(top, #ffef8d, white 50%);
   font-family: Georgia, serif;
   margin: 0px;
+  color: #41415b;
 }
+
+a {
+  color: #153959;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header rules */
 
 #header .content, #body .content, #footer .content {
   width: 980px;
   margin: 0 auto;
 }
 
+#header a#logo {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+  background-image: url(images/hackasaurus-blue-logo.png);
+  width: 357px;
+  height: 24px;
+  color: transparent;
+}
+
+#header ul {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  top: 16px;
+  left: 500px;
+  list-style-type: none;
+}
+
+#header ul li a {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#header ul li {
+  display: inline-block;
+  padding: 5px;
+  border-left: 1px solid #e1d26d;
+}
+
+#header ul li:first-child {
+  border-left: none;
+}
+
+#header .content {
+  position: relative;
+  height: 100px;
+}
+
+#header a#mozilla {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url(images/mozilla-tab.png);
+  width: 118px;
+  height: 49px;
+  color: transparent;
+}
+
+/* Body (main content) rules */
+
 #body h1, #body h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';
 }
+
+/* Footer rules */
 
 #footer .content {
   background-image: url(images/squiggle.png);
@@ -24,4 +94,9 @@ html, body {
 
 #footer {
   background: #1a3763;
+  color: #4562a8;
+}
+
+#footer a, #footer form .instructions {
+  color: #7398cd;
 }
