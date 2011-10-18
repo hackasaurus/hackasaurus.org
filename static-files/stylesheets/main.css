@@ -18,11 +18,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Header rules */
-
 #header .content, #body .content, #footer .content {
   width: 980px;
   margin: 0 auto;
+}
+
+/* Header rules */
+
+#header .content {
+  position: relative;
+  height: 100px;
 }
 
 #header a#logo {
@@ -61,11 +66,6 @@ a:hover {
   border-left: none;
 }
 
-#header .content {
-  position: relative;
-  height: 100px;
-}
-
 #header a#mozilla {
   display: block;
   position: absolute;
@@ -86,17 +86,49 @@ a:hover {
 
 /* Footer rules */
 
+#footer {
+  background: #1a3763;
+  color: #4562a8;
+  font-size: 12px;
+}
+
 #footer .content {
   background-image: url(images/squiggle.png);
   background-repeat: no-repeat;
   background-position: left center;
 }
 
-#footer {
-  background: #1a3763;
-  color: #4562a8;
-}
-
 #footer a, #footer form .instructions {
   color: #7398cd;
+}
+
+#footer form {
+  padding-top: 20px;
+}
+
+#footer form input {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px;
+}
+
+#footer form input.email {
+  width: 250px;
+  border: none;
+}
+
+#footer form input.submit {
+  border: none;
+  background-color: #f8a339;
+  color: #1a3763;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#footer form input.submit:hover {
+  background-color: #ffc833;
+}
+
+#footer div.instructions {
+  padding-top: 10px;
 }
