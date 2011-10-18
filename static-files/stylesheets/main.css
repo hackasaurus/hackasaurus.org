@@ -24,7 +24,11 @@ a.more:after {
 }
 
 #header-and-body {
-  background: -moz-linear-gradient(top, #ffef8d, white 50%);  
+  background-image: -webkit-linear-gradient(top, #ffef8d, white 50%);
+  background-image: -moz-linear-gradient(top, #ffef8d, white 50%);  
+  background-image: -o-linear-gradient(top, #ffef8d, white 50%);  
+  /* If the browser doesn't support gradients, just use a white background. */
+  background-color: white;
 }
 
 #header .content, #body .content, #footer .content {
@@ -146,7 +150,7 @@ a.more:after {
   font-weight: bold;
   font-style: italic;
   border-radius: 10px;
-  -moz-box-shadow: 5px 5px 20px black;
+  box-shadow: 5px 5px 20px black;
 }
 
 #body div.primary a.more:hover {
