@@ -251,11 +251,12 @@ a.more:after {
 }
 
 #footer ul.social li {
-  display: inline-block;
+  display: inline;
 }
 
 #footer ul.social li a {
-  display: inline-block;
+  display: block;
+  float: left;
   width: 48px;
   height: 48px;
   background-size: 48px;
