@@ -24,6 +24,7 @@ a.more:after {
 }
 
 #header-and-body {
+  background-image: -webkit-gradient(linear, left top, left 50%, from(#ffef8d), to(white));
   background-image: -webkit-linear-gradient(top, #ffef8d, white 50%);
   background-image: -moz-linear-gradient(top, #ffef8d, white 50%);  
   background-image: -o-linear-gradient(top, #ffef8d, white 50%);  
