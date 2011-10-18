@@ -79,9 +79,70 @@ a:hover {
 
 /* Body (main content) rules */
 
+#body {
+  font-size: 18px;
+}
+
 #body h1, #body h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';
+}
+
+#body div.primary {
+  padding-bottom: 30px;
+}
+
+#body div.primary p {
+  width: 50%;
+}
+
+#body div.primary ul.options {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#body div.primary ul.options li {
+  display: inline-block;
+  border-left: 1px solid #153959;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#body div.primary ul.options li:first-child {
+  padding-left: 0px;
+  border-left: none;
+}
+
+#body div.primary ul.options li a {
+  font-weight: bold;
+}
+
+#body div.primary a.more {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 20px;
+  background-color: #f8a339;
+  color: white;
+  font-weight: 500;
+  font-style: italic;
+  border-radius: 10px;
+}
+
+#body div.primary a.more:hover {
+  background-color: #ffc833;
+  text-decoration: none;
+}
+
+#body div.secondary div.blurb {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  padding-right: 20px;
+}
+
+#body div.secondary {
+  padding-bottom: 50px;
 }
 
 /* Footer rules */
