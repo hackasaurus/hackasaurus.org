@@ -145,6 +145,10 @@ a.more:after {
   padding-right: 20px;
 }
 
+#body div.secondary div.blurb p {
+  height: 4em;
+}
+
 #body div.secondary {
   padding-bottom: 50px;
 }
