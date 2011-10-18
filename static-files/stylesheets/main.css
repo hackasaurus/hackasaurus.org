@@ -3,10 +3,11 @@
 /* Global rules */
 
 html, body {
-  background: -moz-linear-gradient(top, #ffef8d, white 50%);
   font-family: Georgia, serif;
   margin: 0px;
   color: #41415b;
+  height: 100%;
+  background-color: #1a3763;
 }
 
 a {
@@ -20,6 +21,10 @@ a:hover {
 
 a.more:after {
   content: ' »';
+}
+
+#header-and-body {
+  background: -moz-linear-gradient(top, #ffef8d, white 50%);  
 }
 
 #header .content, #body .content, #footer .content {
@@ -156,7 +161,6 @@ a.more:after {
 /* Footer rules */
 
 #footer {
-  background: #1a3763;
   color: #4562a8;
   font-size: 12px;
 }
