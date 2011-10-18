@@ -98,7 +98,12 @@ a.more:after {
 }
 
 #body div.primary {
+  background: url(images/supergirlanodig.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  min-height: 461px;
   padding-bottom: 30px;
+  position: relative;
 }
 
 #body div.primary p {
@@ -128,14 +133,20 @@ a.more:after {
 }
 
 #body div.primary a.more {
+  position: absolute;
+  text-align: center;
+  width: 200px;
+  top: 205px;
+  right: 608px;
   display: inline-block;
   margin-top: 1em;
   padding: 20px;
   background-color: #f8a339;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
   font-style: italic;
   border-radius: 10px;
+  -moz-box-shadow: 5px 5px 20px black;
 }
 
 #body div.primary a.more:hover {
