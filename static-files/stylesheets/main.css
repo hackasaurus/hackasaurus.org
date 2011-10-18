@@ -196,6 +196,7 @@ a.more:after {
   font-family: inherit;
   font-size: 16px;
   padding: 8px;
+  border-radius: 4px;
 }
 
 #footer form input.email {
@@ -207,7 +208,6 @@ a.more:after {
   border: none;
   background-color: #f8a339;
   color: #1a3763;
-  border-radius: 4px;
   cursor: pointer;
 }
 
