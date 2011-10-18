@@ -93,9 +93,10 @@ a:hover {
 }
 
 #footer .content {
+  position: relative;
   background-image: url(images/squiggle.png);
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left 60px;
 }
 
 #footer a, #footer form .instructions {
@@ -104,6 +105,7 @@ a:hover {
 
 #footer form {
   padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 #footer form input {
@@ -131,4 +133,65 @@ a:hover {
 
 #footer div.instructions {
   padding-top: 10px;
+}
+
+#footer ul.legal {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#footer ul.legal li {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid #4562a8;
+}
+
+#footer ul.legal li:first-child {
+  padding-left: 0px;
+  border-left: none;
+}
+
+#footer ul.social {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#footer ul.social li {
+  display: inline-block;
+}
+
+#footer ul.social li a {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-size: 48px;
+  color: transparent;
+  overflow: hidden;
+}
+
+#footer ul.social li a.flickr {
+  background-image: url(images/social-icons/flickr.png);
+}
+
+#footer ul.social li a.twitter {
+  background-image: url(images/social-icons/twitter.png);
+}
+
+#footer ul.social li a.facebook {
+  background-image: url(images/social-icons/facebook.png);
+}
+
+#footer ul.social li a.rss {
+  background-image: url(images/social-icons/rss.png);
+}
+
+#footer div.disclaimer {
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
