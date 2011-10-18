@@ -32,7 +32,7 @@ a.more:after {
 }
 
 #header .content, #body .content, #footer .content {
-  width: 980px;
+  width: 940px;
   margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@ a.more:after {
   padding: 0px;
   position: relative;
   top: 16px;
-  left: 500px;
+  left: 475px;
   list-style-type: none;
 }
 
