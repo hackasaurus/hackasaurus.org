@@ -1,9 +1,47 @@
+import sys
+import os
 import argparse
+
+from babel.messages.frontend import CommandLineInterface
 
 from . import tinysite
 
+def babel(args):
+    cmdline = CommandLineInterface()
+    cmdline.usage = 'pybabel %s %s'
+    print "calling pybabel %s" % (" ".join(args))
+    cmdline.run([sys.argv[0]] + args)
+
 def execute_manager(build_dir, static_files_dir, ext_handlers,
-                    handlers, default_filenames=None):
+                    locale_dir, locale_domain,
+                    handlers, babel_ini_file, default_filenames=None):
+    def cmd_makemessages(args):
+        "create/update message file(s) for localization"
+
+        potfile = os.path.join(locale_dir, '%s.pot' % locale_domain)
+
+        localeargs = []
+        cmd = 'update'
+        
+        if args.locale:
+            localeargs.extend(['-l', args.locale])
+            pofile = os.path.join(locale_dir, args.locale, 'LC_MESSAGES',
+                                  '%s.po' % locale_domain)
+            if not os.path.exists(pofile):
+                cmd = 'init'
+
+        babel(['extract', '-F', babel_ini_file, '-o', potfile,
+               static_files_dir])
+        
+        babel([cmd, '-i', potfile, '-d', locale_dir, '-D', locale_domain] +
+              localeargs)
+
+    def cmd_compilemessages(args):
+        "convert message files into binary format"
+
+        babel(['compile', '--use-fuzzy', '-d', locale_dir, '-D',
+               locale_domain])
+
     def cmd_build(args):
         "build static site"
 
@@ -19,6 +57,8 @@ def execute_manager(build_dir, static_files_dir, ext_handlers,
         tinysite.run_server(
             port=args.port,
             static_files_dir=static_files_dir,
+            locale_dir=locale_dir,
+            locale_domain=locale_domain,
             handlers=handlers,
             ext_handlers=ext_handlers,
             default_filenames=default_filenames
@@ -31,6 +71,13 @@ def execute_manager(build_dir, static_files_dir, ext_handlers,
     subparsers = parser.add_subparsers()
     build = subparsers.add_parser('build', help=cmd_build.__doc__)
     build.set_defaults(func=cmd_build)
+    makemessages = subparsers.add_parser('makemessages', 
+                                         help=cmd_makemessages.__doc__)
+    makemessages.add_argument('-l', '--locale', help="locale")
+    makemessages.set_defaults(func=cmd_makemessages)
+    compilemessages = subparsers.add_parser('compilemessages',
+                                            help=cmd_compilemessages.__doc__)
+    compilemessages.set_defaults(func=cmd_compilemessages)
     runserver = subparsers.add_parser('runserver', help=cmd_runserver.__doc__)
     runserver.add_argument('--port', help='port to serve on',
                            type=int, default=8000)

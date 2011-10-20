@@ -1,10 +1,13 @@
 import os
+import re
 import mimetypes
 import traceback
 import shutil
+import gettext
 from wsgiref.simple_server import make_server
-from wsgiref.util import FileWrapper
+from wsgiref.util import FileWrapper, shift_path_info
 
+locale_path_re = re.compile(r'^/([a-z][a-z])/.*')
 mimetypes.add_type('application/x-font-woff', '.woff')
 
 def simple_response(start, contents, code='200 OK', mimetype='text/plain'):
@@ -25,10 +28,12 @@ def handle_request(env, start, handlers):
         return simple_response(start, msg, code='500 Internal Server Error')
 
 class BasicFileServer(object):
-    def __init__(self, static_files_dir):
+    def __init__(self, static_files_dir, locale_dir, locale_domain):
         self.ext_handlers = {}
         self.default_filenames = []
         self.static_files_dir = static_files_dir
+        self.locale_dir = locale_dir
+        self.locale_domain = locale_domain
 
     def try_loading(self, filename, env, start):
         static_files_dir = self.static_files_dir
@@ -41,7 +46,7 @@ class BasicFileServer(object):
                 ext = os.path.splitext(fullpath)[1]
                 handler = self.ext_handlers.get(ext)
                 if handler:
-                    mimetype, contents = handler(static_files_dir, fullpath)
+                    mimetype, contents = handler(env, static_files_dir, fullpath)
                     return simple_response(start, contents, mimetype=mimetype)
                 (mimetype, encoding) = mimetypes.guess_type(fullpath)
                 if mimetype:
@@ -56,6 +61,18 @@ class BasicFileServer(object):
 
     def handle_request(self, env, start):
         filename = env['PATH_INFO']
+
+        match = locale_path_re.match(filename)
+        if match:
+            locale = match.group(1)
+            if gettext.find(self.locale_domain, self.locale_dir, [locale]):
+                env['translation'] = gettext.translation(self.locale_domain,
+                                                         self.locale_dir,
+                                                         [locale])
+                env['locale_prefix'] = locale
+                shift_path_info(env)
+                return self.handle_request(env, start)
+
         if filename.endswith('/'):
             for index in self.default_filenames:
                 result = self.try_loading(filename + index, env, start)
@@ -63,14 +80,16 @@ class BasicFileServer(object):
                     return result
         return self.try_loading(filename, env, start)
 
-def run_server(port, static_files_dir, handlers=None, ext_handlers=None,
+def run_server(port, static_files_dir,
+               locale_dir, locale_domain, 
+               handlers=None, ext_handlers=None,
                default_filenames=('index.html',)):
     if handlers is None:
         handlers = []
     if ext_handlers is None:
         ext_handlers = {}
 
-    file_server = BasicFileServer(static_files_dir)
+    file_server = BasicFileServer(static_files_dir, locale_dir, locale_domain)
     file_server.default_filenames.extend(list(default_filenames))
     file_server.ext_handlers.update(ext_handlers)
     handlers += [file_server.handle_request]
