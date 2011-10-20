@@ -11,6 +11,9 @@ from wsgiref.util import FileWrapper, shift_path_info
 locale_path_re = re.compile(r'^/([a-z][a-z])/.*')
 mimetypes.add_type('application/x-font-woff', '.woff')
 
+# Don't require localization files to exist for this locale.
+NULL_LOCALE = 'en'
+
 def simple_response(start, contents, code='200 OK', mimetype='text/plain'):
     start(code, [('Content-Type', mimetype),
                  ('Content-Length', str(len(contents)))])
@@ -81,13 +84,15 @@ class LocalizedTemplateServer(object):
         match = locale_path_re.match(env['PATH_INFO'])
         if match:
             locale = match.group(1)
+            env = dict(env)
+            env['locale_prefix'] = locale
+            shift_path_info(env)
             if gettext.find(self.locale_domain, self.locale_dir, [locale]):
-                env = dict(env)
                 env['translation'] = gettext.translation(self.locale_domain,
                                                          self.locale_dir,
                                                          [locale])
-                env['locale_prefix'] = locale
-                shift_path_info(env)
+                                                         
+            if 'translation' in env or locale == NULL_LOCALE:
                 return self.file_server.handle_request(env, start)
 
     def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
