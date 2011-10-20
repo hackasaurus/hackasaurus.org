@@ -4,6 +4,7 @@ import mimetypes
 import traceback
 import shutil
 import gettext
+import jinja2
 from wsgiref.simple_server import make_server
 from wsgiref.util import FileWrapper, shift_path_info
 
@@ -28,12 +29,10 @@ def handle_request(env, start, handlers):
         return simple_response(start, msg, code='500 Internal Server Error')
 
 class BasicFileServer(object):
-    def __init__(self, static_files_dir, locale_dir, locale_domain):
+    def __init__(self, static_files_dir):
         self.ext_handlers = {}
         self.default_filenames = []
         self.static_files_dir = static_files_dir
-        self.locale_dir = locale_dir
-        self.locale_domain = locale_domain
 
     def try_loading(self, filename, env, start):
         static_files_dir = self.static_files_dir
@@ -62,17 +61,6 @@ class BasicFileServer(object):
     def handle_request(self, env, start):
         filename = env['PATH_INFO']
 
-        match = locale_path_re.match(filename)
-        if match:
-            locale = match.group(1)
-            if gettext.find(self.locale_domain, self.locale_dir, [locale]):
-                env['translation'] = gettext.translation(self.locale_domain,
-                                                         self.locale_dir,
-                                                         [locale])
-                env['locale_prefix'] = locale
-                shift_path_info(env)
-                return self.handle_request(env, start)
-
         if filename.endswith('/'):
             for index in self.default_filenames:
                 result = self.try_loading(filename + index, env, start)
@@ -80,19 +68,45 @@ class BasicFileServer(object):
                     return result
         return self.try_loading(filename, env, start)
 
-def run_server(port, static_files_dir,
-               locale_dir, locale_domain, 
-               handlers=None, ext_handlers=None,
-               default_filenames=('index.html',)):
-    if handlers is None:
-        handlers = []
-    if ext_handlers is None:
-        ext_handlers = {}
+class LocalizedTemplateServer(object):
+    def __init__(self, template_dir, locale_dir, locale_domain):
+        self.locale_dir = locale_dir
+        self.locale_domain = locale_domain
+        self.file_server = BasicFileServer(template_dir)
+        self.file_server.default_filenames.extend(['index.html'])
+        self.file_server.ext_handlers.update({
+            '.html': self.handle_file_as_jinja2_template
+        })
 
-    file_server = BasicFileServer(static_files_dir, locale_dir, locale_domain)
-    file_server.default_filenames.extend(list(default_filenames))
-    file_server.ext_handlers.update(ext_handlers)
-    handlers += [file_server.handle_request]
+    def handle_request(self, env, start):
+        match = locale_path_re.match(env['PATH_INFO'])
+        if match:
+            locale = match.group(1)
+            if gettext.find(self.locale_domain, self.locale_dir, [locale]):
+                env = dict(env)
+                env['translation'] = gettext.translation(self.locale_domain,
+                                                         self.locale_dir,
+                                                         [locale])
+                env['locale_prefix'] = locale
+                shift_path_info(env)
+                return self.file_server.handle_request(env, start)
+
+    def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
+        loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
+        env = jinja2.Environment(loader=loader, extensions=['jinja2.ext.i18n'])
+        if 'translation' in wsgi_env:
+            env.install_gettext_translations(wsgi_env['translation'])
+        else:
+            env.install_null_translations(newstyle=True)
+        template = env.get_template(fullpath[len(root_dir):])
+        return ('text/html', template.render().encode('utf-8'))
+
+def run_server(port, static_files_dir, templates_dir,
+               locale_dir, locale_domain):
+    template_server = LocalizedTemplateServer(templates_dir, locale_dir,
+                                              locale_domain)
+    file_server = BasicFileServer(static_files_dir)
+    handlers = [template_server.handle_request, file_server.handle_request]
 
     def application(env, start):
         return handle_request(env, start, handlers=handlers)

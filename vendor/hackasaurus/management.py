@@ -12,9 +12,9 @@ def babel(args):
     print "calling pybabel %s" % (" ".join(args))
     cmdline.run([sys.argv[0]] + args)
 
-def execute_manager(build_dir, static_files_dir, ext_handlers,
+def execute_manager(build_dir, static_files_dir, templates_dir,
                     locale_dir, locale_domain,
-                    handlers, babel_ini_file, default_filenames=None):
+                    babel_ini_file):
     def cmd_makemessages(args):
         "create/update message file(s) for localization"
 
@@ -31,7 +31,7 @@ def execute_manager(build_dir, static_files_dir, ext_handlers,
                 cmd = 'init'
 
         babel(['extract', '-F', babel_ini_file, '-o', potfile,
-               static_files_dir])
+               templates_dir])
         
         babel([cmd, '-i', potfile, '-d', locale_dir, '-D', locale_domain] +
               localeargs)
@@ -57,15 +57,10 @@ def execute_manager(build_dir, static_files_dir, ext_handlers,
         tinysite.run_server(
             port=args.port,
             static_files_dir=static_files_dir,
+            templates_dir=templates_dir,
             locale_dir=locale_dir,
             locale_domain=locale_domain,
-            handlers=handlers,
-            ext_handlers=ext_handlers,
-            default_filenames=default_filenames
             )
-
-    if default_filenames is None:
-        default_filenames = ['index.html']
 
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers()
