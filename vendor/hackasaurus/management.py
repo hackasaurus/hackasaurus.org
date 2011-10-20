@@ -18,6 +18,9 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
     def cmd_makemessages(args):
         "create/update message file(s) for localization"
 
+        if not os.path.exists(locale_dir):
+            os.mkdir(locale_dir)
+        
         potfile = os.path.join(locale_dir, '%s.pot' % locale_domain)
 
         localeargs = []
