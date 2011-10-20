@@ -31,7 +31,7 @@ def handle_request(env, start, handlers):
 class BasicFileServer(object):
     def __init__(self, static_files_dir):
         self.ext_handlers = {}
-        self.default_filenames = []
+        self.default_filenames = ['index.html']
         self.static_files_dir = static_files_dir
 
     def try_loading(self, filename, env, start):
@@ -73,7 +73,6 @@ class LocalizedTemplateServer(object):
         self.locale_dir = locale_dir
         self.locale_domain = locale_domain
         self.file_server = BasicFileServer(template_dir)
-        self.file_server.default_filenames.extend(['index.html'])
         self.file_server.ext_handlers.update({
             '.html': self.handle_file_as_jinja2_template
         })
