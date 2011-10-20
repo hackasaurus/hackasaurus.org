@@ -1,16 +1,8 @@
-import sys
 import os
 import argparse
 
-from babel.messages.frontend import CommandLineInterface
-
 from . import tinysite
-
-def babel(args):
-    cmdline = CommandLineInterface()
-    cmdline.usage = 'pybabel %s %s'
-    print "calling pybabel %s" % (" ".join(args))
-    cmdline.run([sys.argv[0]] + args)
+from .localization import babel, locale_exists
 
 def execute_manager(build_dir, static_files_dir, templates_dir,
                     locale_dir, locale_domain,
@@ -28,9 +20,7 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
         
         if args.locale:
             localeargs.extend(['-l', args.locale])
-            pofile = os.path.join(locale_dir, args.locale, 'LC_MESSAGES',
-                                  '%s.po' % locale_domain)
-            if not os.path.exists(pofile):
+            if not locale_exists(args.locale, locale_dir, locale_domain):
                 cmd = 'init'
 
         babel(['extract', '-F', babel_ini_file, '-o', potfile,
