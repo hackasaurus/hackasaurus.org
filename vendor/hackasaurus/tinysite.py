@@ -110,9 +110,9 @@ class LocalizedTemplateServer(object):
         template = env.get_template(fullpath[len(root_dir):])
         return ('text/html', template.render().encode('utf-8'))
 
-def run_server(port, static_files_dir, templates_dir,
+def run_server(port, static_files_dir, template_dir,
                locale_dir, locale_domain):
-    template_server = LocalizedTemplateServer(templates_dir, locale_dir,
+    template_server = LocalizedTemplateServer(template_dir, locale_dir,
                                               locale_domain)
     file_server = BasicFileServer(static_files_dir)
     handlers = [template_server.handle_request, file_server.handle_request]
@@ -128,13 +128,13 @@ def run_server(port, static_files_dir, templates_dir,
 
     httpd.serve_forever()
 
-def export_site(build_dir, static_files_dir, templates_dir, locale_dir,
+def export_site(build_dir, static_files_dir, template_dir, locale_dir,
                 locale_domain):
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
     print "copying static files"
     shutil.copytree(static_files_dir, build_dir)
-    server = LocalizedTemplateServer(templates_dir, locale_dir, locale_domain)
+    server = LocalizedTemplateServer(template_dir, locale_dir, locale_domain)
     locales = find_locales(locale_dir, locale_domain)
     if NULL_LOCALE not in locales:
         locales.append(NULL_LOCALE)
@@ -142,15 +142,15 @@ def export_site(build_dir, static_files_dir, templates_dir, locale_dir,
         print "processing localization '%s'" % locale
         env = {}
         server.maybe_apply_translation(env, locale)
-        for dirpath, dirnames, filenames in os.walk(templates_dir):
-            files = [os.path.join(dirpath, filename)[len(templates_dir)+1:]
+        for dirpath, dirnames, filenames in os.walk(template_dir):
+            files = [os.path.join(dirpath, filename)[len(template_dir)+1:]
                      for filename in filenames]
             for relpath in files:
                 print "  %s/%s" % (locale, relpath)
-                abspath = os.path.join(templates_dir, relpath)
+                abspath = os.path.join(template_dir, relpath)
                 mimetype, contents = server.handle_file_as_jinja2_template(
                     env,
-                    templates_dir,
+                    template_dir,
                     abspath
                     )
                 dest_path = os.path.join(build_dir, locale, relpath)

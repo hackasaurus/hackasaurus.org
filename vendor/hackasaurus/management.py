@@ -4,7 +4,7 @@ import argparse
 from . import tinysite
 from .localization import babel, locale_exists
 
-def execute_manager(build_dir, static_files_dir, templates_dir,
+def execute_manager(build_dir, static_files_dir, template_dir,
                     locale_dir, locale_domain,
                     babel_ini_file):
     def cmd_makemessages(args):
@@ -24,7 +24,7 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
                 cmd = 'init'
 
         babel(['extract', '-F', babel_ini_file, '-o', potfile,
-               templates_dir])
+               template_dir])
         
         babel([cmd, '-i', potfile, '-d', locale_dir, '-D', locale_domain] +
               localeargs)
@@ -41,7 +41,7 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
         tinysite.export_site(
             build_dir=build_dir,
             static_files_dir=static_files_dir,
-            templates_dir=templates_dir,
+            template_dir=template_dir,
             locale_dir=locale_dir,
             locale_domain=locale_domain
             )
@@ -52,7 +52,7 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
         tinysite.run_server(
             port=args.port,
             static_files_dir=static_files_dir,
-            templates_dir=templates_dir,
+            template_dir=template_dir,
             locale_dir=locale_dir,
             locale_domain=locale_domain,
             )

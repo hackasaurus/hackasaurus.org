@@ -14,7 +14,7 @@ if __name__ == '__main__':
     execute_manager(
         build_dir=path('build'),
         static_files_dir=path('static'),
-        templates_dir=path('templates'),
+        template_dir=path('templates'),
         locale_dir=path('locale'),
         locale_domain='default',
         babel_ini_file=path('babel.ini')
