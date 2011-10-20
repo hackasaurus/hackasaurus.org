@@ -41,7 +41,9 @@ def execute_manager(build_dir, static_files_dir, templates_dir,
         tinysite.export_site(
             build_dir=build_dir,
             static_files_dir=static_files_dir,
-            ext_handlers=ext_handlers
+            templates_dir=templates_dir,
+            locale_dir=locale_dir,
+            locale_domain=locale_domain
             )
 
     def cmd_runserver(args):

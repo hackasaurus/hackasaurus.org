@@ -8,8 +8,8 @@ def find_locales(dirname, domain):
             if locale_exists(name, dirname, domain)]
 
 def locale_exists(locale, dirname, domain):
-    pofile = os.path.join(locale_dir, locale, 'LC_MESSAGES',
-                          '%s.po' % locale_domain)
+    pofile = os.path.join(dirname, locale, 'LC_MESSAGES',
+                          '%s.po' % domain)
     return os.path.exists(pofile)
 
 def babel(args):

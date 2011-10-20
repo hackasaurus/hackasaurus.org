@@ -5,8 +5,11 @@ import traceback
 import shutil
 import gettext
 import jinja2
+from distutils.dir_util import mkpath
 from wsgiref.simple_server import make_server
 from wsgiref.util import FileWrapper, shift_path_info
+
+from .localization import find_locales
 
 locale_path_re = re.compile(r'^/([a-z][a-z])/.*')
 mimetypes.add_type('application/x-font-woff', '.woff')
@@ -80,18 +83,20 @@ class LocalizedTemplateServer(object):
             '.html': self.handle_file_as_jinja2_template
         })
 
+    def maybe_apply_translation(self, env, locale):
+        env['locale_prefix'] = locale
+        if gettext.find(self.locale_domain, self.locale_dir, [locale]):
+            env['translation'] = gettext.translation(self.locale_domain,
+                                                     self.locale_dir,
+                                                     [locale])
+
     def handle_request(self, env, start):
         match = locale_path_re.match(env['PATH_INFO'])
         if match:
             locale = match.group(1)
             env = dict(env)
-            env['locale_prefix'] = locale
             shift_path_info(env)
-            if gettext.find(self.locale_domain, self.locale_dir, [locale]):
-                env['translation'] = gettext.translation(self.locale_domain,
-                                                         self.locale_dir,
-                                                         [locale])
-                                                         
+            self.maybe_apply_translation(env, locale)
             if 'translation' in env or locale == NULL_LOCALE:
                 return self.file_server.handle_request(env, start)
 
@@ -123,18 +128,32 @@ def run_server(port, static_files_dir, templates_dir,
 
     httpd.serve_forever()
 
-def export_site(build_dir, static_files_dir, ext_handlers, ignore=None):
+def export_site(build_dir, static_files_dir, templates_dir, locale_dir,
+                locale_domain):
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
-    shutil.copytree(static_files_dir, build_dir, ignore=ignore)
-    for dirpath, dirnames, filenames in os.walk(build_dir):
-        files = [os.path.join(dirpath, filename)[len(build_dir)+1:]
-                 for filename in filenames
-                 if os.path.splitext(filename)[1] in ext_handlers]
-        for relpath in files:
-            print "processing special file: %s" % relpath
-            abspath = os.path.join(static_files_dir, relpath)
-            handler = ext_handlers[os.path.splitext(relpath)[1]]
-            mimetype, contents = handler(static_files_dir, abspath)
-            open(os.path.join(build_dir, relpath), 'w').write(contents)
+    print "copying static files"
+    shutil.copytree(static_files_dir, build_dir)
+    server = LocalizedTemplateServer(templates_dir, locale_dir, locale_domain)
+    locales = find_locales(locale_dir, locale_domain)
+    if NULL_LOCALE not in locales:
+        locales.append(NULL_LOCALE)
+    for locale in locales:
+        print "processing localization '%s'" % locale
+        env = {}
+        server.maybe_apply_translation(env, locale)
+        for dirpath, dirnames, filenames in os.walk(templates_dir):
+            files = [os.path.join(dirpath, filename)[len(templates_dir)+1:]
+                     for filename in filenames]
+            for relpath in files:
+                print "  %s/%s" % (locale, relpath)
+                abspath = os.path.join(templates_dir, relpath)
+                mimetype, contents = server.handle_file_as_jinja2_template(
+                    env,
+                    templates_dir,
+                    abspath
+                    )
+                dest_path = os.path.join(build_dir, locale, relpath)
+                mkpath(os.path.dirname(dest_path))
+                open(dest_path, 'w').write(contents)
     print "done.\n\nyour new static site is located at:\n%s" % build_dir
