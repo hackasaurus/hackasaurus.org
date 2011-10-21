@@ -1,0 +1,126 @@
+.wrapper {
+    margin: 0 10px;
+    overflow: hidden;
+    zoom: 1;
+    position: relative;
+}
+footer a:link,
+footer a:visited,
+footer a:focus,
+footer a:hover,
+footer a:active,
+footer b {
+    color: #ef4619;
+    text-decoration: none;
+}
+footer a:focus,
+footer a:hover,
+footer a:active {
+    text-decoration: underline;
+}
+footer h1, footer h2 {
+  font-family: "MetaWebPro-Black";
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.cta {
+    background: url(images/bg_cta.jpg) no-repeat 75% 0 #1c2a35;
+    color: #D0D0D0;
+    border-top: 1px solid #2d4053;
+}
+.cta h2 {
+    color: #FFF;
+}
+.cta h3 {
+    font-weight: normal;
+    margin-bottom: 0.2em;
+}
+.cta label {
+    font-family: Arial;
+    color: #8a8a8a;
+    position: absolute;
+    left: -9999em;
+    display: block;
+    height: 1px;
+}
+.cta .inline {
+    margin: 0.4em 0;
+}
+.cta .inline label {
+    margin-left: 10px;
+    position: static;
+    display: inline;
+    height: auto;
+    left: 0;
+}
+.cta input[type="email"] {
+    padding: 0.6em 10px;
+}
+.cta input[type="submit"] {
+    margin: 0.2em 0 0.4em;
+    display: block;
+    width: 100%;
+    color: #FFF;
+    border: 1px solid #ef4619;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 5px;
+    background: #ef3219; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#ef4619, #ef3219);
+    background: -o-linear-gradient(#ef4619, #ef3219);
+    background: -webkit-linear-gradient(#ef4619,#ef3219);
+    padding: 0.25em 21px;
+    font-size: 26px;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.cta input[type="submit"]:hover {
+        text-decoration: underline;
+}
+.external {
+    background: url(images/bg_external.png) repeat-x 0 0 #FFF;
+}
+.external h2 {
+    padding-top: 40px;
+    color: #2e2e2d;
+    background: url(images/icons.png) no-repeat 0 -440px transparent;
+}
+.moz h2 {
+    background-position: 0 -590px;
+}
+.learn h2 {
+    background-position: 0 -740px;
+}
+.external p {
+    font-size: 14px;
+    color: #454545;
+}
+.external ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.external li {
+    border-top: 1px solid #d8dadc;
+    font-size: 14px;
+    padding: 0.5em 0;
+}
+.external li:first-child {
+    border-top: none;
+}
+.partners {
+    background: url(images/bg_partners.png) repeat-x 0 0 #e7e7e7;
+}
+.partners ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.partners li {
+    margin-left: 10px;
+    float: left;
+}
+.partners li:first-child {
+    margin-left: 0;
+}

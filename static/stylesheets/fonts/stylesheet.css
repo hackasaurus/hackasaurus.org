@@ -14,3 +14,7 @@
 
 }
 
+@font-face {
+    font-family: 'MetaWebPro-Black';
+    src: url(MetaWebPro-Black.woff) format('woff');
+}
