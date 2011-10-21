@@ -9,13 +9,13 @@ from distutils.dir_util import mkpath
 from wsgiref.simple_server import make_server
 from wsgiref.util import FileWrapper, shift_path_info
 
+from babel import Locale, UnknownLocaleError
 from .localization import find_locales
 
-locale_path_re = re.compile(r'^/([a-z][a-z])/.*')
 mimetypes.add_type('application/x-font-woff', '.woff')
 
 # Don't require localization files to exist for this locale.
-NULL_LOCALE = 'en'
+NULL_LOCALE = 'en_US'
 
 def simple_response(start, contents, code='200 OK', mimetype='text/plain'):
     start(code, [('Content-Type', mimetype),
@@ -91,13 +91,18 @@ class LocalizedTemplateServer(object):
                                                      [locale])
 
     def handle_request(self, env, start):
-        match = locale_path_re.match(env['PATH_INFO'])
-        if match:
-            locale = match.group(1)
+        parts = env['PATH_INFO'].split('/')[1:]
+        locale = None
+        if len(parts):
+            try:
+                locale = Locale.parse(parts[0], sep='-')
+            except (ValueError, UnknownLocaleError):
+                pass
+        if locale:
             env = dict(env)
             shift_path_info(env)
-            self.maybe_apply_translation(env, locale)
-            if 'translation' in env or locale == NULL_LOCALE:
+            self.maybe_apply_translation(env, str(locale))
+            if 'translation' in env or str(locale) == NULL_LOCALE:
                 return self.file_server.handle_request(env, start)
 
     def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
@@ -139,21 +144,22 @@ def export_site(build_dir, static_files_dir, template_dir, locale_dir,
     if NULL_LOCALE not in locales:
         locales.append(NULL_LOCALE)
     for locale in locales:
-        print "processing localization '%s'" % locale
+        nice_locale = locale.replace('_', '-')
+        print "processing localization '%s'" % nice_locale
         env = {}
         server.maybe_apply_translation(env, locale)
         for dirpath, dirnames, filenames in os.walk(template_dir):
             files = [os.path.join(dirpath, filename)[len(template_dir)+1:]
                      for filename in filenames]
             for relpath in files:
-                print "  %s/%s" % (locale, relpath)
+                print "  %s/%s" % (nice_locale, relpath)
                 abspath = os.path.join(template_dir, relpath)
                 mimetype, contents = server.handle_file_as_jinja2_template(
                     env,
                     template_dir,
                     abspath
                     )
-                dest_path = os.path.join(build_dir, locale, relpath)
+                dest_path = os.path.join(build_dir, nice_locale, relpath)
                 mkpath(os.path.dirname(dest_path))
                 open(dest_path, 'w').write(contents)
     print "done.\n\nyour new static site is located at:\n%s" % build_dir
