@@ -10,12 +10,18 @@ html, body {
   background-color: #e7e7e7;
 }
 
-a {
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
   color: #153959;
   text-decoration: none;
 }
 
-a:hover {
+a:focus,
+a:hover,
+a:active {
   text-decoration: underline;
 }
 
