@@ -48,7 +48,7 @@ a.more:after {
   display: block;
   position: absolute;
   top: 15px;
-  left: 0px;
+  left: 10px;
   background-image: url(images/hackasaurus-blue-logo.png);
   width: 357px;
   height: 24px;
@@ -59,9 +59,9 @@ a.more:after {
   display: inline-block;
   margin: 0px;
   padding: 0px;
-  position: relative;
+  position: absolute;
   top: 16px;
-  left: 475px;
+  right: 150px;
   list-style-type: none;
 }
 
@@ -84,7 +84,7 @@ a.more:after {
   display: block;
   position: absolute;
   top: 0px;
-  right: 0px;
+  right: 10px;
   background-image: url(images/mozilla-tab.png);
   width: 118px;
   height: 49px;
@@ -95,6 +95,10 @@ a.more:after {
 
 #body {
   font-size: 18px;
+}
+
+#body .wrapper {
+  padding-right: 0px;
 }
 
 #body h1, #body h2 {
