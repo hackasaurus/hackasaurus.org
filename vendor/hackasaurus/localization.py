@@ -10,10 +10,14 @@ def parse_locale(name):
     except (ValueError, UnknownLocaleError):
         return None
 
-def find_locales(dirname, domain):
-    return [name for name in os.listdir(dirname)
-            if locale_exists(name, dirname, domain)]
-
+def find_locales(dirname, domain, default):
+    locales = {}
+    for name in [name for name in os.listdir(dirname)
+                 if locale_exists(name, dirname, domain)]:
+        locales[name] = Locale(name)
+    locales[default] = Locale(default)
+    return locales
+    
 def locale_exists(locale, dirname, domain):
     pofile = os.path.join(dirname, locale, 'LC_MESSAGES',
                           '%s.po' % domain)

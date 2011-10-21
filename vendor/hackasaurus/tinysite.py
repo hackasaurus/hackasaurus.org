@@ -83,7 +83,7 @@ class LocalizedTemplateServer(object):
         })
 
     def maybe_apply_translation(self, env, locale):
-        env['locale_prefix'] = locale
+        env['locale'] = locale
         if gettext.find(self.locale_domain, self.locale_dir, [locale]):
             env['translation'] = gettext.translation(self.locale_domain,
                                                      self.locale_dir,
@@ -103,7 +103,12 @@ class LocalizedTemplateServer(object):
 
     def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
         loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
-        env = jinja2.Environment(loader=loader, extensions=['jinja2.ext.i18n'])
+        env = jinja2.Environment(loader=loader, 
+                                 extensions=['jinja2.ext.i18n'])
+        locales = find_locales(self.locale_dir, self.locale_domain,
+                               NULL_LOCALE)
+        env.globals['locales'] = locales
+        env.globals['current_locale'] = locales[wsgi_env['locale']]
         if 'translation' in wsgi_env:
             env.install_gettext_translations(wsgi_env['translation'])
         else:
@@ -136,9 +141,7 @@ def export_site(build_dir, static_files_dir, template_dir, locale_dir,
     print "copying static files"
     shutil.copytree(static_files_dir, build_dir)
     server = LocalizedTemplateServer(template_dir, locale_dir, locale_domain)
-    locales = find_locales(locale_dir, locale_domain)
-    if NULL_LOCALE not in locales:
-        locales.append(NULL_LOCALE)
+    locales = find_locales(locale_dir, locale_domain, NULL_LOCALE)
     for locale in locales:
         nice_locale = locale.replace('_', '-')
         print "processing localization '%s'" % nice_locale
