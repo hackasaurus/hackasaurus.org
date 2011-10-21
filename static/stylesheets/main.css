@@ -208,6 +208,8 @@ a.more:after {
     float: left;
     width: 33%;
     -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 10px;
 }
 .external .col:first-child {
