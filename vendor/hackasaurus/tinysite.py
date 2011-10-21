@@ -9,8 +9,7 @@ from distutils.dir_util import mkpath
 from wsgiref.simple_server import make_server
 from wsgiref.util import FileWrapper, shift_path_info
 
-from babel import Locale, UnknownLocaleError
-from .localization import find_locales
+from .localization import find_locales, parse_locale
 
 mimetypes.add_type('application/x-font-woff', '.woff')
 
@@ -94,10 +93,7 @@ class LocalizedTemplateServer(object):
         parts = env['PATH_INFO'].split('/')[1:]
         locale = None
         if len(parts):
-            try:
-                locale = Locale.parse(parts[0], sep='-')
-            except (ValueError, UnknownLocaleError):
-                pass
+            locale = parse_locale(parts[0])
         if locale:
             env = dict(env)
             shift_path_info(env)
