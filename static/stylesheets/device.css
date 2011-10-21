@@ -62,18 +62,14 @@ footer h1, footer h2 {
     display: block;
     width: 100%;
     color: #FFF;
-    border: 1px solid #ef4619;
+    border: none;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 5px;
-    background: #ef3219; /* Show a solid color for older browsers */
-    background: -moz-linear-gradient(#ef4619, #ef3219);
-    background: -o-linear-gradient(#ef4619, #ef3219);
-    background: -webkit-linear-gradient(#ef4619,#ef3219);
-    padding: 0.25em 21px;
-    font-size: 26px;
-    text-transform: uppercase;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #f8a339;
+    padding: 9px 21px;
+    font-size: 20px;
+    font-family: inherit;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
