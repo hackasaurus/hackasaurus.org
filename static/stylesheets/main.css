@@ -118,6 +118,17 @@ header a#mozilla {
 
 /* Main content rules */
 
+#content p a {
+  text-decoration: underline;
+}
+
+#content div.primary img.octocat {
+  width: 300px;
+  position: absolute;
+  top: 150px;
+  left: 58px;
+}
+
 #content {
   font-size: 18px;
 }
