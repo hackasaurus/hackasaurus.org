@@ -107,8 +107,11 @@ class LocalizedTemplateServer(object):
                                  extensions=['jinja2.ext.i18n'])
         locales = find_locales(self.locale_dir, self.locale_domain,
                                NULL_LOCALE)
-        env.globals['locales'] = locales
-        env.globals['current_locale'] = locales[wsgi_env['locale']]
+        env.globals.update(dict(
+            SITE_ROOT="/%s/" % wsgi_env['locale'].replace('_', '-'),
+            locales=locales,
+            current_locale=locales[wsgi_env['locale']]
+        ))
         if 'translation' in wsgi_env:
             env.install_gettext_translations(wsgi_env['translation'])
         else:
