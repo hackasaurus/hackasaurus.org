@@ -23,6 +23,16 @@ the web site, where `<locale>` is the name of a locale like `en-US`.
 
   [Jinja2]: http://jinja.pocoo.org/
 
+## Localization
+
+The site uses GNU gettext for localization via [Babel][] and Jinja2's
+[i18n extension][]. Soon we'll get the site listed on
+localize.mozilla.org so that anyone can easily help localize
+the website.
+
+  [Babel]: http://babel.edgewall.org/
+  [i18n extension]: http://jinja.pocoo.org/docs/templates/#extensions
+
 ## Deployment
 
 Run this at the terminal prompt:
