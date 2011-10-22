@@ -234,6 +234,16 @@ a.more:after {
   background-size: 80px;  
   background-image: url(images/partners/macarthur.jpg);
 }
+.partners a.hive {
+  color: transparent;
+  display: inline-block;
+  margin-top: 25px;
+  margin-left: 10px;
+  width: 120px;
+  background-size: 120px;  
+  height: 65px;
+  background-image: url(images/partners/hive-logo.png);
+}
 
 /* For bigger screens */
 @media all and (min-width: 600px) {
