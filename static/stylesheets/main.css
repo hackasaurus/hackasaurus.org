@@ -2,18 +2,18 @@
 
 @font-face {
     font-family: 'TrashHandRegular';
-    src: url('fonts/TrashHand-webfont.eot');
-    src: url('fonts/TrashHand-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/TrashHand-webfont.woff') format('woff'),
-         url('fonts/TrashHand-webfont.ttf') format('truetype'),
-         url('fonts/TrashHand-webfont.svg#TrashHandRegular') format('svg');
+    src: url('../fonts/TrashHand-webfont.eot');
+    src: url('../fonts/TrashHand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/TrashHand-webfont.woff') format('woff'),
+         url('../fonts/TrashHand-webfont.ttf') format('truetype'),
+         url('../fonts/TrashHand-webfont.svg#TrashHandRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MetaWebPro-Black';
-    src: url(fonts/MetaWebPro-Black.woff) format('woff');
+    src: url(../fonts/MetaWebPro-Black.woff) format('woff');
 }
 
 /* Global rules */
@@ -74,7 +74,7 @@ header a#logo {
   position: absolute;
   top: 15px;
   left: 10px;
-  background-image: url(images/hackasaurus-blue-logo.png);
+  background-image: url(../images/hackasaurus-blue-logo.png);
   width: 357px;
   height: 24px;
   color: transparent;
@@ -110,7 +110,7 @@ header a#mozilla {
   position: absolute;
   top: 0px;
   right: 10px;
-  background-image: url(images/mozilla-tab.png);
+  background-image: url(../images/mozilla-tab.png);
   width: 118px;
   height: 49px;
   color: transparent;
@@ -132,7 +132,7 @@ header a#mozilla {
 }
 
 #content div.primary {
-  background: url(images/supergirlanodig.png);
+  background: url(../images/supergirlanodig.png);
   background-position: 250px 0px;
   background-repeat: no-repeat;
   min-height: 461px;
@@ -232,7 +232,7 @@ footer h1, footer h2 {
 }
 
 .cta {
-  background: url(images/bg_cta.jpg) no-repeat 75% 0 #1c2a35;
+  background: url(../images/bg_cta.jpg) no-repeat 75% 0 #1c2a35;
   color: #D0D0D0;
   border-top: 1px solid #2d4053;
 }
@@ -293,13 +293,13 @@ footer h1, footer h2 {
 }
 
 .external {
-  background: url(images/bg_external.png) repeat-x 0 0 #FFF;
+  background: url(../images/bg_external.png) repeat-x 0 0 #FFF;
 }
 
 .external h2 {
   padding-top: 40px;
   color: #2e2e2d;
-  background: url(images/icons.png) no-repeat 0 -440px transparent;
+  background: url(../images/icons.png) no-repeat 0 -440px transparent;
 }
 
 .moz h2 {
@@ -331,7 +331,7 @@ footer h1, footer h2 {
 }
 
 .partners {
-  background: url(images/bg_partners.png) repeat-x 0 0 #e7e7e7;
+  background: url(../images/bg_partners.png) repeat-x 0 0 #e7e7e7;
 }
 
 .partners ul {
@@ -408,7 +408,7 @@ footer h1, footer h2 {
   margin-left: 20px;
   width: 80px;
   background-size: 80px;  
-  background-image: url(images/partners/macarthur.jpg);
+  background-image: url(../images/partners/macarthur.jpg);
 }
 
 .partners a.hive {
@@ -417,7 +417,7 @@ footer h1, footer h2 {
   width: 120px;
   background-size: 120px;  
   height: 65px;
-  background-image: url(images/partners/hive-logo.png);
+  background-image: url(../images/partners/hive-logo.png);
 }
 
 .legal {
