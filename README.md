@@ -1,4 +1,6 @@
-This is the content for the website at hackasaurus.org.
+This is the content for the website at [hackasaurus.org][].
+
+  [hackasaurus.org]: http://hackasaurus.org
 
 ## Prerequisites
 
@@ -27,11 +29,12 @@ the web site, where `<locale>` is the name of a locale like `en-US`.
 
 The site uses GNU gettext for localization via [Babel][] and Jinja2's
 [i18n extension][]. Soon we'll get the site listed on
-localize.mozilla.org so that anyone can easily help localize
+[localize.mozilla.org][] so that anyone can easily help localize
 the website.
 
   [Babel]: http://babel.edgewall.org/
   [i18n extension]: http://jinja.pocoo.org/docs/templates/#extensions
+  [localize.mozilla.org]: https://localize.mozilla.org
 
 ## Deployment
 
