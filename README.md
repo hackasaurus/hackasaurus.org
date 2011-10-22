@@ -2,7 +2,8 @@ This is the content for the website at hackasaurus.org.
 
 ## Prerequisites
 
-You need Python version 2.6 or higher.
+You need Python version 2.6 or higher. All other dependencies are
+self-contained within the project's code repository.
 
 ## Setup
 
