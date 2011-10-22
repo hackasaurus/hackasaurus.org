@@ -189,19 +189,20 @@ header a#mozilla {
 
 /* Footer rules */
 
-footer a:link,
-footer a:visited,
-footer a:focus,
-footer a:hover,
-footer a:active,
-footer b {
+.cta a:link,
+.cta a:visited,
+.cta a:focus,
+.cta a:hover,
+.cta a:active,
+.cta b {
   color: #ef4619;
+  color: #f8a339;
   text-decoration: none;
 }
 
-footer a:focus,
-footer a:hover,
-footer a:active {
+.cta a:focus,
+.cta a:hover,
+.cta a:active {
   text-decoration: underline;
 }
 
@@ -270,7 +271,7 @@ footer h1, footer h2 {
 }
 
 .cta input[type="submit"]:hover {
-  text-decoration: underline;
+  background-color: #ffc833;
 }
 
 .external {
