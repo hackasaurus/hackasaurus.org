@@ -116,7 +116,7 @@ header a#mozilla {
   color: transparent;
 }
 
-/* main content rules */
+/* Main content rules */
 
 #content {
   font-size: 18px;
@@ -203,7 +203,9 @@ header a#mozilla {
   padding-bottom: 50px;
 }
 
-/* Footer rules */
+/* Footer rules
+ * Based on https://github.com/rossbruniges/splash.mozilla-ignite.org/
+ * (as of commit 3edb1d599296195f223ca8127972ecd9fbc39899) */
 
 .cta a:link,
 .cta a:visited,
