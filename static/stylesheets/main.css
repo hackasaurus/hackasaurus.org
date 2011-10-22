@@ -356,6 +356,8 @@ footer h1, footer h2 {
 .cta input[type="email"] {
   width: 100%;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .external .col {
