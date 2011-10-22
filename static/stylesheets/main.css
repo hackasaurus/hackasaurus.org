@@ -225,9 +225,12 @@ a.more:after {
     float: left;
     line-height: 120px;
 }
-.partners a.macarthur {
-  color: transparent;
+.partners a {
+  color: transparent !important;
   display: inline-block;
+  overflow: hidden;
+}
+.partners a.macarthur {
   margin-top: 40px;
   margin-left: 20px;
   width: 80px;
@@ -235,8 +238,6 @@ a.more:after {
   background-image: url(images/partners/macarthur.jpg);
 }
 .partners a.hive {
-  color: transparent;
-  display: inline-block;
   margin-top: 25px;
   margin-left: 10px;
   width: 120px;
