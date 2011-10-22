@@ -29,7 +29,7 @@ a.more:after {
   content: ' »';
 }
 
-#header-and-body {
+#header-and-content {
   background-image: -webkit-gradient(linear, left top, left 50%, from(#ffef8d), to(white));
   background-image: -webkit-linear-gradient(top, #ffef8d, white 50%);
   background-image: -moz-linear-gradient(top, #ffef8d, white 50%);  
@@ -46,11 +46,11 @@ a.more:after {
 
 /* Header rules */
 
-#header .wrapper {
+header .wrapper {
   height: 100px;
 }
 
-#header a#logo {
+header a#logo {
   display: block;
   position: absolute;
   top: 15px;
@@ -61,7 +61,7 @@ a.more:after {
   color: transparent;
 }
 
-#header ul {
+header ul {
   display: inline-block;
   margin: 0px;
   padding: 0px;
@@ -71,22 +71,22 @@ a.more:after {
   list-style-type: none;
 }
 
-#header ul li a {
+header ul li a {
   font-weight: bold;
   font-size: 14px;
 }
 
-#header ul li {
+header ul li {
   display: inline-block;
   padding: 5px;
   border-left: 1px solid #e1d26d;
 }
 
-#header ul li:first-child {
+header ul li:first-child {
   border-left: none;
 }
 
-#header a#mozilla {
+header a#mozilla {
   display: block;
   position: absolute;
   top: 0px;
@@ -97,22 +97,22 @@ a.more:after {
   color: transparent;
 }
 
-/* Body (main content) rules */
+/* main content rules */
 
-#body {
+#content {
   font-size: 18px;
 }
 
-#body .wrapper {
+#content .wrapper {
   padding-right: 0px;
 }
 
-#body h1, #body h2 {
+#content h1, #content h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';
 }
 
-#body div.primary {
+#content div.primary {
   background: url(images/supergirlanodig.png);
   background-position: 250px 0px;
   background-repeat: no-repeat;
@@ -121,33 +121,33 @@ a.more:after {
   position: relative;
 }
 
-#body div.primary p {
+#content div.primary p {
   width: 50%;
 }
 
-#body div.primary ul.options {
+#content div.primary ul.options {
   margin: 0px;
   padding: 0px;
   list-style-type: none;
 }
 
-#body div.primary ul.options li {
+#content div.primary ul.options li {
   display: inline-block;
   border-left: 1px solid #153959;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-#body div.primary ul.options li:first-child {
+#content div.primary ul.options li:first-child {
   padding-left: 0px;
   border-left: none;
 }
 
-#body div.primary ul.options li a {
+#content div.primary ul.options li a {
   font-weight: bold;
 }
 
-#body div.primary a.more {
+#content div.primary a.more {
   position: absolute;
   text-align: center;
   width: 230px;
@@ -164,23 +164,23 @@ a.more:after {
   box-shadow: 5px 5px 20px black;
 }
 
-#body div.primary a.more:hover {
+#content div.primary a.more:hover {
   background-color: #ffc833;
   text-decoration: none;
 }
 
-#body div.secondary div.blurb {
+#content div.secondary div.blurb {
   display: inline-block;
   width: 30%;
   vertical-align: top;
   padding-right: 20px;
 }
 
-#body div.secondary div.blurb p {
+#content div.secondary div.blurb p {
   height: 4em;
 }
 
-#body div.secondary {
+#content div.secondary {
   padding-bottom: 50px;
 }
 
