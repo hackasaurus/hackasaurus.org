@@ -12,7 +12,7 @@ from hackasaurus.management import execute_manager
 
 if __name__ == '__main__':
     execute_manager(
-        build_dir=path('build'),
+        build_dir=path('dist'),
         static_files_dir=path('static'),
         template_dir=path('templates'),
         locale_dir=path('locale'),
