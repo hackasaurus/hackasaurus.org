@@ -45,3 +45,18 @@ Run this at the terminal prompt:
 This will create a static version of the site, for all supported locales, in 
 the `dist` directory. You can copy this directory to any web server that 
 serves static files, such as Apache or Amazon S3.
+
+## Technical Design Philosophy
+
+The Hackasaurus website is almost entirely static content, so we didn't see
+much of a need to use a massive server-side framework like [Playdoh][].
+Instead, we took an approach more akin to that of [Jekyll][], whereby
+a script can be run to generate a fully static site capable of being
+deployed to any static web server.
+
+However, we pick from Playdoh's toolkit when we need to solve a problem, which
+results in a code repository that looks more familiar to Mozilla developers as
+the site's requirements become more complex.
+
+  [Playdoh]: https://github.com/mozilla/playdoh
+  [Jekyll]: https://github.com/mojombo/jekyll/wiki
