@@ -8,4 +8,11 @@
       {% endif %}
     {% endfor %}
   </select>
+  <noscript>
+    <ul class="noscript-language-selector">
+      {% for name, locale in locales|dictsort %}
+        <li><a href="/{{ name }}/">{{ locale.display_name }}</a></li>
+      {% endfor %}
+    </ul>
+  </noscript>
 </form>

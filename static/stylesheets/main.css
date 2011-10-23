@@ -353,8 +353,23 @@ footer h1, footer h2 {
   float: right;
 }
 
+.languages form {
+  position: relative;
+}
+
 .languages select {
   margin-top: 5px;
+  font-size: 12px;
+}
+
+.languages ul.noscript-language-selector {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  right: 0px;
+  background: #e7e7e7;
+  list-style-type: none;
+  padding-left: 0px;
   font-size: 12px;
 }
 
