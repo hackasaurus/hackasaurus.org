@@ -1,0 +1,9 @@
+<select onchange="window.location = '/' + this.options[this.selectedIndex].value + '/'">
+  {% for name, locale in locales|dictsort %}
+    {% if locale is sameas current_locale %}
+    <option value="{{ name }}" selected>{{ locale.display_name }}</option>
+    {% else %}
+    <option value="{{ name }}">{{ locale.display_name }}</option>
+    {% endif %}
+  {% endfor %}
+</select>

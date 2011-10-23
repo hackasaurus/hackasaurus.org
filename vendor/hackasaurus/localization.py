@@ -4,6 +4,9 @@ import sys
 from babel import Locale, UnknownLocaleError
 from babel.messages.frontend import CommandLineInterface
 
+def hyphenate(name):
+    return name.replace('_', '-')
+
 def parse_locale(name):
     try:
         return Locale.parse(name, sep='-')
@@ -14,8 +17,8 @@ def find_locales(dirname, domain, default):
     locales = {}
     for name in [name for name in os.listdir(dirname)
                  if locale_exists(name, dirname, domain)]:
-        locales[name] = Locale(name)
-    locales[default] = Locale(default)
+        locales[hyphenate(name)] = Locale(name)
+    locales[hyphenate(default)] = Locale(default)
     return locales
     
 def locale_exists(locale, dirname, domain):
