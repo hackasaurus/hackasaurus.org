@@ -4,6 +4,7 @@
 <title>{% trans %}Hackasaurus{% endtrans %}{% block title %}{% endblock %}</title>
 <link rel="stylesheet" href="/stylesheets/normalize.css">
 <link rel="stylesheet" href="/stylesheets/main.css">
+{% block stylesheets %}{% endblock %}
 <div id="header-and-content">
   <header>
     <div class="wrapper">
@@ -98,3 +99,4 @@
 </footer>
 <script src="/scripts/jquery.min.js"></script>
 <script src="/scripts/localize.js"></script>
+{% block scripts %}{% endblock %}

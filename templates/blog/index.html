@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/blog.css">
+{% endblock %}
+{% block content %}
+<div id="blog">
+  <h1>Blog</h1>
+  <aside>News, notes and ramblings from the Hackasaurus project team.</aside>
+	<div class="entries">
+		<p>Loading blog posts&hellip;</p>
+	</div>
+</div>
+
+<div id="templates" style="display: none;">
+  <div class="entry">
+    <h2 class="title"><a></a></h2>
+    <div class="byline">Posted by <span class="author"></span></div>
+    <div class="date"></div>
+    <div class="content"></div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="/scripts/blog/date.format.js"></script>
+<script src="/scripts/blog/blog.js"></script>
+{% endblock %}
