@@ -1,17 +1,17 @@
 <form autocomplete="off">
   <select class="language-selector">
-    {% for name, locale in locales|dictsort %}
+    {% for locale in locales %}
       {% if locale is sameas current_locale %}
-      <option value="{{ name }}" selected>{{ locale.display_name }}</option>
+      <option value="{{ locale }}" selected>{{ locale.display_name }}</option>
       {% else %}
-      <option value="{{ name }}">{{ locale.display_name }}</option>
+      <option value="{{ locale }}">{{ locale.display_name }}</option>
       {% endif %}
     {% endfor %}
   </select>
   <noscript>
     <ul class="noscript-language-selector">
-      {% for name, locale in locales|dictsort %}
-        <li><a href="/{{ name }}/">{{ locale.display_name }}</a></li>
+      {% for locale in locales %}
+        <li><a href="/{{ locale }}/">{{ locale.display_name }}</a></li>
       {% endfor %}
     </ul>
   </noscript>

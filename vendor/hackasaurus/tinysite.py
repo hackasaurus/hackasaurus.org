@@ -9,7 +9,7 @@ from distutils.dir_util import mkpath
 from wsgiref.simple_server import make_server
 from wsgiref.util import FileWrapper, shift_path_info
 
-from .localization import find_locales, parse_locale, hyphenate
+from .localization import find_locales, to_gettext_locale, hyphenate
 
 mimetypes.add_type('application/x-font-woff', '.woff')
 
@@ -93,7 +93,7 @@ class LocalizedTemplateServer(object):
         parts = env['PATH_INFO'].split('/')[1:]
         locale = None
         if len(parts):
-            locale = parse_locale(parts[0])
+            locale = to_gettext_locale(parts[0])
         if locale:
             env = dict(env)
             shift_path_info(env)
@@ -109,7 +109,7 @@ class LocalizedTemplateServer(object):
                                NULL_LOCALE)
         env.globals.update(dict(
             LOCALE_ROOT="/%s/" % wsgi_env['locale'],
-            locales=locales,
+            locales=sorted(locales.values()),
             current_locale=locales[wsgi_env['locale']]
         ))
         if 'translation' in wsgi_env:

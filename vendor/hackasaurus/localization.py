@@ -15,7 +15,7 @@ class SimpleLocale(object):
 def hyphenate(name):
     return name.replace('_', '-')
 
-def parse_locale(name):
+def to_gettext_locale(name):
     try:
         return str(Locale.parse(name, sep='-'))
     except (ValueError, UnknownLocaleError):
