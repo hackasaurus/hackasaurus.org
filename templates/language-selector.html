@@ -1,5 +1,5 @@
 <form autocomplete="off">
-  <select onchange="window.location = '/' + this.options[this.selectedIndex].value + '/'">
+  <select class="language-selector">
     {% for name, locale in locales|dictsort %}
       {% if locale is sameas current_locale %}
       <option value="{{ name }}" selected>{{ locale.display_name }}</option>
