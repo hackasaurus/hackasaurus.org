@@ -1,6 +1,13 @@
 (function(jQuery) {
   var $ = jQuery;
   
+  function normalizeLanguage(language) {
+    var match = language.match(/([A-Za-z]+)-([A-Za-z]+)/);
+    if (match)
+      return match[1].toLowerCase() + "-" + match[2].toUpperCase();
+    return language.toLowerCase();
+  }
+  
   jQuery.extend({
     localization: {
       DEFAULT: "en-US",
@@ -17,9 +24,12 @@
         });
       },
       findBestMatch: function(locale, available) {
+        locale = normalizeLanguage(locale);
         var exactMatch = available.indexOf(locale);
-        if (exactMatch == -1)
+        if (exactMatch == -1) {
+          // TODO: Implement this.
           return this.DEFAULT;
+        }
         return locale;
       },
       activate: function(locale) {
