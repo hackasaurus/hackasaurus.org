@@ -8,7 +8,7 @@ jQuery.when(feedLoaded).then(function(data) {
 
   entries = $('#blog .entries').empty();
 
-  data.value.items.forEach(function(item) {
+  function createBlogPost(item) {
     var entry = entryTemplate.clone();
     entry.find(".title a").text(item['y:title']);
 
@@ -45,5 +45,7 @@ jQuery.when(feedLoaded).then(function(data) {
     });
 
     entries.append(entry);
-  });
+  }
+  
+  data.value.items.slice(0, 3).forEach(createBlogPost);
 });
