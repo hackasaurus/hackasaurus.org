@@ -108,7 +108,7 @@ class LocalizedTemplateServer(object):
         locales = find_locales(self.locale_dir, self.locale_domain,
                                NULL_LOCALE)
         env.globals.update(dict(
-            SITE_ROOT="/%s/" % wsgi_env['locale'],
+            LOCALE_ROOT="/%s/" % wsgi_env['locale'],
             locales=locales,
             current_locale=locales[wsgi_env['locale']]
         ))
