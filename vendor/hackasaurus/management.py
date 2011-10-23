@@ -9,9 +9,6 @@ def execute_manager(build_dir, static_files_dir, template_dir,
                     babel_ini_file):
     def cmd_makemessages(args):
         "create/update message file(s) for localization"
-
-        if not os.path.exists(locale_dir):
-            os.mkdir(locale_dir)
         
         potfile = os.path.join(locale_dir, '%s.pot' % locale_domain)
 
@@ -56,6 +53,9 @@ def execute_manager(build_dir, static_files_dir, template_dir,
             locale_dir=locale_dir,
             locale_domain=locale_domain,
             )
+
+    if not os.path.exists(locale_dir):
+        os.mkdir(locale_dir)
 
     parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers()
