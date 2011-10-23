@@ -201,9 +201,12 @@ header a#mozilla {
 
 #content div.secondary div.blurb {
   display: inline-block;
-  width: 30%;
+  width: 33%;
   vertical-align: top;
   padding-right: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #content div.secondary div.blurb p {
