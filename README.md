@@ -23,6 +23,10 @@ placed at the root of the web site. The `templates` directory
 contains localized [Jinja2][] templates that are located at `/<locale>/` on
 the web site, where `<locale>` is the name of a locale like `en-US`.
 
+Whenever you need to link to a localized template, you can do so either via
+a relative URL or an absolute one that begins with the template variable
+`{{ LOCALE_ROOT }}`.
+
   [Jinja2]: http://jinja.pocoo.org/
 
 ## Localization
