@@ -97,8 +97,8 @@ class LocalizedTemplateServer(object):
         if locale:
             env = dict(env)
             shift_path_info(env)
-            self.maybe_apply_translation(env, str(locale))
-            if 'translation' in env or str(locale) == NULL_LOCALE:
+            self.maybe_apply_translation(env, locale)
+            if 'translation' in env or locale == NULL_LOCALE:
                 return self.file_server.handle_request(env, start)
 
     def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
