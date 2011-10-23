@@ -22,7 +22,7 @@
           });
           var bestMatch = jQuery.localization.findBestMatch(navigator.language,
                                                             available);
-          jQuery.localization.activate(bestMatch);
+          jQuery.localization.activate(bestMatch, true);
         });
       },
       findBestMatch: function(locale, available) {
@@ -34,9 +34,9 @@
         }
         return locale;
       },
-      activate: function(locale) {
+      activate: function(locale, replaceState) {
         var newURL = '/' + locale + '/';
-        if (window.history && window.history.replaceState) {
+        if (replaceState && window.history && window.history.replaceState) {
           window.history.replaceState({}, "", newURL);
           window.location.reload();
         } else
