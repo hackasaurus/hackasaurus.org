@@ -46,10 +46,10 @@ a.more:after {
 }
 
 #header-and-content {
-  background-image: -webkit-gradient(linear, left top, left 50%, from(#ffef8d), to(white));
-  background-image: -webkit-linear-gradient(top, #ffef8d, white 50%);
-  background-image: -moz-linear-gradient(top, #ffef8d, white 50%);  
-  background-image: -o-linear-gradient(top, #ffef8d, white 50%);  
+  background-image: -webkit-gradient(linear, left top, left 400px, from(#ffef8d), to(white));
+  background-image: -webkit-linear-gradient(top, #ffef8d, white 400px);
+  background-image: -moz-linear-gradient(top, #ffef8d, white 400px);  
+  background-image: -o-linear-gradient(top, #ffef8d, white 400px);  
   /* If the browser doesn't support gradients, just use a white background. */
   background-color: white;
 }
