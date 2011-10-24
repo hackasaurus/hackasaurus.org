@@ -30,6 +30,11 @@ jQuery.when(feedLoaded).then(function(data) {
     if (isNaN(entry.date))
       entry.date = null;
 
+    /* Anna hand-rolls her RSS feed and either doesn't include author
+     * info, or Yahoo Pipes can't parse it, so... */
+    if (!entry.author)
+      entry.author = "Anna";
+    
     entryObjects.push(entry);
   });
 
