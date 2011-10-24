@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/events.css">
+{% endblock %}
+{% block content %}
+<div id="events">
+  <h1>Events</h1>
+  <aside>Design jams, hackfests and workshops</aside>
+
+  <div class="tips">
+    <h3>Don't see an event nearby?</h3>
+    <p>Consider starting your own!</p>
+  </div>
+
+  <div class="header-row">
+    <div>Upcoming Event</div>
+    <div>Location</div>
+    <div>Date</div>
+  </div>
+  
+  <div class="lanyrd-target-splat">
+  	<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-number-5 lanyrd-template-detailed lanyrd-context-all" rel="me"><span class="fallback">All events</span></a>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
+{% endblock %}

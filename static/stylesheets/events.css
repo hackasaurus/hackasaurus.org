@@ -1,0 +1,83 @@
+#events > h1 {
+  font-size: 48px;
+}
+
+#events > aside {
+  margin-top: -30px;
+  padding-bottom: 30px;
+}
+
+div.tips h3 {
+  font-weight: normal;
+  font-family: "TrashHandRegular";
+}
+
+div.tips {
+  background-color: #c7e2f3;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+div.lanyrd-target-splat {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+a.lanyrd-splat {
+  display: inline-block;
+  background-color: #f8a339;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+a.lanyrd-splat:hover {
+  background-color: #ffc833;
+  text-decoration: none;
+}
+
+a.lanyrd-splat span.fallback:after {
+  content: ' »';
+}
+
+li.vevent {
+}
+
+li.vevent, div.header-row {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li.vevent a.flag-mini {
+  display: none;
+}
+
+li.vevent p.location a, li.vevent p.lanyrd-date {
+  color: gray;
+  text-decoration: none !important;
+}
+
+li.vevent h3, li.vevent strong {
+  font-weight: normal;
+}
+
+div.header-row {
+  font-family: "TrashHandRegular";
+  color: gray;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed gray;
+}
+
+li.vevent h3, li.vevent p.location, li.vevent p.lanyrd-date,
+div.header-row div {
+  display: inline-block;
+  vertical-align: top;
+  width: 33%;
+}
+
