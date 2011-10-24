@@ -126,10 +126,6 @@ header a#mozilla {
   font-size: 18px;
 }
 
-#content .wrapper {
-  padding-right: 0px;
-}
-
 #content h1, #content h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';

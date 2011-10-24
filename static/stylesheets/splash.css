@@ -1,3 +1,8 @@
+#content .wrapper {
+  /* So the background image goes to edge of page on narrow screens. */
+  padding-right: 0px;
+}
+
 #content div.primary {
   background: url(../images/supergirlanodig.png);
   background-position: 250px 0px;
