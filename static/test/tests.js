@@ -18,3 +18,19 @@ test("jQuery.localization.findBestMatch()", function() {
         "en-GB",
         "match to more specific locale works");
 });
+
+module("cleanBlogEntries()");
+
+test("cleanBlogEntries() sanitizes", function() {
+  deepEqual(cleanBlogEntries([{
+    link: "javascript:foo()",
+    'content:encoded': '<p onclick="evil()">hello</p>',
+    'dc:creator': 'Bob'
+  }]), [{
+    title: undefined,
+    date: null,
+    author: "Bob",
+    content: "<p>hello</p>",
+    link: null
+  }], "Javascript URLs and event handlers are removed");
+});

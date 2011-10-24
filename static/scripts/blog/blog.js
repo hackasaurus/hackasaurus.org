@@ -3,13 +3,18 @@ var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
                                 "_render=json");
 var entries = null;
 
-jQuery.when(feedLoaded).then(function(data) {
-  var entryObjects = [];
-  var entryTemplate = $("#templates .entry");
+function safeUrl(url) {
+  if (typeof(url) != "string")
+    return null;
+  if (url.match("^https?://"))
+    return url;
+  return null;
+}
 
-  entries = $('#blog .entries').empty();
-  
-  data.value.items.forEach(function(item) {
+function cleanBlogEntries(entries) {
+  var entryObjects = [];
+
+  entries.forEach(function(item) {
     var entry = {
       title: item['y:title'],
       date: new Date(item['pubDate'] ||                  // Wordpress
@@ -34,10 +39,22 @@ jQuery.when(feedLoaded).then(function(data) {
      * info, or Yahoo Pipes can't parse it, so... */
     if (!entry.author)
       entry.author = "Anna";
-    
+
+    entry.content = html_sanitize(entry.content, safeUrl);
+    entry.link = safeUrl(entry.link);
+
     entryObjects.push(entry);
   });
 
+  return entryObjects;
+}
+
+jQuery.when(feedLoaded).then(function(data) {
+  var entryTemplate = $("#templates .entry");
+  var entryObjects = cleanBlogEntries(data.value.items);
+
+  entries = $('#blog .entries').empty();
+  
   entryObjects.forEach(function addSidebarLink(item) {
     var link = $('<li><a></a></li>');
     link.find('a').attr('href', item.link).text(item.title);
