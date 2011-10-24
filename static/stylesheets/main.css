@@ -124,11 +124,21 @@ header a#mozilla {
 
 #content {
   font-size: 18px;
+  padding-bottom: 40px;
 }
 
 #content h1, #content h2 {
   font-weight: normal;
   font-family: 'TrashHandRegular';
+}
+
+#content-header {
+  padding-bottom: 40px;
+}
+
+#content-header > h1 {
+  font-size: 48px;
+  margin-bottom: 0px;
 }
 
 /* Footer rules
