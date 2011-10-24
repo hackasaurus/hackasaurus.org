@@ -71,5 +71,7 @@ These major known vulnerabilities ought to be fixed before any sensitive
 information is served from the domain this site is hosted on:
 
 1. On the events page, we load a [Lanyrd Badge][] via HTTP script injection.
+   The secure equivalent of the script's URL doesn't deliver a trusted
+   certificate, so loading the badge over HTTPS may be problematic.
 
   [Lanyrd badge]: http://lanyrd.com/services/badges/docs/
