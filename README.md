@@ -64,3 +64,11 @@ the site's requirements become more complex.
 
   [Playdoh]: https://github.com/mozilla/playdoh
   [Jekyll]: https://github.com/mojombo/jekyll/wiki
+
+## Security
+
+These major known vulnerabilities ought to be fixed before any sensitive
+information is served from the domain this site is hosted on:
+
+1. The blog section pulls in data from a Yahoo Pipe and injects its content as
+raw HTML.
