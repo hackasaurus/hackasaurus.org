@@ -13,6 +13,7 @@ div.tips h3 {
 }
 
 div.tips {
+  display: none;
   background-color: #c7e2f3;
   padding: 10px;
   border-radius: 10px;
