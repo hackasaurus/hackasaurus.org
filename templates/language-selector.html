@@ -1,3 +1,7 @@
+{# Note that this template is both embedded into the footer and fetched by
+ # the site's static root index.html to determine what localizations are
+ # available for client-side content negotiation.
+ #}
 <form autocomplete="off">
   <select class="language-selector">
     {% for locale in locales %}
