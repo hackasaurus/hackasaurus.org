@@ -2,6 +2,9 @@ module("jQuery.localization");
 
 test("jQuery.localization.findBestMatch()", function() {
   var l10n = jQuery.localization;
+  equal(l10n.findBestMatch("en-GB", ["fr"]),
+        l10n.DEFAULT,
+        "unmatched code gives default");
   equal(l10n.findBestMatch("en-GB", ["fr", "en-GB"]),
         "en-GB",
         "exact match works");

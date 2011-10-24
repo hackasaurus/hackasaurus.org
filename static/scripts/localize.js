@@ -9,7 +9,27 @@
       return match[1].toLowerCase() + "-" + match[2].toUpperCase();
     return language.toLowerCase();
   }
-  
+
+  function inArray(item, arr) {
+    return arr.indexOf(item) != -1;
+  }
+
+  function indexOfNearMatch(locale, available) {
+    var match;
+    if (locale.indexOf('-') != -1) {
+      var localeParts = locale.split('-');
+      match = available.indexOf(localeParts[0]);
+    } 
+    else {
+      match = available.map(function(locale){ 
+        var localeParts = locale.split('-');
+        return localeParts[0];
+      }).indexOf(locale);
+    }
+    return match;
+  }
+   
+
   jQuery.extend({
     localization: {
       DEFAULT: "en-US",
@@ -27,12 +47,16 @@
       },
       findBestMatch: function(locale, available) {
         locale = normalizeLanguage(locale);
-        var exactMatch = available.indexOf(locale);
-        if (exactMatch == -1) {
-          // TODO: Implement this.
-          return this.DEFAULT;
+        if (inArray(locale, available)){
+          return locale;
         }
-        return locale;
+        else {
+          var nearMatch = indexOfNearMatch(locale, available);
+          if (nearMatch == -1) {
+            return this.DEFAULT;
+          }
+          return available[nearMatch];
+        }
       },
       activate: function(locale, replaceState) {
         var newURL = '/' + locale + '/';
