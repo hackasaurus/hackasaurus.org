@@ -143,6 +143,14 @@ header a#mozilla {
   margin-bottom: 0px;
 }
 
+/* For while we're waiting on ajax requests. */
+
+.throbber {
+  background: url(/images/ajax-loader.gif);
+  width: 16px;
+  height: 16px;
+}
+
 /* Two-column layouts that some pages use. */
 
 .two-column > section, .two-column > aside {

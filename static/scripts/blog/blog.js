@@ -67,4 +67,7 @@ jQuery.when(feedLoaded).then(function(data) {
 
     entries.append(entry);
   });
+  
+  $(".throbber").hide();
+  $(".two-column").fadeIn();
 });
