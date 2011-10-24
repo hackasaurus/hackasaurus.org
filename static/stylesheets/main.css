@@ -132,6 +132,8 @@ header a#mozilla {
   font-family: 'TrashHandRegular';
 }
 
+/* The header above content that appears on many pages. */
+
 #content-header {
   padding-bottom: 40px;
 }
@@ -139,6 +141,26 @@ header a#mozilla {
 #content-header > h1 {
   font-size: 48px;
   margin-bottom: 0px;
+}
+
+/* Two-column layouts that some pages use. */
+
+.two-column > section, .two-column > aside {
+  display: inline-block;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.two-column > section {
+  width: 66%;
+  padding-right: 10px;
+}
+
+.two-column > aside {
+  width: 33%;
+  padding-left: 10px;
 }
 
 /* Footer rules
