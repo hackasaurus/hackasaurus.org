@@ -1,3 +1,13 @@
+#blog ul.recent-posts {
+  list-style-type: none;
+  padding-left: 0px;
+  font-size: 14px;
+}
+
+#blog ul.recent-posts li {
+  padding-bottom: 10px;
+}
+
 #blog h2.title {
   margin-bottom: 0px;
 }

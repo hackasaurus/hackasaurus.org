@@ -4,38 +4,54 @@ var feedLoaded = jQuery.getJSON("http://pipes.yahoo.com/pipes/pipe.run?" +
 var entries = null;
 
 jQuery.when(feedLoaded).then(function(data) {
+  var entryObjects = [];
   var entryTemplate = $("#templates .entry");
 
   entries = $('#blog .entries').empty();
+  
+  data.value.items.forEach(function(item) {
+    var entry = {
+      title: item['y:title'],
+      date: new Date(item['pubDate'] ||                  // Wordpress
+                     item.published),                    // Blogger
+      author: item['dc:creator'] ||                      // Wordpress
+              (item.author &&                            // Blogger
+               item.author.name),
+      content: item['content:encoded'] ||                // Wordpress
+                (item.content &&                         // Blogger
+                 item.content.content)
+    };
 
-  function createBlogPost(item) {
-    var entry = entryTemplate.clone();
-    entry.find(".title a").text(item['y:title']);
-
-    var link = null;
-    
     if (typeof(item.link) == 'string')
-      link = item.link;                                     // Wordpress
+      entry.link = item.link;                            // Wordpress
     else
-      link = item.link[item.link.length-1];                 // Blogger
+      entry.link = item.link[item.link.length-1];        // Blogger
     
-    entry.find(".title a").attr("href", link);
+    if (isNaN(entry.date))
+      entry.date = null;
 
-    var date = new Date(item['pubDate'] ||                  // Wordpress
-                        item.published);                    // Blogger
+    entryObjects.push(entry);
+  });
 
-    if (!isNaN(date))
+  entryObjects.forEach(function addSidebarLink(item) {
+    var link = $('<li><a></a></li>');
+    link.find('a').attr('href', item.link).text(item.title);
+    $("#blog .recent-posts").append(link);
+  });
+  
+  entryObjects.slice(0, 3).forEach(function createBlogPost(item) {
+    var entry = entryTemplate.clone();
+    entry.find(".title a").text(item.title);
+    entry.find(".title a").attr("href", item.link);
+
+    if (item.date)
       // TODO: non-Firefox browsers don't parse some kinds of
       // dates; we need to use a library or something to parse
       // them.
-      entry.find(".date").text(date.format("mmmm dS, yyyy"));
+      entry.find(".date").text(item.date.format("mmmm dS, yyyy"));
 
-    entry.find(".author").text(item['dc:creator'] ||        // Wordpress
-                               (item.author &&              // Blogger
-                                item.author.name));
-    entry.find(".content").html(item['content:encoded'] ||  // Wordpress
-                                (item.content &&            // Blogger
-                                 item.content.content));
+    entry.find(".author").text(item.author);
+    entry.find(".content").html(item.content);
 
     // Remove the really gross-looking "Comments: 0" and "Tweet it!"
     // images that Wordpress adds.
@@ -45,7 +61,5 @@ jQuery.when(feedLoaded).then(function(data) {
     });
 
     entries.append(entry);
-  }
-  
-  data.value.items.slice(0, 3).forEach(createBlogPost);
+  });
 });
