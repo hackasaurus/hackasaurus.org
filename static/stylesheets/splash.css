@@ -1,0 +1,74 @@
+#content div.primary {
+  background: url(../images/supergirlanodig.png);
+  background-position: 250px 0px;
+  background-repeat: no-repeat;
+  min-height: 461px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+#content div.primary p {
+  width: 50%;
+}
+
+#content div.primary ul.options {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+#content div.primary ul.options li {
+  display: inline-block;
+  border-left: 1px solid #153959;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#content div.primary ul.options li:first-child {
+  padding-left: 0px;
+  border-left: none;
+}
+
+#content div.primary ul.options li a {
+  font-weight: bold;
+}
+
+#content div.primary a.more {
+  position: absolute;
+  text-align: center;
+  width: 230px;
+  top: 205px;
+  left: 15px;
+  display: inline-block;
+  margin-top: 1em;
+  padding: 20px;
+  background-color: #f8a339;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px black;
+}
+
+#content div.primary a.more:hover {
+  background-color: #ffc833;
+  text-decoration: none;
+}
+
+#content div.secondary div.blurb {
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+  padding-right: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#content div.secondary div.blurb p {
+  height: 4em;
+}
+
+#content div.secondary {
+  padding-bottom: 50px;
+}

@@ -1,0 +1,8 @@
+@import url(splash.css);
+
+#content div.primary img.octocat {
+  width: 300px;
+  position: absolute;
+  top: 150px;
+  left: 58px;
+}
