@@ -18,6 +18,7 @@
 
 #blog .byline {
   float: right;
+  padding-right: 10px;
 }
 
 #blog .date, #blog .byline, #blog .content {
