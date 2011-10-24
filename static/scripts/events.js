@@ -7,7 +7,7 @@
     if (list.length) {
       $(".throbber").remove();
       clearInterval(intervalID);
-      list.slideDown();
+      list.fadeIn();
     }
   }, 250);
 })();
