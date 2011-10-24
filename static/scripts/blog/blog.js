@@ -55,7 +55,7 @@ jQuery.when(feedLoaded).then(function(data) {
 
   entries = $('#blog .entries').empty();
   
-  entryObjects.forEach(function addSidebarLink(item) {
+  entryObjects.slice(0, 10).forEach(function addSidebarLink(item) {
     var link = $('<li><a></a></li>');
     link.find('a').attr('href', item.link).text(item.title);
     $("#blog .recent-posts").append(link);
