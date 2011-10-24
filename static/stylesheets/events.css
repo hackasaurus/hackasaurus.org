@@ -36,7 +36,9 @@ a.lanyrd-splat span.fallback:after {
   content: ' »';
 }
 
-li.vevent {
+ol.lanyrd-listing {
+  /* Our JS code will ensure it transitions in nicely. */
+  display: none;
 }
 
 li.vevent, div.header-row {

@@ -1,9 +1,10 @@
 (function showLanyrdInfoWithTransition() {
   var intervalID = setInterval(function() {
-    if ($("div.lanyrd-target-splat li").length) {
+    var list = $("ol.lanyrd-listing");
+    if (list.length) {
       $(".throbber").remove();
       clearInterval(intervalID);
-      $("div.lanyrd-target-splat").slideDown();
+      list.slideDown();
     }
   }, 1000);
 })();
