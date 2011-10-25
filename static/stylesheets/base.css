@@ -176,89 +176,11 @@ header a#mozilla {
  * Based on https://github.com/rossbruniges/splash.mozilla-ignite.org/
  * (as of commit 3edb1d599296195f223ca8127972ecd9fbc39899) */
 
-.cta a:link,
-.cta a:visited,
-.cta a:focus,
-.cta a:hover,
-.cta a:active,
-.cta b {
-  color: #ef4619;
-  color: #f8a339;
-  text-decoration: none;
-}
-
-.cta a:focus,
-.cta a:hover,
-.cta a:active {
-  text-decoration: underline;
-}
-
 footer h1, footer h2 {
   font-family: "MetaWebPro-Black";
   font-weight: normal;
   text-transform: uppercase;
   font-size: 20px;
-}
-
-.cta {
-  background: url(../images/footer/bg_cta.jpg) no-repeat 75% 0 #1c2a35;
-  color: #D0D0D0;
-  border-top: 1px solid #2d4053;
-}
-
-.cta h2 {
-  color: #FFF;
-}
-
-.cta h3 {
-  font-weight: normal;
-  margin-bottom: 0.2em;
-}
-
-.cta label {
-  font-family: Arial;
-  color: #8a8a8a;
-  position: absolute;
-  left: -9999em;
-  display: block;
-  height: 1px;
-}
-
-.cta .inline {
-  margin: 0.4em 0;
-}
-
-.cta .inline label {
-  margin-left: 10px;
-  position: static;
-  display: inline;
-  height: auto;
-  left: 0;
-}
-
-.cta input[type="email"] {
-  padding: 0.6em 10px;
-}
-
-.cta input[type="submit"] {
-  margin: 0.2em 0 0.4em;
-  display: block;
-  width: 100%;
-  color: #FFF;
-  border: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 5px;
-  background-color: #f8a339;
-  padding: 9px 21px;
-  font-size: 20px;
-  font-family: inherit;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-}
-
-.cta input[type="submit"]:hover {
-  background-color: #ffc833;
 }
 
 .external {
@@ -342,37 +264,6 @@ footer h1, footer h2 {
   margin-left: 0;
 }
 
-.cta {
-  padding-bottom: 0.4em;
-}
-
-.cta h2,
-.cta p {
-  float: left;
-  width: 34%;
-  clear: left;
-}
-
-.cta h2 {
-  margin-bottom: 0;
-}
-
-.cta form {
-  float: right;
-  width: 65%;
-}
-
-.cta .inline label {
-  font-size: 12px;
-}
-
-.cta input[type="email"] {
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .external .col {
   float: left;
   width: 33%;
@@ -439,17 +330,4 @@ footer h1, footer h2 {
 .legal div.disclaimer {
   padding-top: 10px;
   padding-bottom: 20px;
-}
-
-/* For bigger screens */
-@media all and (min-width: 600px) {
-  .row {
-    float: left;
-    width: 60%;
-  }
-  .cta input[type="submit"] {
-    width: 33%;
-    margin: 0 0 0 10px;
-    display: inline-block;
-  }
 }
