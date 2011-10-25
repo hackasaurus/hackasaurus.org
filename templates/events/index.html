@@ -5,22 +5,22 @@
 {% block content %}
 <div id="events">
   <div id="content-header">
-    <h1>Events</h1>
-    <aside>Design jams, hackfests and workshops</aside>
+    <h1>{% trans %}Events{% endtrans %}</h1>
+    <aside>{% trans %}Design jams, hackfests and workshops{% endtrans %}</aside>
   </div>
   
-  <p>Hackasaurus events are taking place all over the world. Attend an event your area!</p>
-  <p>Don't see anything happening in your neighborhood? Consider starting your own event. Get started by checking out the <a href="{{ LOCALE_ROOT }}educators/">Hacktivity Kit</a> for ideas on how to run your own workshop, class or jam.</p>
+  <p>{% trans %}Hackasaurus events are taking place all over the world. Attend an event your area!{% endtrans %}</p>
+  <p>{% trans %}Don't see anything happening in your neighborhood? Consider starting your own event. Get started by checking out the <a href="{{ LOCALE_ROOT }}educators/">Hacktivity Kit</a> for ideas on how to run your own workshop, class or jam.{% endtrans %}</p>
 
   <div class="header-row">
-    <div>Upcoming or Recent Event</div>
-    <div>Location</div>
-    <div>Date</div>
+    <div>{% trans %}Upcoming or Recent Event{% endtrans %}</div>
+    <div>{% trans %}Location{% endtrans %}</div>
+    <div>{% trans %}Date{% endtrans %}</div>
   </div>
   
   <div class="throbber"></div>
   <div class="lanyrd-target-splat">
-  	<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-number-5 lanyrd-template-detailed lanyrd-context-all" rel="me"><span class="fallback">All events</span></a>
+  	<a href="http://lanyrd.com/people/hackasaurus/" class="lanyrd-splat lanyrd-number-5 lanyrd-template-detailed lanyrd-context-all" rel="me"><span class="fallback">{% trans %}All events{% endtrans %}</span></a>
   </div>
 </div>
 {% endblock %}
