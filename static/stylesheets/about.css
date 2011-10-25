@@ -1,0 +1,71 @@
+#content { 
+  line-height: 1.35;
+}
+
+#content section h2 {
+  font-size: 22px;
+}
+
+#content section p {
+  margin-bottom: 36px;
+}
+
+#content aside {
+  font-size: 16px;
+  padding-top: 68px;
+}
+
+#content aside a,
+#content aside #team .bio a{
+  color: #F8A339;
+}
+
+#content aside #team a {
+ color: #115de8;
+}
+
+#content aside a {
+  text-decoration: none;
+}
+
+#content aside a:focus,
+#content aside a:hover,
+#content aside a:active {
+  text-decoration: underline;
+}
+
+#content aside img {
+  width: 100%;
+}
+
+#content aside .bio img {
+  width: 72px;
+  float: left;
+  margin-right: 16px;
+}
+
+#team {
+  padding: 14px;
+  margin-bottom: 75px;
+  margin-top: 75px;
+  font-size: 14px; 
+  line-height: 1.1;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #c7e2f3;
+}
+
+#team > h2 {
+  font-size: 22px;
+  margin-top: 0px;
+}
+
+.bio {
+  margin-bottom: 22px;
+}
+
+.bio strong {
+  font-weight: normal;
+  font-family: 'TrashHandRegular';
+  font-size: 22px; 
+}

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/about.css">
+{% endblock %}
+{% block content %}
+<div id="about">
+  <div id="content-header">
+    <h1>About</h1>
+  </div>
+  <div class="two-column">
+    <section>
+      <h2>Building a generation of webmakers</h2>
+      <p> Hackasaurus spreads skills, attitudes, and ethics that help youth thrive in a remixable digital world. 
+      By making it easy for youth to tinker and mess around with the building blocks that make up the web, Hackasaurus
+      helps tweens move from digital consumers to active producers, seeing the web as something they can actively
+      shape, remix and make better. </p>
+      <h2>Through a set of easy to use tools</h2>
+      <p>Hackasaurus tools make it easy for kids to remix, create and share on the web. The X-Ray Goggles allow 
+      learners to see what the web is made of, remix and change their favorite web pages, and share their creations
+      with friends.</p>
+      <h2>..And at Hack Jam events around the world</h2>
+      <p>Hack jams make hacking and digital literacy accessible, social and fun. In partnership with libraries, 
+      learning centers and youth media centers, learners take part in a flexible DIY curriculum of hands-on projects and 
+      making. Building off pilot events run by the Learning Network in New York and Chicago, the upcoming Hackasaurus Event Kit
+      will make it easy for anyone, anywhere to organize their own jams.</p>
+
+      <div class="video-js-box">
+        <video class="video-js" width="100%" poster="http://videos.mozilla.org/serv/webmademovies/hackasaurus-still-from-dml.jpg" controls preload><br />
+          <source src="http://videos.mozilla.org/serv/webmademovies/hackasaurus_spotlight.mp4" type="video/mp4"><br />
+          <source src="http://videos.mozilla.org/serv/webmademovies/hackasaurus_spotlight.ogv" type="video/ogg"><br />
+          <img src="http://videos.mozilla.org/serv/webmademovies/hackasaurus-still-from-dml.jpg" width="480" height="270" alt="Poster Image"><br />
+          [<em>There's an HTML video hereâ€”load this post with your open-video enabled browser</em>.]<br />
+        </video>
+      </div>
+    </section>
+
+    <aside>
+      <img src="/images/about/photo-hackers-01.jpg"/>
+      <div id="team">
+        <h2>Our team at a glance:</h2>
+        <div class="bio">
+          <img src="/images/about/atul_small.jpg"/>
+          <p><strong>Atul Varma</strong> is the Technical Lead. He has worked on <a href="#">Humanized</a>, <a href="#">collusion</a> and <a href="#">Jetpack</a>.</p>
+        </div>
+        <div class="bio">
+          <img src="/images/about/jess_small.png"/>
+          <p><strong>Jess Klein</strong> is the Design and Learning Lead. She has worked on <a href="#">Hive NYC</a>, <a href="#">Sesame Street English</a>
+          and the <a href="#">Institute of Play</a>.</p>
+        </div>
+        <p>We have many community members who are working to co-develop the project. <a href="#">Learn more about them</a>, and how you can
+        get involved.</p>
+      </div>
+
+      <div>
+        <h2>Did you know?</h2>
+        <p>Hackasaurus is being designed as an open source and open educational resource project. That means that all of our
+        code and curriculum for the project is available for you to <a href="#">Fork</a> and work with&mdash;and improve!
+      </div>
+    </aside>
+  </div>
+</div>
+{% endblock %}
