@@ -4,29 +4,29 @@
 {% endblock %}
 {% block content %}
 <div class="primary">
-  <h1>Remix, Make and Share</h1>
-  <p>Hackasaurus makes it easy to mash up and change any web page like magic. You can also create your own webpages to share with your friends, all within your browser.</p>
+  <h1>{% trans %}Remix, Make and Share{% endtrans %}</h1>
+  <p>{% trans %}Hackasaurus makes it easy to mash up and change any web page like magic. You can also create your own webpages to share with your friends, all within your browser.{% endtrans %}</p>
   <ul class="options">
-    <li><a href="#">See the hack gallery</a></li>
-    <li><a href="#">Watch a video</a></li>
+    <li><a href="#">{% trans %}See the hack gallery{% endtrans %}</a></li>
+    <li><a href="#">{% trans %}Watch a video{% endtrans %}</a></li>
   </ul>
-  <a href="{{ LOCALE_ROOT }}goggles/" class="more">Get Started</a>
+  <a href="{{ LOCALE_ROOT }}goggles/" class="more">{% trans %}Get Started{% endtrans %}</a>
 </div>
 <div class="secondary">
   <div class="blurb" id="attend-an-event">
-    <h2>Attend An Event</h2>
-    <p>Find a hacking club, workshop, class or design jam in your neighborhood.</p>
-    <a href="{{ LOCALE_ROOT }}events/" class="more">Learn More</a>
+    <h2>{% trans %}Attend An Event{% endtrans %}</h2>
+    <p>{% trans %}Find a hacking club, workshop, class or design jam in your neighborhood.{% endtrans %}</p>
+    <a href="{{ LOCALE_ROOT }}events/" class="more">{% trans %}Learn More{% endtrans %}</a>
   </div>
   <div class="blurb" id="run-a-hackshop">
-    <h2>Teach Webmaking</h2>
-    <p>Tools for educators, parents and teens. Cheat sheets + lesson plans!</p>
-    <a href="{{ LOCALE_ROOT }}educators/" class="more">Learn More</a>
+    <h2>{% trans %}Teach Webmaking{% endtrans %}</h2>
+    <p>{% trans %}Tools for educators, parents and teens. Cheat sheets + lesson plans!{% endtrans %}</p>
+    <a href="{{ LOCALE_ROOT }}educators/" class="more">{% trans %}Learn More{% endtrans %}</a>
   </div>
   <div class="blurb" id="fix-a-webpage">
-    <h2>Build With Us</h2>
-    <p>Hackasaurus is an open-source project. Help us make it more awesome!</p>
-    <a href="{{ LOCALE_ROOT }}contribute/" class="more">Learn More</a>
+    <h2>{% trans %}Build With Us{% endtrans %}</h2>
+    <p>{% trans %}Hackasaurus is an open-source project. Help us make it more awesome!{% endtrans %}</p>
+    <a href="{{ LOCALE_ROOT }}contribute/" class="more">{% trans %}Learn More{% endtrans %}</a>
   </div>
 </div>
 {% endblock %}
