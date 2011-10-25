@@ -31,6 +31,12 @@
   line-height: 22px;
 }
 
+#blog .content img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
 #blog .content a:link,
 #blog .content a:visited,
 #blog .content a:focus,
