@@ -5,8 +5,8 @@
 {% block content %}
 <div id="blog">
   <div id="content-header">
-    <h1>Blog</h1>
-    <aside>News, notes and ramblings from the Hackasaurus project team.</aside>
+    <h1>{% trans %}Blog{% endtrans %}</h1>
+    <aside>{% trans %}News, notes and ramblings from the Hackasaurus project team.{% endtrans %}</aside>
   </div>
   <div class="throbber"></div>
   <div class="two-column" style="display: none">
@@ -14,7 +14,7 @@
     	<div class="entries"></div>
     </section>
     <aside>
-      <h2>Recent Posts</h2>
+      <h2>{% trans %}Recent Posts{% endtrans %}</h2>
       <ul class="recent-posts"></ul>
     </aside>
   </div>
@@ -23,7 +23,7 @@
 <div id="templates" style="display: none;">
   <div class="entry">
     <h2 class="title"><a></a></h2>
-    <div class="byline">Posted by <span class="author"></span></div>
+    <div class="byline">{% trans %}Posted by <span class="author"></span>{% endtrans %}</div>
     <div class="date"></div>
     <div class="content"></div>
   </div>
