@@ -126,10 +126,6 @@ header a#mozilla {
 
 /* Main content rules */
 
-#content p a {
-  text-decoration: underline;
-}
-
 #content {
   font-size: 18px;
   padding-bottom: 40px;
