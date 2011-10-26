@@ -45,6 +45,14 @@ a.more:after {
   content: ' »';
 }
 
+a.offsite {
+  color: #E6840B;
+}
+
+a.onsite {
+ color: #115de8;
+}
+
 #header-and-content {
   background-image: -webkit-gradient(linear, left top, left 400px, from(#ffef8d), to(white));
   background-image: -webkit-linear-gradient(top, #ffef8d, white 400px);

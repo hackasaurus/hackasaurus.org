@@ -15,15 +15,6 @@
   padding-top: 68px;
 }
 
-#content aside a,
-#content aside #team .bio a{
-  color: #F8A339;
-}
-
-#content aside #team a {
- color: #115de8;
-}
-
 #content aside a {
   text-decoration: none;
 }
