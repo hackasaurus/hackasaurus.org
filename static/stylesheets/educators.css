@@ -1,0 +1,37 @@
+#content { 
+  line-height: 1.35;
+}
+
+#content section h2 {
+  font-size: 22px;
+}
+
+#content section p {
+  margin-bottom: 36px;
+}
+
+#checklist ol {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+#checklist ol li {
+  margin-bottom: 1em;
+}
+
+.tip {
+  font-style: italic;
+  margin-bottom: 36px;
+}
+
+.tip strong {
+  font-style: normal;
+  font-weight: normal;
+  font-family: 'TrashHandRegular';
+  font-size: 22px;
+}
+
+.tip ul {
+  margin-top: 0;
+}
