@@ -180,6 +180,22 @@ header a#mozilla {
   padding-left: 10px;
 }
 
+/* Right column text box used on several pages */
+
+.two-column > aside .textbox {
+  margin-bottom: 75px;
+  margin-top: 75px;
+  padding: 14px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #c7e2f3;
+}
+
+.textbox > h2 {
+  font-size: 22px;
+  margin-top: 0px;
+}
+
 /* Footer rules
  * Based on https://github.com/rossbruniges/splash.mozilla-ignite.org/
  * (as of commit 3edb1d599296195f223ca8127972ecd9fbc39899) */
