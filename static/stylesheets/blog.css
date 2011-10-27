@@ -62,3 +62,8 @@
   font-weight: normal;
 }
 
+#content-header img {
+  float: right;
+  margin-top: -39px;
+  margin-right: 140px;
+}

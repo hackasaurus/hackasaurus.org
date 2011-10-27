@@ -1,3 +1,9 @@
+#content-header img {
+  float: right;
+  margin-top: -39px;
+  margin-right: 180px;
+}
+
 div.lanyrd-target-splat {
   font-size: 16px;
   padding-top: 20px;
