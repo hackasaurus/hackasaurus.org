@@ -35,3 +35,11 @@
 .tip ul {
   margin-top: 0;
 }
+
+#hacktivity_icon {
+  margin-top: -100px;
+}
+
+#hacktivity_textbox {
+  margin-top: 16px;
+}
