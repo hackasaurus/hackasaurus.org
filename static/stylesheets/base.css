@@ -140,9 +140,10 @@ header a#mozilla {
 
 #content-header {
   padding-bottom: 40px;
+  overflow: auto;
 }
 
-#content-header > h1 {
+#content-header h1 {
   font-size: 48px;
   margin-bottom: 0px;
 }
@@ -284,7 +285,10 @@ footer h1, footer h2 {
   margin-left: 0;
 }
 
-.external .col {
+/* We need to borrow the next two .col declarations 
+ * for some headers as well. */
+.external .col,
+#content-header .col {
   float: left;
   width: 33%;
   -moz-box-sizing: border-box;
@@ -293,7 +297,8 @@ footer h1, footer h2 {
   padding: 10px;
 }
 
-.external .col:first-child {
+.external .col:first-child, 
+#content-header .col:first-child {
   padding-left: 0
 }
 
