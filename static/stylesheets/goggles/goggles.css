@@ -58,8 +58,16 @@ a#bookmarklet.loading {
 
 /* Main page content */
 
-ol li {
+ol {
+  font-family: 'TrashHandRegular';
+  font-size: 24px;
+}
+
+ol p {
+  font-family: Georgia, serif;
   line-height: 30px;
+  font-size: 18px;
+  color: gray;
 }
 
 input#image-url {
