@@ -1,7 +1,19 @@
+#content-header {
+  overflow: auto;
+}
+
+#content-header div {
+  width: 33%;
+  float: left;
+}
+
 #content-header img {
-  float: right;
-  margin-top: -39px;
-  margin-right: 180px;
+  margin-left: 30px;
+}
+
+#content-header h1 {
+  margin-bottom: 4px;
+  margin-top: 60px;
 }
 
 div.lanyrd-target-splat {

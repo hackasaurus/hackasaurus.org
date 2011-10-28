@@ -142,7 +142,7 @@ header a#mozilla {
   padding-bottom: 40px;
 }
 
-#content-header > h1 {
+#content-header h1 {
   font-size: 48px;
   margin-bottom: 0px;
 }
