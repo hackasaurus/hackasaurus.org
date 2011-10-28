@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/stylesheets/goggles/hints.css" 
  class="include-in-remix-dialog">
 <link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+<link rel="stylesheet" href="/stylesheets/splash.css">
 {% endblock %}
 
 {% block content %}
@@ -21,9 +22,19 @@
   <li><p>Activate the <a id="bookmarklet" href="javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();">X-Ray Goggles</a>.</p></li>
   <li><p>Move your mouse over the picture to the right to see what it's made of, and press <kbd>R</kbd> to remix it with the URL from your clipboard!</p></li>
 </ol>
-<div id="success" style="display: none">
-  <h1>&hellip; And now, the world!</h1>
-  <p>Drag the X-Ray Goggles to your bookmarks bar and use them to remix <em>any</em> web page!</p>
+<div class="secondary">
+  <div class="blurb">
+    <h1>&hellip; And then, the world!</h1>
+    <p>Drag the X-Ray Goggles to your bookmarks bar and use them to remix <em>any</em> web page!</p>
+  </div>
+  <div class="blurb">
+    <h1>Share with friends!</h1>
+    <p>Share your creations with your friends by publishing your hacks using the <kbd>T</kbd> key.</p>
+  </div>
+  <div class="blurb">
+    <h1>Become a ninja!</h1>
+    <p>Click the question mark icon at the bottom-right of the screen while the goggles are activated to learn about more of its awesome powers.</p>
+  </div>
 </div>
 
 <!-- Achievements awarded to users when they fix bugs. -->

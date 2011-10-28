@@ -85,3 +85,7 @@ div.remix-chamber img {
   height: 250px;
   padding: 10px;
 }
+
+div.secondary {
+  clear: both;
+}

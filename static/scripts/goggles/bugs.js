@@ -7,10 +7,7 @@ var bugs = {
       var url = $("#image-url", context).val();
       return $("div.remix-chamber img", context).attr("src") == url;
     },
-    achievement: "#url-hacker.achievement",
-    onAchieved: function() {
-      $("div#success").slideDown();
-    }
+    achievement: "#url-hacker.achievement"
   }
 };
 
