@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/goggles/hints.css" 
+ class="include-in-remix-dialog">
+<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+{% endblock %}
+
+{% block content %}
+<div id="content-header">
+  <h1>{% trans %}X-Ray Goggles{% endtrans %}</h1>
+  <aside>Mash up and change any web page like magic.</aside>
+</div>
+<div class="remix-chamber"><img src="/images/goggles/supergirl.png"></div>
+<h1>Make your first hack in three easy steps!</h1>
+<ol>
+  <li><p>Copy this URL to your clipboard: 
+    <input readonly type="text" id="image-url" 
+     value="http://seriouscat.com/serious_cat_is_serious.jpg"></p>
+  </li>
+  <li><p>Activate the <a id="bookmarklet" href="javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();">X-Ray Goggles</a>.</p></li>
+  <li><p>Move your mouse over the picture to the right to see what it's made of, and press <kbd>R</kbd> to remix it!</p></li>
+</ol>
+<div id="success" style="display: none">
+  <h1>&hellip; And now, the world!</h1>
+  <p>Drag the X-Ray Goggles to your bookmarks bar and use them to remix <em>any</em> web page!</p>
+</div>
+
+<!-- Achievements awarded to users when they fix bugs. -->
+
+<div class="achievements">
+  <div id="url-hacker" class="achievement">
+    <h3>Achievement Unlocked</h3>
+    <p>Image Source Hacker</p>
+  </div>
+</div>
+
+<!-- Hints offered to users as they explore the page and UI. -->
+
+<div class="hints">
+  <div class="remix-dialog-hints">
+    <div class="attr hint">Click on an attribute’s value to edit it.</div>
+  </div>
+
+  <div class="remix hint">Tap <kbd><span>R</span></kbd> to change the source code of an element.</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="/scripts/goggles/hints.js" 
+ class="include-in-remix-dialog"></script>
+<script src="/scripts/goggles/bugs.js" 
+ class="include-in-remix-dialog"></script>
+<script src="/scripts/goggles/goggles.js"></script>
+{% endblock %}

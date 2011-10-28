@@ -1,0 +1,79 @@
+/* Achievements */
+
+.achievement {
+  display: none;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: bold;
+  padding: 10px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 5000;
+  pointer-events: none;
+}
+
+.achievement h3 {
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  font-size: 10pt;
+}
+
+.achievement p {
+  color: #B2E725;
+  margin: 0;
+  padding: 0;
+  font-size: 24pt;
+}
+
+/* The goggles bookmarklet */
+
+a#bookmarklet {
+  padding-left: 32px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: white;
+  text-decoration: none;
+  background-color: #f8a339;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px black;
+}
+
+a#bookmarklet:hover {
+  background-color: #ffc833;
+  text-decoration: none;
+}
+
+a#bookmarklet.loading {
+  background-image: url(/images/goggles/ajax-loader-ffc833.gif);
+  background-color: #ffc833;
+  background-repeat: no-repeat;
+  background-position: 6px 8px;
+}
+
+/* Main page content */
+
+ol li {
+  line-height: 30px;
+}
+
+input#image-url {
+  width: 300px;
+  border: 1px dotted black;
+  padding: 6px;
+  font-size: 14px;
+}
+
+div.remix-chamber {
+  float: right;
+}
+
+div.remix-chamber img {
+  height: 250px;
+  padding: 10px;
+}
