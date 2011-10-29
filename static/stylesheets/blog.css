@@ -14,7 +14,7 @@ header .wrapper {
   background-image: url(/images/blog/helloworld.png);
   background-repeat: no-repeat;
   background-size: 320px;
-  background-position: 50% 0%;
+  background-position: right 0%;
 }
 
 #blog ul.recent-posts {
