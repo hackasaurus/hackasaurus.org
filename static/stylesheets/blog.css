@@ -1,19 +1,6 @@
-header .wrapper {
-  /* Normally this is 100px, but we'll make it 60px to accommodate
-   * the graphic near the top of this page... */
-  height: 60px;
-}
-
-#content-header h1 {
-  /* We'll give this extra padding to make up for the space we
-   * took away in the header. */
-  padding-top: 40px;
-}
-
 #content-header {
-  background-image: url(/images/blog/helloworld.png);
+  background-image: url(/images/blog/superboy.png);
   background-repeat: no-repeat;
-  background-size: 320px;
   background-position: right 0%;
 }
 
