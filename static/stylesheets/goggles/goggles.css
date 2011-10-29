@@ -89,3 +89,7 @@ div.remix-chamber img {
 div.secondary {
   clear: both;
 }
+
+div.secondary div.blurb p {
+  line-height: 26px;
+}
