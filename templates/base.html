@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Language" content="{{ current_locale }}">
-<title>{% trans %}Hackasaurus{% endtrans %}{% block title %}{% endblock %}</title>
-<link rel="alternate" type="application/rss+xml" title="Hackasaurus Blog" href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss">
-<link rel="stylesheet" href="/stylesheets/normalize.css">
-<link rel="stylesheet" href="/stylesheets/base.css">
-{% block stylesheets %}{% endblock %}
-<!--[if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>
-<body>
-<div id="header-and-content">
-  <header>
-    <div class="wrapper">
-      <a href="{{ LOCALE_ROOT }}" id="logo">{% trans %}Hackasaurus{% endtrans %}</a>
-      <ul>
-        <li><a href="{{ LOCALE_ROOT }}goggles/">{% trans %}Goggles{% endtrans %}</a></li>
-        <li><a href="{{ LOCALE_ROOT }}educators/">{% trans %}Educators{% endtrans %}</a></li>
-        <li><a href="{{ LOCALE_ROOT }}events/">{% trans %}Events{% endtrans %}</a></li>
-        <li><a href="{{ LOCALE_ROOT }}about/">{% trans %}About{% endtrans %}</a></li>
-        <li><a href="{{ LOCALE_ROOT }}blog/">{% trans %}Blog{% endtrans %}</a></li>
-      </ul>
-      <a href="http://www.mozilla.org/" id="mozilla">{% trans %}Mozilla{% endtrans %}</a>
-    </div>
-  </header>
-  <section id="content">
-    <div class="wrapper">
-      {% block content %}{% endblock %}
-    </div>
-  </section>
-</div>
-<footer>
-  <aside>
-    <div class="external">
-      <div class="wrapper">
-        <div class="col tweet">
-          <h2>{% trans %}Follow and tweet{% endtrans %}</h2>
-          <p>{% trans %}Have you published your first hack yet? Share it on Twitter with the tag <b>#hackasaurus</b>!{% endtrans %}</p>
-          <a href="https://twitter.com/hackasaurus" class="twitter-follow-button" data-show-count="false">{% trans %}Follow @hackasaurus{% endtrans %}</a>
-          <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
-        </div> 
-        <div class="col learn">
-          <h2>{% trans %}Learn more{% endtrans %}</h2>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Language" content="{{ current_locale }}">
+    <title>{% trans %}Hackasaurus{% endtrans %}{% block title %}{% endblock %}</title>
+    <link rel="alternate" type="application/rss+xml" title="Hackasaurus Blog" href="http://pipes.yahoo.com/pipes/pipe.run?_id=acd9b281e46ad78b6c34873ba277626c&_render=rss">
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/base.css">
+    {% block stylesheets %}{% endblock %}
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="header-and-content">
+      <header>
+        <div class="wrapper">
+          <a href="{{ LOCALE_ROOT }}" id="logo">{% trans %}Hackasaurus{% endtrans %}</a>
           <ul>
-              <li><a href="mailto:jess@mozillafoundation.org">{% trans %}Contact us{% endtrans %}</a></li>
-              <li><a href="https://wiki.mozilla.org/Hackasaurus/FAQ">{% trans %}Read our FAQ{% endtrans %}</a></li>
-              <li><a href="{{ LOCALE_ROOT }}contribute/">{% trans %}Build with us{% endtrans %}</a></li>
+            <li><a href="{{ LOCALE_ROOT }}goggles/">{% trans %}Goggles{% endtrans %}</a></li>
+            <li><a href="{{ LOCALE_ROOT }}educators/">{% trans %}Educators{% endtrans %}</a></li>
+            <li><a href="{{ LOCALE_ROOT }}events/">{% trans %}Events{% endtrans %}</a></li>
+            <li><a href="{{ LOCALE_ROOT }}about/">{% trans %}About{% endtrans %}</a></li>
+            <li><a href="{{ LOCALE_ROOT }}blog/">{% trans %}Blog{% endtrans %}</a></li>
           </ul>
+          <a href="http://www.mozilla.org/" id="mozilla">{% trans %}Mozilla{% endtrans %}</a>
         </div>
-        <div class="col moz">
-          <h2>{% trans %}Connect with Mozilla{% endtrans %}</h2>
-          <ul>
-              <li><a href="http://www.mozilla.org/about/mission.html">{% trans %}Learn about Mozilla's mission{% endtrans %}</a></li>
-              <li><a href="https://donate.mozilla.org/page/contribute/protect-the-web/">{% trans %}Join Mozilla{% endtrans %}</a></li>
-              <li><a href="http://www.facebook.com/pages/Hackasaurus/140459162682866">{% trans %}Like us on Facebook{% endtrans %}</a></li>
-          </ul>
+      </header>
+      <section id="content">
+        <div class="wrapper">
+          {% block content %}{% endblock %}
         </div>
-      </div>
+      </section>
     </div>
-    <div class="partners-and-languages">
-      <div class="wrapper">
-        <div class="languages">
-          <h2>{% trans %}Other Languages{% endtrans %}</h2>
-          {% include "language-selector.html" %}
+    <footer>
+      <aside>
+        <div class="external">
+          <div class="wrapper">
+            <div class="col tweet">
+              <h2>{% trans %}Follow and tweet{% endtrans %}</h2>
+              <p>{% trans %}Have you published your first hack yet? Share it on Twitter with the tag <b>#hackasaurus</b>!{% endtrans %}</p>
+              <a href="https://twitter.com/hackasaurus" class="twitter-follow-button" data-show-count="false">{% trans %}Follow @hackasaurus{% endtrans %}</a>
+              <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+            </div> 
+            <div class="col learn">
+              <h2>{% trans %}Learn more{% endtrans %}</h2>
+              <ul>
+                  <li><a href="mailto:jess@mozillafoundation.org">{% trans %}Contact us{% endtrans %}</a></li>
+                  <li><a href="https://wiki.mozilla.org/Hackasaurus/FAQ">{% trans %}Read our FAQ{% endtrans %}</a></li>
+                  <li><a href="{{ LOCALE_ROOT }}contribute/">{% trans %}Build with us{% endtrans %}</a></li>
+              </ul>
+            </div>
+            <div class="col moz">
+              <h2>{% trans %}Connect with Mozilla{% endtrans %}</h2>
+              <ul>
+                  <li><a href="http://www.mozilla.org/about/mission.html">{% trans %}Learn about Mozilla's mission{% endtrans %}</a></li>
+                  <li><a href="https://donate.mozilla.org/page/contribute/protect-the-web/">{% trans %}Join Mozilla{% endtrans %}</a></li>
+                  <li><a href="http://www.facebook.com/pages/Hackasaurus/140459162682866">{% trans %}Like us on Facebook{% endtrans %}</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="partners">
-          <h2>{% trans %}Our partners{% endtrans %}</h2>
-          <ul>
-            <li><a class="macarthur" href="http://www.macfound.org/site/c.lkLXJ8MQKrH/b.946881/k.B85/Domestic_Grantmaking__Digital_Media__Learning.htm">{% trans %}MacArthur Foundation{% endtrans %}</a></li>
-            <li><a class="hive" href="http://explorecreateshare.org/">{% trans %}The Hive NYC{% endtrans %}</a></li>
-          </ul>
+        <div class="partners-and-languages">
+          <div class="wrapper">
+            <div class="languages">
+              <h2>{% trans %}Other Languages{% endtrans %}</h2>
+              {% include "language-selector.html" %}
+            </div>
+            <div class="partners">
+              <h2>{% trans %}Our partners{% endtrans %}</h2>
+              <ul>
+                <li><a class="macarthur" href="http://www.macfound.org/site/c.lkLXJ8MQKrH/b.946881/k.B85/Domestic_Grantmaking__Digital_Media__Learning.htm">{% trans %}MacArthur Foundation{% endtrans %}</a></li>
+                <li><a class="hive" href="http://explorecreateshare.org/">{% trans %}The Hive NYC{% endtrans %}</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="legal">
-      <div class="wrapper">
-        <ul>
-          <li><a href="http://www.mozilla.org/about/policies/privacy-policy.html">{% trans %}Privacy Policy{% endtrans %}</a></li>
-          <li><a href="http://www.mozilla.org/about/legal.html">{% trans %}Legal Notices{% endtrans %}</a></li>
-          <li><a href="http://www.mozilla.org/legal/fraud-report/index.html">{% trans %}Report Trademark Abuse{% endtrans %}</a></li>
-        </ul>
-        <div class="disclaimer">{% trans %}©2011 by individual mozilla.org contributors. Content available under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons license</a>.{% endtrans %}</div>
-      </div>
-    </div>
-  </aside>
-</footer>
-<script src="/scripts/jquery.min.js"></script>
-<script src="/scripts/localize.js"></script>
-{% block scripts %}{% endblock %}
-</body>
+        <div class="legal">
+          <div class="wrapper">
+            <ul>
+              <li><a href="http://www.mozilla.org/about/policies/privacy-policy.html">{% trans %}Privacy Policy{% endtrans %}</a></li>
+              <li><a href="http://www.mozilla.org/about/legal.html">{% trans %}Legal Notices{% endtrans %}</a></li>
+              <li><a href="http://www.mozilla.org/legal/fraud-report/index.html">{% trans %}Report Trademark Abuse{% endtrans %}</a></li>
+            </ul>
+            <div class="disclaimer">{% trans %}©2011 by individual mozilla.org contributors. Content available under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons license</a>.{% endtrans %}</div>
+          </div>
+        </div>
+      </aside>
+    </footer>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/localize.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
 </html>
