@@ -29,6 +29,15 @@ a relative URL or an absolute one that begins with the template variable
 
   [Jinja2]: http://jinja.pocoo.org/
 
+## Testing
+
+When writing JavaScript code, please try to make it testable and add
+a unit test for it in the `test` directory. These [QUnit][] tests can be
+run from the development server at [localhost:8000/test][].
+
+  [QUnit]: http://docs.jquery.com/Qunit
+  [localhost:8000/test]: http://localhost:8000/test/
+
 ## Localization
 
 The site uses GNU gettext for localization via [Babel][] and Jinja2's
