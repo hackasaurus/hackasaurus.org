@@ -85,7 +85,12 @@ header a#logo {
   background-image: url(../images/header/hackasaurus-blue-logo.png);
   width: 357px;
   height: 24px;
-  color: transparent;
+  
+  /* This hides the text. */
+  text-indent: -3000px;
+  white-space: nowrap;
+  outline: none;
+  overflow: hidden;
 }
 
 header ul {
@@ -121,7 +126,12 @@ header a#mozilla {
   background-image: url(../images/header/mozilla-tab.png);
   width: 118px;
   height: 49px;
-  color: transparent;
+
+  /* This hides the text. */
+  text-indent: -3000px;
+  white-space: nowrap;
+  outline: none;
+  overflow: hidden;
 }
 
 /* Main content rules */
@@ -308,8 +318,12 @@ footer h1, footer h2 {
 }
 
 .partners a {
-  color: transparent !important;
   display: inline-block;
+
+  /* This hides the text. */
+  text-indent: -3000px;
+  white-space: nowrap;
+  outline: none;
   overflow: hidden;
 }
 
