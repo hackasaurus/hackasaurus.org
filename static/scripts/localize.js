@@ -36,7 +36,8 @@
           $(this).find("option").each(function() {
             available.push(this.value);
           });
-          var bestMatch = jQuery.localization.findBestMatch(navigator.language,
+          var language = navigator.language || navigator.userLanguage;
+          var bestMatch = jQuery.localization.findBestMatch(language,
                                                             available);
           jQuery.localization.activate(bestMatch, true);
         });
