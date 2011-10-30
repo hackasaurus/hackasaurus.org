@@ -331,7 +331,7 @@ footer h1, footer h2 {
   margin-top: 40px;
   margin-left: 20px;
   width: 80px;
-  background-size: 80px;  
+  height: 40px;
   background-image: url(../images/partners/macarthur.jpg);
 }
 
@@ -339,7 +339,6 @@ footer h1, footer h2 {
   margin-top: 25px;
   margin-left: 10px;
   width: 120px;
-  background-size: 120px;  
   height: 65px;
   background-image: url(../images/partners/hive-logo.png);
 }
