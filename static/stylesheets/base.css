@@ -54,12 +54,14 @@ a.onsite {
 }
 
 #header-and-content {
+  background-image: url(../images/gradient-ffef8d-to-ffffff-400px.png);
+  background-repeat: repeat-x;
+  background-color: white;
+
   background-image: -webkit-gradient(linear, left top, left 400px, from(#ffef8d), to(white));
   background-image: -webkit-linear-gradient(top, #ffef8d, white 400px);
   background-image: -moz-linear-gradient(top, #ffef8d, white 400px);  
   background-image: -o-linear-gradient(top, #ffef8d, white 400px);  
-  /* If the browser doesn't support gradients, just use a white background. */
-  background-color: white;
 }
 
 .wrapper {
