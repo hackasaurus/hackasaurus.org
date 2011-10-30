@@ -14,7 +14,7 @@ function safeUrl(url) {
 function cleanBlogEntries(entries) {
   var entryObjects = [];
 
-  entries.forEach(function(item) {
+  jQuery.each(entries, function(i, item) {
     var entry = {
       title: item['y:title'],
       date: new Date(item['pubDate'] ||                  // Wordpress
