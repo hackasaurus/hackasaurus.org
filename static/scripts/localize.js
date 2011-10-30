@@ -10,21 +10,17 @@
     return language.toLowerCase();
   }
 
-  function inArray(item, arr) {
-    return arr.indexOf(item) != -1;
-  }
-
   function indexOfNearMatch(locale, available) {
     var match;
     if (locale.indexOf('-') != -1) {
       var localeParts = locale.split('-');
-      match = available.indexOf(localeParts[0]);
-    } 
+      match = jQuery.inArray(localeParts[0], available);
+    }
     else {
-      match = available.map(function(locale){ 
+      match = jQuery.inArray(locale, jQuery.map(available, function(locale){ 
         var localeParts = locale.split('-');
         return localeParts[0];
-      }).indexOf(locale);
+      }));
     }
     return match;
   }
@@ -47,7 +43,7 @@
       },
       findBestMatch: function(locale, available) {
         locale = normalizeLanguage(locale);
-        if (inArray(locale, available)){
+        if (jQuery.inArray(locale, available) != -1){
           return locale;
         }
         else {
