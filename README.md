@@ -32,8 +32,8 @@ a relative URL or an absolute one that begins with the template variable
 ## Testing
 
 When writing JavaScript code, please try to make it testable and add
-a unit test for it in the `test` directory. These [QUnit][] tests can be
-run from the development server at [localhost:8000/test][].
+a unit test for it in the `static/test` directory. These [QUnit][]
+tests can be run from the development server at  [localhost:8000/test][].
 
   [QUnit]: http://docs.jquery.com/Qunit
   [localhost:8000/test]: http://localhost:8000/test/
