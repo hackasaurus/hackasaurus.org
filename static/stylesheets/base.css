@@ -349,6 +349,11 @@ footer h1, footer h2 {
   font-size: 10px;
 }
 
+.legal h2 {
+  /* It's only for display on text-only browsers, etc. */
+  display: none;
+}
+
 .legal ul {
   margin: 0px;
   padding: 0px;
