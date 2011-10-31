@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+<style>
+video {
+  width: 640px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="content-header">
+  <h1>Installing The X-Ray Goggles</h1>
+</div>
+<p>The X-Ray Goggles are a <em>bookmarklet</em>&mdash;a special kind of tool that can augment any web page.</p>
+<p>Here's how to install the goggles bookmarklet so you can inspect and remix anything you see on the web.</p>
+<ol>
+  <li>
+    <p>Enable your browser's bookmarks toolbar by watching this video:</p>
+    <video controls src="http://videos-cdn.mozilla.net/serv/labs/hackasaurus/ToolBar-MacOS-FF7.webm"></video>
+  </li>
+  <li>
+    <p>Drag the <a id="bookmarklet" href="javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();">X-Ray Goggles</a> up to your bookmarks toolbar.</p>
+  </li>
+  <li>
+    <p>Whenever you want to remix any web page you're visiting, just click on the X-Ray Goggles button in your bookmarks toolbar.</p>
+  </li>
+</ol>
+<p>That's all there is to it. Happy webmaking!</p>
+{% endblock %}
