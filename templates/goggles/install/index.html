@@ -19,7 +19,7 @@ video {
 <ol>
   <li>
     <p>Enable your browser's bookmarks toolbar by watching this video:</p>
-    <video controls src="http://videos-cdn.mozilla.net/serv/labs/hackasaurus/ToolBar-MacOS-FF7.webm"></video>
+    <div id="bookmarks-toolbar-movie"></div>
   </li>
   <li>
     <p>Drag the <a id="bookmarklet" href="javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();">X-Ray Goggles</a> up to your bookmarks toolbar.</p>
@@ -33,4 +33,5 @@ video {
 
 {% block scripts %}
 <script src="/scripts/goggles/msie-only.js"></script>
+<script src="/scripts/goggles/bookmarks-toolbar-movie.js"></script>
 {% endblock %}
