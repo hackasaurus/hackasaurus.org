@@ -59,7 +59,8 @@ class BasicFileServer(object):
                                      ('Content-Length', str(filesize))])
                     return FileWrapper(open(fullpath, 'rb'))
             elif os.path.isdir(fullpath) and not filename.endswith('/'):
-                start('302 Found', [('Location', filename + '/')])
+                start('302 Found', [('Location', env['SCRIPT_NAME'] +
+                                                 filename + '/')])
                 return []
         return None
 
