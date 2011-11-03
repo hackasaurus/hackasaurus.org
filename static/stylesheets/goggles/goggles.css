@@ -93,3 +93,15 @@ div.secondary {
 div.secondary div.blurb p {
   line-height: 26px;
 }
+
+.alert {
+  background-color: firebrick;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px black;
+}
+
+.msie-only {
+  display: none;
+}

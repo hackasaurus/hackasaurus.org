@@ -13,6 +13,7 @@
   <h1>{% trans %}X-Ray Goggles{% endtrans %}</h1>
   <aside>Remix, make and share webpages instantly.</aside>
 </div>
+{% include "goggles/incompatibility-warning.html" %}
 <div class="remix-chamber"><img src="/images/goggles/supergirl.png"></div>
 <h1>Make your first hack in three easy steps!</h1>
 <ol>
@@ -65,4 +66,5 @@
 <script src="/scripts/goggles/bugs.js" 
  class="include-in-remix-dialog"></script>
 <script src="/scripts/goggles/goggles.js"></script>
+<script src="/scripts/goggles/msie-only.js"></script>
 {% endblock %}

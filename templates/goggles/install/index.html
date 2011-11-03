@@ -13,6 +13,7 @@ video {
 <div id="content-header">
   <h1>Installing The X-Ray Goggles</h1>
 </div>
+{% include "goggles/incompatibility-warning.html" %}
 <p>The X-Ray Goggles are a <em>bookmarklet</em>&mdash;a special kind of tool that can augment any web page.</p>
 <p>Here's how to install the goggles bookmarklet so you can inspect and remix anything you see on the web.</p>
 <ol>
@@ -28,4 +29,8 @@ video {
   </li>
 </ol>
 <p>That's all there is to it. Happy webmaking!</p>
+{% endblock %}
+
+{% block scripts %}
+<script src="/scripts/goggles/msie-only.js"></script>
 {% endblock %}
