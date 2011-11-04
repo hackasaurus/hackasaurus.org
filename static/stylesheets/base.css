@@ -42,7 +42,7 @@ a:active {
 }
 
 a.more:after {
-  content: ' »';
+  content: ' ▶';
 }
 
 #header-and-content {

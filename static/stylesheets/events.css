@@ -25,7 +25,7 @@ a.lanyrd-splat:hover {
 }
 
 a.lanyrd-splat span.fallback:after {
-  content: ' »';
+  content: ' ▶';
 }
 
 ol.lanyrd-listing {
