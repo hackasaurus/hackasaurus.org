@@ -1,6 +1,6 @@
 $(window).ready(function() {
   var DEFAULT_BROWSER = "firefox";
-  var DEFAULT_PLATFORM = "WinXP";
+  var DEFAULT_PLATFORM = "MacIntel";
   var BASE_URL = "http://videos-cdn.mozilla.net/serv/labs/hackasaurus/";
   var videos = {
     MacIntel: {
