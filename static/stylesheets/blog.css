@@ -14,8 +14,16 @@
   padding-bottom: 10px;
 }
 
+#blog ul.recent-posts li a {
+  color: #153959;
+}
+
 #blog h2.title {
   margin-bottom: 0px;
+}
+
+#blog h2.title a {
+  color: #153959;
 }
 
 #blog .date {
@@ -41,23 +49,6 @@
   display: block;
   margin: 0 auto;
   padding: 10px;
-}
-
-#blog .content a:link,
-#blog .content a:visited,
-#blog .content a:focus,
-#blog .content a:hover,
-#blog .content a:active,
-#blog .content b {
-  color: #ef4619;
-  color: #f8a339;
-  text-decoration: none;
-}
-
-#blog .content a:focus,
-#blog .content a:hover,
-#blog .content a:active {
-  text-decoration: underline;
 }
 
 #blog .content h1, #blog .content h2 {

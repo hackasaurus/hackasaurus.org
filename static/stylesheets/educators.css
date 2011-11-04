@@ -26,7 +26,7 @@
   background-image: url(/images/educators/cheatsheet.png);
 }
 
-a.button {
+#content a.button {
   display: inline-block;
   background-color: #f8a339;
   color: white;
@@ -35,22 +35,22 @@ a.button {
   font-size: 18px;
 }
 
-a.button:visited, 
-a.button:focus, 
-a.button:hover,
-a.button:active {
+#content a.button:visited, 
+#content a.button:focus, 
+#content a.button:hover,
+#content a.button:active {
   text-decoration: none;
 }
 
-a.button:hover {
+#content a.button:hover {
   background-color: #ffc833;
 }
 
-a.button .arrow {
+#content a.button .arrow {
   margin-left: 1em;
 }
 
-a.button .arrow:after {
+#content a.button .arrow:after {
   content: "▶"; 
 }
 

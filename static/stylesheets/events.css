@@ -10,7 +10,7 @@ div.lanyrd-target-splat {
   padding-bottom: 20px;
 }
 
-a.lanyrd-splat {
+#content a.lanyrd-splat {
   display: inline-block;
   background-color: #f8a339;
   color: white;
@@ -19,12 +19,12 @@ a.lanyrd-splat {
   padding: 10px;
 }
 
-a.lanyrd-splat:hover {
+#content a.lanyrd-splat:hover {
   background-color: #ffc833;
   text-decoration: none;
 }
 
-a.lanyrd-splat span.fallback:after {
+#content a.lanyrd-splat span.fallback:after {
   content: ' ▶';
 }
 
@@ -40,12 +40,16 @@ li.vevent, div.header-row {
   box-sizing: border-box;
 }
 
+#content li.vevent a.summary {
+  color: #153959;
+}
+
 li.vevent a.flag-mini {
   display: none;
 }
 
 li.vevent p.location a, li.vevent p.lanyrd-date {
-  color: gray;
+  color: gray !important;
   text-decoration: none !important;
 }
 

@@ -56,6 +56,17 @@ a.more:after {
   background-image: -o-linear-gradient(top, #ffef8d, white 400px);  
 }
 
+#content a {
+  text-decoration: none;
+  color: #E6840B;
+}
+
+#content a:focus,
+#content a:hover,
+#content a:active {
+  text-decoration: underline;
+}
+
 .wrapper {
   max-width: 960px;
   padding: 0 10px;

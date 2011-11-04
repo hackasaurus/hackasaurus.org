@@ -60,6 +60,10 @@
   text-decoration: none;
 }
 
+#content div.secondary a.more {
+  color: #153959;
+}
+
 #content div.secondary div.blurb {
   display: inline-block;
   width: 33%;

@@ -15,17 +15,6 @@
   padding-top: 68px;
 }
 
-#content aside a {
-  text-decoration: none;
-  color: #E6840B;
-}
-
-#content aside a:focus,
-#content aside a:hover,
-#content aside a:active {
-  text-decoration: underline;
-}
-
 #content aside img {
   width: 100%;
 }
