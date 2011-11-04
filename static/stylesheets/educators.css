@@ -1,45 +1,73 @@
 .two-column { 
-  line-height: 1.35;
+  min-height: 391px;
+  padding-left: 33%;
+  background-repeat: no-repeat;
+  background-position: left 0%;
+  margin-bottom: 30px;
+}
+
+.two-column > section {
+  width: 100%
+}
+
+#kit {
+  background-image: url(/images/educators/hacktivity.png);
+}
+
+#slides {
+  background-image: url(/images/educators/howtohack.png);
+}
+
+#checklist {
+  background-image: url(/images/educators/checklist.png);
+}
+
+#cheatsheet {
+  background-image: url(/images/educators/cheatsheet.png);
+}
+
+a.button {
+  display: inline-block;
+  background-color: #f8a339;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-family: Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+a.button:visited, 
+a.button:focus, 
+a.button:hover,
+a.button:active {
+  text-decoration: none;
+}
+
+a.button:hover {
+  background-color: #ffc833;
+}
+
+a.button .arrow {
+  margin-left: 1em;
+}
+
+a.button .arrow:after {
+  content: "▶"; 
 }
 
 #content section h2 {
   font-size: 22px;
+  margin-bottom: 2px;
 }
 
 #content section p {
-  margin-bottom: 36px;
-}
-
-#checklist ol {
-  margin-left: 0;
-  padding-left: 0;
-  list-style-position: inside;
-}
-
-#checklist ol li {
+  margin-top: 0px;
   margin-bottom: 1em;
 }
 
-.tip {
-  font-style: italic;
-  margin-bottom: 36px;
-}
-
-.tip strong {
-  font-style: normal;
-  font-weight: normal;
-  font-family: 'TrashHandRegular';
-  font-size: 22px;
-}
-
-.tip ul {
-  margin-top: 0;
-}
-
-#hacktivity_icon {
-  margin-top: -100px;
-}
-
-#hacktivity_textbox {
-  margin-top: 16px;
+#content section ul {
+  margin: 0px;
+  margin-bottom: 1em;
+  padding: 0px;
+  list-style-position: inside;
 }
