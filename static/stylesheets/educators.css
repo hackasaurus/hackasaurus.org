@@ -32,8 +32,7 @@ a.button {
   color: white;
   border-radius: 10px;
   padding: 15px 30px;
-  font-family: Helvetica, sans-serif;
-  font-size: 32px;
+  font-size: 18px;
 }
 
 a.button:visited, 
