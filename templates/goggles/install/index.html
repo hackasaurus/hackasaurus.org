@@ -1,7 +1,7 @@
-{% extends "base.html" %}
+{% extends "goggles/base.html" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+{{ super() }}
 <style>
 video {
   width: 640px;
@@ -9,13 +9,11 @@ video {
 </style>
 {% endblock %}
 
-{% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
-
 {% block content %}
 <div id="content-header">
   <h1>{% trans %}Installing The X-Ray Goggles{% endtrans %}</h1>
 </div>
-{% include "goggles/incompatibility-warning.html" %}
+{{ super() }}
 <p>{% trans %}The X-Ray Goggles are a <em>bookmarklet</em>&mdash;a special kind of tool that can augment any web page.{% endtrans %}</p>
 <p>{% trans %}Here's how to install the goggles bookmarklet so you can inspect and remix anything you see on the web.{% endtrans %}</p>
 <ol>
@@ -34,6 +32,6 @@ video {
 {% endblock %}
 
 {% block scripts %}
-<script src="/scripts/goggles/msie-only.js"></script>
+{{ super() }}
 <script src="/scripts/goggles/bookmarks-toolbar-movie.js"></script>
 {% endblock %}

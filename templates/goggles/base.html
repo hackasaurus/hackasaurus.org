@@ -1,3 +1,12 @@
+{% extends "base.html" %}
+
+{% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+{% endblock %}
+
+{% block content %}
 <noscript>
   <div class="alert">
     <p>{% trans %}In order to use the goggles, you need to have JavaScript enabled.{% endtrans %}</p>
@@ -8,3 +17,8 @@
   <p>{% trans %}Sorry, but the goggles don't yet work on Microsoft Internet Explorer.{% endtrans %}</p>
   <p>{% trans %}Until they do, please use the latest version of <a href="http://mozilla.org/firefox">Firefox</a>, Opera, Chrome, or Safari.{% endtrans %}</p>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/scripts/goggles/msie-only.js"></script>
+{% endblock %}

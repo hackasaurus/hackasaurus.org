@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "goggles/base.html" %}
 
 {% block stylesheets %}
+{{ super() }}
 <link rel="stylesheet" href="/stylesheets/goggles/hints.css" 
  class="include-in-remix-dialog">
 <link rel="stylesheet" href="/stylesheets/goggles/keys.css">
-<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
 <link rel="stylesheet" href="/stylesheets/splash.css">
 {% endblock %}
 
@@ -13,10 +13,7 @@
   <h1>{% trans %}X-Ray Goggles{% endtrans %}</h1>
   <aside>{% trans %}Remix, make and share webpages instantly.{% endtrans %}</aside>
 </div>
-
-{% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
-
-{% include "goggles/incompatibility-warning.html" %}
+{{ super() }}
 <div class="remix-chamber"><img src="/images/goggles/supergirl.png"></div>
 <h1>{% trans %}Make your first hack in three easy steps!{% endtrans %}</h1>
 <ol>
@@ -64,10 +61,10 @@
 {% endblock %}
 
 {% block scripts %}
+{{ super() }}
 <script src="/scripts/goggles/hints.js" 
  class="include-in-remix-dialog"></script>
 <script src="/scripts/goggles/bugs.js" 
  class="include-in-remix-dialog"></script>
 <script src="/scripts/goggles/goggles.js"></script>
-<script src="/scripts/goggles/msie-only.js"></script>
 {% endblock %}
