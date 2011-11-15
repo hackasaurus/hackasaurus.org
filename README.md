@@ -21,7 +21,10 @@ Then, point your browser to http://localhost:8000/.
 All static, unlocalized files are in the `static` directory, which are
 placed at the root of the web site. The `templates` directory
 contains localized [Jinja2][] templates that are located at `/<locale>/` on
-the web site, where `<locale>` is the name of a locale like `en-US`.
+the web site, where `<locale>` is the name of a locale like `en-US`. The
+single exception to this is the file `templates/locale-redirector.html`,
+which is used to redirect a non-localized pathname to a localized one (e.g.,
+redirecting `/goggles/` to `/en-US/goggles`).
 
 Whenever you need to link to a localized template, you can do so either via
 a relative URL or an absolute one that begins with the template variable
