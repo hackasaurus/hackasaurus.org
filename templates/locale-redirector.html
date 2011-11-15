@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <noscript>
-      <meta http-equiv="refresh" content="0; url=/en-US/">
+      <meta http-equiv="refresh" content="0; url=/en-US{{ PATH_INFO }}">
     </noscript>
     <title>Hackasaurus</title>
   </head>
   <body>
     <noscript>
-      Please click <a href="/en-US/">here</a> if you are not redirected
-      automatically.
+      Please click <a href="/en-US{{ PATH_INFO }}">here</a> if you are not 
+      redirected automatically.
     </noscript>
     <script src="/scripts/jquery.min.js"></script>
     <script src="/scripts/localize.js"></script>
     <script>
     $(window).ready(function() {
-      jQuery.localization.activateBestLocale();
+      jQuery.localization.activateBestLocale("{{ PATH_INFO }}");
     });
     </script>
   </body>

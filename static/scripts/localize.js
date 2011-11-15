@@ -29,7 +29,7 @@
   jQuery.extend({
     localization: {
       DEFAULT: "en-US",
-      activateBestLocale: function() {
+      activateBestLocale: function(path) {
         var div = $("<div></div>");
         div.load("/" + this.DEFAULT + "/language-selector.html", function() {
           var available = [];
@@ -39,7 +39,7 @@
           var language = navigator.language || navigator.userLanguage;
           var bestMatch = jQuery.localization.findBestMatch(language,
                                                             available);
-          jQuery.localization.activate(bestMatch, true);
+          jQuery.localization.activate(bestMatch, true, path);
         });
       },
       findBestMatch: function(locale, available) {
@@ -55,8 +55,8 @@
           return available[nearMatch];
         }
       },
-      activate: function(locale, replaceState) {
-        var newURL = '/' + locale + '/';
+      activate: function(locale, replaceState, path) {
+        var newURL = '/' + locale + (path || '/');
         if (replaceState && window.history && window.history.replaceState) {
           window.history.replaceState({}, "", newURL);
           window.location.reload();

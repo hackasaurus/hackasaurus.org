@@ -74,6 +74,25 @@ class BasicFileServer(object):
                     return result
         return self.try_loading(filename, env, start)
 
+class LocaleRedirectorServer(object):
+    def __init__(self, template_dir,
+                 redirect_template='locale-redirector.html'):
+        self.redirect_template = redirect_template
+        self.file_server = BasicFileServer(template_dir)
+        self.file_server.ext_handlers.update({
+            '.html': self.handle_file_as_jinja2_template
+        })
+
+    def handle_file_as_jinja2_template(self, wsgi_env, root_dir, fullpath):
+        loader = jinja2.FileSystemLoader(root_dir, encoding='utf-8')
+        env = jinja2.Environment(loader=loader)
+        env.globals.update(dict(PATH_INFO=wsgi_env['PATH_INFO']))
+        template = env.get_template(self.redirect_template)
+        return ('text/html', template.render().encode('utf-8'))
+
+    def handle_request(self, env, start):
+        return self.file_server.handle_request(env, start)
+
 class LocalizedTemplateServer(object):
     def __init__(self, template_dir, locale_dir, locale_domain):
         self.locale_dir = locale_dir
@@ -124,8 +143,11 @@ def run_server(port, static_files_dir, template_dir,
                locale_dir, locale_domain):
     template_server = LocalizedTemplateServer(template_dir, locale_dir,
                                               locale_domain)
+    locale_redirector = LocaleRedirectorServer(template_dir)
     file_server = BasicFileServer(static_files_dir)
-    handlers = [template_server.handle_request, file_server.handle_request]
+    handlers = [template_server.handle_request,
+                file_server.handle_request,
+                locale_redirector.handle_request]
 
     def application(env, start):
         return handle_request(env, start, handlers=handlers)
@@ -144,6 +166,25 @@ def export_site(build_dir, static_files_dir, template_dir, locale_dir,
         shutil.rmtree(build_dir)
     print "copying static files"
     shutil.copytree(static_files_dir, build_dir)
+    print "generating locale redirectors"
+    redirector = LocaleRedirectorServer(template_dir)
+    for dirpath, dirnames, filenames in os.walk(template_dir):
+        files = [os.path.join(dirpath, filename)[len(template_dir)+1:]
+                 for filename in filenames]
+        for relpath in files:
+            print "  %s" % (relpath)
+            abspath = os.path.join(template_dir, relpath)
+            env = {'PATH_INFO': '/%s' % relpath}
+            if relpath.endswith('index.html'):
+                env['PATH_INFO'] = env['PATH_INFO'][:-len('index.html')]
+            mimetype, contents = redirector.handle_file_as_jinja2_template(
+                env,
+                template_dir,
+                abspath
+                )
+            dest_path = os.path.join(build_dir, relpath)
+            mkpath(os.path.dirname(dest_path))
+            open(dest_path, 'w').write(contents)
     server = LocalizedTemplateServer(template_dir, locale_dir, locale_domain)
     locales = find_locales(locale_dir, locale_domain, NULL_LOCALE)
     for locale in locales:
