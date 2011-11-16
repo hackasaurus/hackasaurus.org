@@ -25,10 +25,17 @@ $(window).ready(function() {
 
   var platform = navigator.platform;
   
-  // TODO: No idea what navigator.platform for Win7, WinXP, WinVista are.
-  // TODO: Windows Vista should show Win7 videos.
-  // TODO: Linux should show WinXP videos.
-
+  if (navigator.platform.match(/Win/)) {
+    // We're some flavor of Windows.
+    if (navigator.userAgent.match(/NT 5/)) {
+      // We're WinXP/2000.
+      platform = "WinXP";
+    } else {
+      // Assume we're Vista, 7, or higher.
+      platform = "Win7";
+    }
+  }
+  
   if (!(platform in videos))
     platform = DEFAULT_PLATFORM;
     
