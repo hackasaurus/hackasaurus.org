@@ -1,5 +1,6 @@
 import sys
 import os
+import settings
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
@@ -17,5 +18,6 @@ if __name__ == '__main__':
         template_dir=path('templates'),
         locale_dir=path('locale'),
         locale_domain='default',
-        babel_ini_file=path('babel.ini')
+        babel_ini_file=path('babel.ini'),
+        template_vars={'settings': settings}
         )

@@ -1,7 +1,4 @@
 {% extends "base.html" %}
-
-{% set PDF_BASE_URL = "http://labs.toolness.com/temp/hackasaurus-pdfs/" %}
-
 {% block stylesheets %}
 <link rel="stylesheet" href="/stylesheets/educators.css">
 {% endblock %}
@@ -25,7 +22,7 @@
         <li>{% trans %}work in teams and co-build{% endtrans %}</li>
       </ul>
       <p>{% trans %}...and more!{% endtrans %}</p>
-      <a class="button" href="{{ PDF_BASE_URL }}hacktivity_kit.pdf">{% trans %}Download{% endtrans %}<span class="arrow"></span></a>
+      <a class="button" href="{{ settings.PDF_BASE_URL }}hacktivity_kit.pdf">{% trans %}Download{% endtrans %}<span class="arrow"></span></a>
     </section>
   </div>
   <div id="slides" class="two-column">
@@ -52,7 +49,7 @@
       <li>{% trans %}projector set up for participation{% endtrans %}</li>
     </ul>
     <p>{% trans %}For a more detailed checklist, download the PDF below.{% endtrans %}</p>
-    <a class="button" href="{{ PDF_BASE_URL }}it_checklist.pdf">{% trans %}Download PDF{% endtrans %}<span class="arrow"></span></a>
+    <a class="button" href="{{ settings.PDF_BASE_URL }}it_checklist.pdf">{% trans %}Download PDF{% endtrans %}<span class="arrow"></span></a>
     </section>
   </div>
   <div id="cheatsheet" class="two-column">
@@ -70,7 +67,7 @@
         <li>▼ - {% trans %}Descend from parent element{% endtrans %}</li>
         <li>{% trans %}Delete{% endtrans %}/{% trans %}Backspace{% endtrans %} - {% trans %}delete an element{% endtrans %}</li>
       </ul>
-      <a class="button" href="{{ PDF_BASE_URL }}goggles_cheatsheet.pdf">{% trans %}Download PDF{% endtrans %}<span class="arrow"></span></a>
+      <a class="button" href="{{ settings.PDF_BASE_URL }}goggles_cheatsheet.pdf">{% trans %}Download PDF{% endtrans %}<span class="arrow"></span></a>
     </section>
   </div>
 </div>

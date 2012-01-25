@@ -6,7 +6,7 @@ from .localization import babel, locale_exists
 
 def execute_manager(build_dir, static_files_dir, template_dir,
                     locale_dir, locale_domain,
-                    babel_ini_file):
+                    babel_ini_file, template_vars):
     def cmd_makemessages(args):
         "create/update message file(s) for localization"
         
@@ -40,7 +40,8 @@ def execute_manager(build_dir, static_files_dir, template_dir,
             static_files_dir=static_files_dir,
             template_dir=template_dir,
             locale_dir=locale_dir,
-            locale_domain=locale_domain
+            locale_domain=locale_domain,
+            template_vars=template_vars,
             )
 
     def cmd_runserver(args):
@@ -52,6 +53,7 @@ def execute_manager(build_dir, static_files_dir, template_dir,
             template_dir=template_dir,
             locale_dir=locale_dir,
             locale_domain=locale_domain,
+            template_vars=template_vars,
             )
 
     if not os.path.exists(locale_dir):

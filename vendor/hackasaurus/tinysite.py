@@ -94,13 +94,15 @@ class LocaleRedirectorServer(object):
         return self.file_server.handle_request(env, start)
 
 class LocalizedTemplateServer(object):
-    def __init__(self, template_dir, locale_dir, locale_domain):
+    def __init__(self, template_dir, locale_dir, locale_domain,
+                 template_vars):
         self.locale_dir = locale_dir
         self.locale_domain = locale_domain
         self.file_server = BasicFileServer(template_dir)
         self.file_server.ext_handlers.update({
             '.html': self.handle_file_as_jinja2_template
         })
+        self.template_vars = template_vars
 
     def maybe_apply_translation(self, env, locale):
         env['locale'] = hyphenate(locale)
@@ -132,6 +134,7 @@ class LocalizedTemplateServer(object):
             locales=sorted(locales.values()),
             current_locale=locales[wsgi_env['locale']]
         ))
+        env.globals.update(self.template_vars)
         if 'translation' in wsgi_env:
             env.install_gettext_translations(wsgi_env['translation'])
         else:
@@ -140,9 +143,9 @@ class LocalizedTemplateServer(object):
         return ('text/html', template.render().encode('utf-8'))
 
 def run_server(port, static_files_dir, template_dir,
-               locale_dir, locale_domain):
+               locale_dir, locale_domain, template_vars):
     template_server = LocalizedTemplateServer(template_dir, locale_dir,
-                                              locale_domain)
+                                              locale_domain, template_vars)
     locale_redirector = LocaleRedirectorServer(template_dir)
     file_server = BasicFileServer(static_files_dir)
     handlers = [template_server.handle_request,
@@ -161,7 +164,7 @@ def run_server(port, static_files_dir, template_dir,
     httpd.serve_forever()
 
 def export_site(build_dir, static_files_dir, template_dir, locale_dir,
-                locale_domain):
+                locale_domain, template_vars):
     if os.path.exists(build_dir):
         shutil.rmtree(build_dir)
     print "copying static files"
@@ -185,7 +188,8 @@ def export_site(build_dir, static_files_dir, template_dir, locale_dir,
             dest_path = os.path.join(build_dir, relpath)
             mkpath(os.path.dirname(dest_path))
             open(dest_path, 'w').write(contents)
-    server = LocalizedTemplateServer(template_dir, locale_dir, locale_domain)
+    server = LocalizedTemplateServer(template_dir, locale_dir, locale_domain,
+                                     template_vars)
     locales = find_locales(locale_dir, locale_domain, NULL_LOCALE)
     for locale in locales:
         nice_locale = locale.replace('_', '-')
