@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
-{% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='http://labs.toolness.com/temp/webxray-dev/webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
+{% set GOGGLES_BASE_URL = "http://labs.toolness.com/temp/webxray-dev/" %}
+
+{% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='" + GOGGLES_BASE_URL + "webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
 
 {% block stylesheets %}
 <link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
