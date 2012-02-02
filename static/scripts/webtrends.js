@@ -6,7 +6,7 @@
 function WebTrends(){
 	var that=this;
 	// begin: user modifiable
-	this.dcsid="dcs2llglp00000k3wqbsoinmj_7u8n";
+	this.dcsid="dcsql8mskuz5bdiwy3g2ms442_6d1l";
 	this.domain="statse.webtrendslive.com";
 	this.timezone=0;
 	this.fpcdom=".mozillalabs.com";
