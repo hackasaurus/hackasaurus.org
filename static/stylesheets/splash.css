@@ -75,5 +75,5 @@
 }
 
 #content div.secondary div.blurb p {
-  height: 4em;
+  min-height: 4em;
 }
