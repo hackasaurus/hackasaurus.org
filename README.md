@@ -30,6 +30,11 @@ Whenever you need to link to a localized template, you can do so either via
 a relative URL or an absolute one that begins with the template variable
 `{{ LOCALE_ROOT }}`.
 
+Whenever you need to link to a static file, please use the `{{ STATIC_URL }}` 
+template variable. While this is almost always set to the root directory
+of your website, it may change, especially if you migrate your site to
+Playdoh.
+
   [Jinja2]: http://jinja.pocoo.org/
 
 ## Testing
