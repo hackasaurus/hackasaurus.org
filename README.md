@@ -77,6 +77,92 @@ the site's requirements become more complex.
   [Playdoh]: https://github.com/mozilla/playdoh
   [Jekyll]: https://github.com/mojombo/jekyll/wiki
 
+## Playdoh Migration
+
+Migrating this site to [Playdoh][] is fairly straightforward due to the
+above design philosophy. It requires no dependencies, aside from Playdoh
+itself.
+
+You'll want to create a new Django app in your Playdoh project and do
+the following:
+
+1. Recursively copy this site's `static` and `templates` directories into the
+   Django app.
+
+2. Delete `templates/locale-redirector.html` from the Django app, 
+   as Playdoh will now take care of locale redirection for you.
+
+3. Copy any site-specific configuration variables from this site's
+   `settings.py` into the Django project's `settings.py`.
+
+4. Fill the Django app's `views.py` with the following helpers:
+
+```python
+from django.shortcuts import render
+from django.conf import settings
+from funfactory.context_processors import i18n
+
+class Locale(object):
+    """
+    Simple shim class to make locale code in templates work.
+    """
+    
+    def __init__(self, locale, display_name):
+        self.locale = locale
+        self.display_name = display_name
+
+    def __str__(self):
+        return self.locale
+
+def page(filename):
+    """
+    Simple factory function that returns a Django view for a static website
+    page.
+    """
+    
+    def view(request):
+        info = i18n(request)
+        locales = {}
+        for locale, display_name in info['LANGUAGES'].items():
+            locales[locale] = Locale(locale, display_name)
+        currlocale = locales[info['LANG'].lower()]
+
+        return render(request, filename, {
+            'STATIC_URL': settings.STATIC_URL,
+            'locales': locales.values(),
+            'current_locale': currlocale,
+            'LOCALE_ROOT': '/%s/' % currlocale
+        })
+    
+    return view
+```
+
+5. Fill the Django app's `urls.py` with the following:
+
+```python
+    from django.conf.urls.defaults import *
+
+    from .views import page
+
+    urlpatterns = patterns('',
+        url(r'^$', page('index.html')),
+    )
+```
+
+This should expose *only* the site's home page to the Playdoh app. To
+expose more pages, you'll need to add to `urlpatterns`.
+
+You *should* be able to just copy the `.po` files from this site into
+the Django project and everything will magically work. However, this hasn't
+yet been tested.
+
+Note also that you may need to install the [staticfiles][] app in order to get
+the above code to work. Alternatively, you should be able to achieve the same
+effect by moving the files in `static` into your project's `media` directory
+and then setting `STATIC_URL = MEDIA_URL` in your `settings.py`.
+
+  [staticfiles]: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/
+  
 ## Security
 
 These major known vulnerabilities ought to be fixed before any sensitive
