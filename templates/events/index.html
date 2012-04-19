@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} - {% trans %}Events{% endtrans %}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/events.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/events.css">
 {% endblock %}
 {% block content %}
 <div id="events">
@@ -29,5 +29,5 @@
 {% endblock %}
 {% block scripts %}
 <script src="http://cdn.lanyrd.net/badges/person-v1.min.js"></script>
-<script src="/scripts/events.js"></script>
+<script src="{{ STATIC_URL }}scripts/events.js"></script>
 {% endblock %}

@@ -12,8 +12,8 @@
       Please click <a href="/en-US{{ PATH_INFO }}">here</a> if you are not 
       redirected automatically.
     </noscript>
-    <script src="/scripts/jquery.min.js"></script>
-    <script src="/scripts/localize.js"></script>
+    <script src="{{ STATIC_URL }}scripts/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}scripts/localize.js"></script>
     <script>
     $(window).ready(function() {
       jQuery.localization.activateBestLocale("{{ PATH_INFO }}");

@@ -2,10 +2,10 @@
 
 {% block stylesheets %}
 {{ super() }}
-<link rel="stylesheet" href="/stylesheets/goggles/hints.css" 
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/goggles/hints.css" 
  class="include-in-remix-dialog">
-<link rel="stylesheet" href="/stylesheets/goggles/keys.css">
-<link rel="stylesheet" href="/stylesheets/splash.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/goggles/keys.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/splash.css">
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
   <aside>{% trans %}Remix, make and share webpages instantly.{% endtrans %}</aside>
 </div>
 {{ super() }}
-<div class="remix-chamber"><img src="/images/goggles/supergirl.png"></div>
+<div class="remix-chamber"><img src="{{ STATIC_URL }}images/goggles/supergirl.png"></div>
 <h1>{% trans %}Make your first hack in three easy steps!{% endtrans %}</h1>
 <ol>
   <li><p>{% trans %}Copy this URL to your clipboard:{% endtrans %} 
@@ -62,9 +62,9 @@
 
 {% block scripts %}
 {{ super() }}
-<script src="/scripts/goggles/hints.js" 
+<script src="{{ STATIC_URL }}scripts/goggles/hints.js" 
  class="include-in-remix-dialog"></script>
-<script src="/scripts/goggles/bugs.js" 
+<script src="{{ STATIC_URL }}scripts/goggles/bugs.js" 
  class="include-in-remix-dialog"></script>
-<script src="/scripts/goggles/goggles.js"></script>
+<script src="{{ STATIC_URL }}scripts/goggles/goggles.js"></script>
 {% endblock %}

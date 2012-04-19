@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} - {% trans %}Blog{% endtrans %}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/blog.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/blog.css">
 {% endblock %}
 {% block content %}
 <div id="blog">
@@ -33,7 +33,7 @@
 </div>
 {% endblock %}
 {% block scripts %}
-<script src="/scripts/blog/date.format.js"></script>
-<script src="/scripts/blog/html-sanitizer-minified.js"></script>
-<script src="/scripts/blog/blog.js"></script>
+<script src="{{ STATIC_URL }}scripts/blog/date.format.js"></script>
+<script src="{{ STATIC_URL }}scripts/blog/html-sanitizer-minified.js"></script>
+<script src="{{ STATIC_URL }}scripts/blog/blog.js"></script>
 {% endblock %}

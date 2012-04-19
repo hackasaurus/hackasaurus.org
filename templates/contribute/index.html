@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} - {% trans %}Build With Us{% endtrans %}{% endblock %}
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/contribute.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/contribute.css">
 {% endblock %}
 
 {% set BUG_LIST_URL = "http://hackasaurus.lighthouseapp.com/projects/81472-goggles/tickets" %}
@@ -10,7 +10,7 @@
 <div class="primary">
   <h1>{% trans %}Build With Us{% endtrans %}</h1>
   <p>{% trans %}Hackasaurus is an open-source project. If you're a coder, just <a href="https://github.com/hackasaurus/webxray">fork the goggles</a> on Github, <a href="{{ BUG_LIST_URL }}">find a bug</a>, and contribute away!{% endtrans %}</p>
-  <img class="octocat" src="/images/contribute/octocat.png">
+  <img class="octocat" src="{{ STATIC_URL }}images/contribute/octocat.png">
 </div>
 <div class="secondary">
   <div class="blurb">

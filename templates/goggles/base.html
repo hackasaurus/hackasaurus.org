@@ -3,7 +3,7 @@
 {% set GOGGLES_BOOKMARKLET_URL = "javascript:(function(){var script=document.createElement('script');script.src='" + settings.GOGGLES_BASE_URL + "webxray.js';script.className='webxray';document.head.appendChild(script);})();" %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/goggles/goggles.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/goggles/goggles.css">
 {% endblock %}
 
 {% block content %}
@@ -20,5 +20,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/scripts/goggles/msie-only.js"></script>
+<script src="{{ STATIC_URL }}scripts/goggles/msie-only.js"></script>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block stylesheets %}
-<link rel="stylesheet" href="/stylesheets/about.css">
+<link rel="stylesheet" href="{{ STATIC_URL }}stylesheets/about.css">
 {% endblock %}
 {% block content %}
 <div id="about">
@@ -35,18 +35,18 @@
     </section>
 
     <aside>
-      <img src="/images/about/photo-hackers-01.jpg"/>
+      <img src="{{ STATIC_URL }}images/about/photo-hackers-01.jpg"/>
       <div id="team" class="textbox">
         <h2>{% trans %}Our team at a glance:{% endtrans %}</h2>
         <div class="bio">
-          <img src="/images/about/atul_small.jpg"/>
+          <img src="{{ STATIC_URL }}images/about/atul_small.jpg"/>
           <p>
             {% trans %}<strong>Atul Varma</strong> is the Technical Lead. He has worked on <a href="http://humanized.com/enso/">Humanized Enso</a>, 
             <a href="http://collusion.toolness.org/">Collusion</a> and <a href="https://mozillalabs.com/ubiquity/">Ubiquity</a>.{% endtrans %}
           </p>
         </div>
         <div class="bio">
-          <img src="/images/about/jess_small.png"/>
+          <img src="{{ STATIC_URL }}images/about/jess_small.png"/>
           <p>
             {% trans %}<strong>Jess Klein</strong> is the Design and Learning Lead. She has worked at <a href="http://explorecreateshare.org/">Hive NYC</a>, 
             <a href="http://sesameworkshop.org">Sesame Workshop</a> and the <a href="http://www.instituteofplay.org/">Institute of Play</a>.{% endtrans %}
